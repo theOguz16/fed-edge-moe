@@ -1,0 +1,16 @@
+{
+  "network_budget_mb": 5.0,
+  "federated": {
+    "steps": 120,
+    "seconds": 7.712,
+    "traffic_bytes": 787000
+  },
+  "split": {
+    "seconds_per_step": 1.94,
+    "expert_download_bytes": 393472,
+    "expert_upload_bytes": 393472,
+    "activation_bytes_per_step": 307440
+  },
+  "max_split_steps": 13,
+  "max_split_seconds": 25.22
+}

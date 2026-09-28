@@ -1,0 +1,25 @@
+{
+  "target_layer": 0,
+  "target_expert": 7,
+  "client_C": "simulated slow edge",
+  "candidates": [
+    {
+      "pair": "A_mac + B_msi",
+      "shared_affinity": 0.1914338916540146,
+      "estimated_round_seconds": 4.057,
+      "affinity_per_second": 0.047186071396109086
+    },
+    {
+      "pair": "A_mac + C_slow_edge",
+      "shared_affinity": 0.1914338916540146,
+      "estimated_round_seconds": 11.239,
+      "affinity_per_second": 0.017033000414095077
+    }
+  ],
+  "winner": {
+    "pair": "A_mac + B_msi",
+    "shared_affinity": 0.1914338916540146,
+    "estimated_round_seconds": 4.057,
+    "affinity_per_second": 0.047186071396109086
+  }
+}

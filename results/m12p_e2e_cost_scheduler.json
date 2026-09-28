@@ -1,0 +1,11 @@
+{
+  "old_msi_estimate_seconds": 4.06,
+  "measured_msi_e2e_seconds": 7.712019915999917,
+  "msi_affinity": 0.2,
+  "msi_efficiency": 0.025933542985938803,
+  "slow_edge_seconds": 11.24,
+  "slow_edge_affinity": 0.4,
+  "slow_edge_efficiency": 0.03558718861209965,
+  "required_slow_affinity": 0.29149302316195214,
+  "winner": "slow-edge"
+}

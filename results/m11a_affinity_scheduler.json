@@ -1,0 +1,339 @@
+{
+  "model": "checkpoints/m10_candidates/global_step_0100",
+  "data_split": "train",
+  "validation_used": false,
+  "test_used": false,
+  "scheduler": "max shared minimum routing affinity",
+  "clients": {
+    "client_A": {
+      "domain": 0,
+      "device": "Mac MPS",
+      "num_sequences": 179,
+      "routing_shares": [
+        [
+          0.0681564211845398,
+          0.015456238761544228,
+          0.07523277401924133,
+          0.32979515194892883,
+          0.0,
+          0.28137803077697754,
+          0.01601489819586277,
+          0.2139664739370346
+        ],
+        [
+          0.2836126685142517,
+          0.006331471260637045,
+          0.12830540537834167,
+          0.09031657129526138,
+          0.3867783844470978,
+          0.013407820835709572,
+          0.03109869733452797,
+          0.06014897674322128
+        ],
+        [
+          0.08621974289417267,
+          0.0,
+          0.0,
+          0.42327746748924255,
+          0.3162011206150055,
+          0.06443203240633011,
+          0.10949720442295074,
+          0.00037243947735987604
+        ]
+      ]
+    },
+    "client_B": {
+      "domain": 1,
+      "device": "MSI CUDA",
+      "num_sequences": 179,
+      "routing_shares": [
+        [
+          0.2661080062389374,
+          0.11973929405212402,
+          0.00037243947735987604,
+          0.1471135914325714,
+          0.18845437467098236,
+          0.020670391619205475,
+          0.06610801070928574,
+          0.1914338916540146
+        ],
+        [
+          0.0590316578745842,
+          0.062011174857616425,
+          0.1783985048532486,
+          0.0013035382144153118,
+          0.25381749868392944,
+          0.01135940384119749,
+          0.21750465035438538,
+          0.2165735512971878
+        ],
+        [
+          0.29087522625923157,
+          0.008938547223806381,
+          0.16610801219940186,
+          0.0,
+          0.00037243947735987604,
+          0.018063314259052277,
+          0.27653631567955017,
+          0.23910614848136902
+        ]
+      ]
+    }
+  },
+  "ranking": [
+    {
+      "layer": 1,
+      "expert": 4,
+      "client_A_affinity": 0.3867783844470978,
+      "client_B_affinity": 0.25381749868392944,
+      "shared_min_affinity": 0.25381749868392944,
+      "shared_mean_affinity": 0.3202979415655136,
+      "affinity_imbalance": 0.13296088576316833,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 7,
+      "client_A_affinity": 0.2139664739370346,
+      "client_B_affinity": 0.1914338916540146,
+      "shared_min_affinity": 0.1914338916540146,
+      "shared_mean_affinity": 0.2027001827955246,
+      "affinity_imbalance": 0.02253258228302002,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 3,
+      "client_A_affinity": 0.32979515194892883,
+      "client_B_affinity": 0.1471135914325714,
+      "shared_min_affinity": 0.1471135914325714,
+      "shared_mean_affinity": 0.23845437169075012,
+      "affinity_imbalance": 0.18268156051635742,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 2,
+      "client_A_affinity": 0.12830540537834167,
+      "client_B_affinity": 0.1783985048532486,
+      "shared_min_affinity": 0.12830540537834167,
+      "shared_mean_affinity": 0.15335195511579514,
+      "affinity_imbalance": 0.05009309947490692,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 6,
+      "client_A_affinity": 0.10949720442295074,
+      "client_B_affinity": 0.27653631567955017,
+      "shared_min_affinity": 0.10949720442295074,
+      "shared_mean_affinity": 0.19301676005125046,
+      "affinity_imbalance": 0.16703911125659943,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 0,
+      "client_A_affinity": 0.08621974289417267,
+      "client_B_affinity": 0.29087522625923157,
+      "shared_min_affinity": 0.08621974289417267,
+      "shared_mean_affinity": 0.18854748457670212,
+      "affinity_imbalance": 0.2046554833650589,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 0,
+      "client_A_affinity": 0.0681564211845398,
+      "client_B_affinity": 0.2661080062389374,
+      "shared_min_affinity": 0.0681564211845398,
+      "shared_mean_affinity": 0.1671322137117386,
+      "affinity_imbalance": 0.19795158505439758,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 7,
+      "client_A_affinity": 0.06014897674322128,
+      "client_B_affinity": 0.2165735512971878,
+      "shared_min_affinity": 0.06014897674322128,
+      "shared_mean_affinity": 0.13836126402020454,
+      "affinity_imbalance": 0.15642457455396652,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 0,
+      "client_A_affinity": 0.2836126685142517,
+      "client_B_affinity": 0.0590316578745842,
+      "shared_min_affinity": 0.0590316578745842,
+      "shared_mean_affinity": 0.17132216319441795,
+      "affinity_imbalance": 0.2245810106396675,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 6,
+      "client_A_affinity": 0.03109869733452797,
+      "client_B_affinity": 0.21750465035438538,
+      "shared_min_affinity": 0.03109869733452797,
+      "shared_mean_affinity": 0.12430167384445667,
+      "affinity_imbalance": 0.1864059530198574,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 5,
+      "client_A_affinity": 0.28137803077697754,
+      "client_B_affinity": 0.020670391619205475,
+      "shared_min_affinity": 0.020670391619205475,
+      "shared_mean_affinity": 0.1510242111980915,
+      "affinity_imbalance": 0.26070763915777206,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 5,
+      "client_A_affinity": 0.06443203240633011,
+      "client_B_affinity": 0.018063314259052277,
+      "shared_min_affinity": 0.018063314259052277,
+      "shared_mean_affinity": 0.04124767333269119,
+      "affinity_imbalance": 0.04636871814727783,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 6,
+      "client_A_affinity": 0.01601489819586277,
+      "client_B_affinity": 0.06610801070928574,
+      "shared_min_affinity": 0.01601489819586277,
+      "shared_mean_affinity": 0.04106145445257425,
+      "affinity_imbalance": 0.050093112513422966,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 1,
+      "client_A_affinity": 0.015456238761544228,
+      "client_B_affinity": 0.11973929405212402,
+      "shared_min_affinity": 0.015456238761544228,
+      "shared_mean_affinity": 0.06759776640683413,
+      "affinity_imbalance": 0.1042830552905798,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 5,
+      "client_A_affinity": 0.013407820835709572,
+      "client_B_affinity": 0.01135940384119749,
+      "shared_min_affinity": 0.01135940384119749,
+      "shared_mean_affinity": 0.012383612338453531,
+      "affinity_imbalance": 0.002048416994512081,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 1,
+      "client_A_affinity": 0.006331471260637045,
+      "client_B_affinity": 0.062011174857616425,
+      "shared_min_affinity": 0.006331471260637045,
+      "shared_mean_affinity": 0.034171323059126735,
+      "affinity_imbalance": 0.05567970359697938,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 1,
+      "expert": 3,
+      "client_A_affinity": 0.09031657129526138,
+      "client_B_affinity": 0.0013035382144153118,
+      "shared_min_affinity": 0.0013035382144153118,
+      "shared_mean_affinity": 0.04581005475483835,
+      "affinity_imbalance": 0.08901303308084607,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 4,
+      "client_A_affinity": 0.3162011206150055,
+      "client_B_affinity": 0.00037243947735987604,
+      "shared_min_affinity": 0.00037243947735987604,
+      "shared_mean_affinity": 0.15828678004618268,
+      "affinity_imbalance": 0.3158286811376456,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 7,
+      "client_A_affinity": 0.00037243947735987604,
+      "client_B_affinity": 0.23910614848136902,
+      "shared_min_affinity": 0.00037243947735987604,
+      "shared_mean_affinity": 0.11973929397936445,
+      "affinity_imbalance": 0.23873370900400914,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 2,
+      "client_A_affinity": 0.07523277401924133,
+      "client_B_affinity": 0.00037243947735987604,
+      "shared_min_affinity": 0.00037243947735987604,
+      "shared_mean_affinity": 0.037802606748300605,
+      "affinity_imbalance": 0.07486033454188146,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 3,
+      "client_A_affinity": 0.42327746748924255,
+      "client_B_affinity": 0.0,
+      "shared_min_affinity": 0.0,
+      "shared_mean_affinity": 0.21163873374462128,
+      "affinity_imbalance": 0.42327746748924255,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 0,
+      "expert": 4,
+      "client_A_affinity": 0.0,
+      "client_B_affinity": 0.18845437467098236,
+      "shared_min_affinity": 0.0,
+      "shared_mean_affinity": 0.09422718733549118,
+      "affinity_imbalance": 0.18845437467098236,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 2,
+      "client_A_affinity": 0.0,
+      "client_B_affinity": 0.16610801219940186,
+      "shared_min_affinity": 0.0,
+      "shared_mean_affinity": 0.08305400609970093,
+      "affinity_imbalance": 0.16610801219940186,
+      "parameter_count": 98304
+    },
+    {
+      "layer": 2,
+      "expert": 1,
+      "client_A_affinity": 0.0,
+      "client_B_affinity": 0.008938547223806381,
+      "shared_min_affinity": 0.0,
+      "shared_mean_affinity": 0.004469273611903191,
+      "affinity_imbalance": 0.008938547223806381,
+      "parameter_count": 98304
+    }
+  ],
+  "selected": {
+    "layer": 1,
+    "expert": 4,
+    "client_A_affinity": 0.3867783844470978,
+    "client_B_affinity": 0.25381749868392944,
+    "shared_min_affinity": 0.25381749868392944,
+    "shared_mean_affinity": 0.3202979415655136,
+    "affinity_imbalance": 0.13296088576316833,
+    "parameter_count": 98304
+  },
+  "m10_reference": {
+    "layer": 1,
+    "expert": 4
+  }
+}

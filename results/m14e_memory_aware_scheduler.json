@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "name": "small_expert_job",
+      "required_training_memory_gb": 1.5,
+      "devices": [
+        {
+          "device_id": "mac_m4",
+          "available_memory_gb": 16.0,
+          "fits": true
+        },
+        {
+          "device_id": "msi_rtx3050",
+          "available_memory_gb": 4.0,
+          "fits": true
+        },
+        {
+          "device_id": "slow_edge_sim",
+          "available_memory_gb": 2.0,
+          "fits": false
+        }
+      ]
+    },
+    {
+      "name": "medium_expert_job",
+      "required_training_memory_gb": 3.5,
+      "devices": [
+        {
+          "device_id": "mac_m4",
+          "available_memory_gb": 16.0,
+          "fits": true
+        },
+        {
+          "device_id": "msi_rtx3050",
+          "available_memory_gb": 4.0,
+          "fits": true
+        },
+        {
+          "device_id": "slow_edge_sim",
+          "available_memory_gb": 2.0,
+          "fits": false
+        }
+      ]
+    },
+    {
+      "name": "large_expert_job",
+      "required_training_memory_gb": 6.0,
+      "devices": [
+        {
+          "device_id": "mac_m4",
+          "available_memory_gb": 16.0,
+          "fits": true
+        },
+        {
+          "device_id": "msi_rtx3050",
+          "available_memory_gb": 4.0,
+          "fits": false
+        },
+        {
+          "device_id": "slow_edge_sim",
+          "available_memory_gb": 2.0,
+          "fits": false
+        }
+      ]
+    }
+  ]
+}

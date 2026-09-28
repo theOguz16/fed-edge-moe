@@ -1,0 +1,35 @@
+{
+  "global_version": 105,
+  "accepted": [
+    {
+      "id": "client_A",
+      "base_version": 105,
+      "status": "complete",
+      "weight": 120
+    },
+    {
+      "id": "client_B",
+      "base_version": 105,
+      "status": "complete",
+      "weight": 120
+    }
+  ],
+  "rejected": [
+    {
+      "id": "client_C",
+      "base_version": 105,
+      "status": "dropout",
+      "weight": 0,
+      "reason": "DROPOUT"
+    },
+    {
+      "id": "client_D",
+      "base_version": 104,
+      "status": "complete",
+      "weight": 120,
+      "reason": "STALE_UPDATE"
+    }
+  ],
+  "participation": 0.5,
+  "round_valid": true
+}

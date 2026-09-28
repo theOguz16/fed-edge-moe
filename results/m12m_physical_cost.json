@@ -1,0 +1,163 @@
+{
+  "start_version": 100,
+  "num_rounds": 1,
+  "history": [
+    {
+      "version": 100,
+      "round": 0,
+      "evaluation": [
+        {
+          "loss": 2.6887943744659424,
+          "accuracy": 0.15964911878108978
+        },
+        {
+          "loss": 2.7563676834106445,
+          "accuracy": 0.13162393867969513
+        },
+        {
+          "loss": 1.3100477457046509,
+          "accuracy": 0.8273504376411438
+        },
+        {
+          "loss": 0.9867412447929382,
+          "accuracy": 0.8684210777282715
+        }
+      ],
+      "mean_accuracy": 0.49676114320755005
+    },
+    {
+      "round": 1,
+      "base_version": 100,
+      "version": 101,
+      "evaluation": [
+        {
+          "loss": 2.665055990219116,
+          "accuracy": 0.16842105984687805
+        },
+        {
+          "loss": 2.7256927490234375,
+          "accuracy": 0.13333334028720856
+        },
+        {
+          "loss": 1.3237274885177612,
+          "accuracy": 0.8273504376411438
+        },
+        {
+          "loss": 0.9868170619010925,
+          "accuracy": 0.8684210777282715
+        }
+      ],
+      "mean_accuracy": 0.4993814788758755,
+      "delta_cosine_similarity": 0.0240929014980793,
+      "client_A": {
+        "client_id": "client_A_mac_mps",
+        "round": 1,
+        "domain": 0,
+        "base_global_version": 100,
+        "layer": 0,
+        "expert": 7,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 3.406660415999795,
+        "delta_l2_norm": 5.103692584176129,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.6887943744659424,
+            "accuracy": 0.15964911878108978
+          },
+          {
+            "loss": 2.7563676834106445,
+            "accuracy": 0.13162393867969513
+          },
+          {
+            "loss": 1.3100477457046509,
+            "accuracy": 0.8273504376411438
+          },
+          {
+            "loss": 0.9867412447929382,
+            "accuracy": 0.8684210777282715
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.5899479389190674,
+            "accuracy": 0.19473683834075928
+          },
+          {
+            "loss": 2.759884834289551,
+            "accuracy": 0.12649573385715485
+          },
+          {
+            "loss": 1.381296157836914,
+            "accuracy": 0.8290598392486572
+          },
+          {
+            "loss": 0.986815869808197,
+            "accuracy": 0.8684210777282715
+          }
+        ]
+      },
+      "client_B": {
+        "client_id": "client_B_physical_msi",
+        "round": 1,
+        "domain": 1,
+        "base_global_version": 100,
+        "layer": 0,
+        "expert": 7,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 3.831777200000033,
+        "snapshot_download_bytes": 9595116,
+        "snapshot_download_seconds": 0.8767394999999851,
+        "delta_l2_norm": 5.439980259116202,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.6887943744659424,
+            "accuracy": 0.15964911878108978
+          },
+          {
+            "loss": 2.7563676834106445,
+            "accuracy": 0.13162393867969513
+          },
+          {
+            "loss": 1.3100477457046509,
+            "accuracy": 0.8273504376411438
+          },
+          {
+            "loss": 0.9867413640022278,
+            "accuracy": 0.8684210777282715
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.692782163619995,
+            "accuracy": 0.1631578952074051
+          },
+          {
+            "loss": 2.6575958728790283,
+            "accuracy": 0.1914529949426651
+          },
+          {
+            "loss": 1.3228312730789185,
+            "accuracy": 0.8307692408561707
+          },
+          {
+            "loss": 0.9867473244667053,
+            "accuracy": 0.8684210777282715
+          }
+        ],
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      "aggregation_seconds": 0.2482227079999575,
+      "round_seconds": 11.081273290999889,
+      "snapshot_bytes": 9595116
+    }
+  ]
+}

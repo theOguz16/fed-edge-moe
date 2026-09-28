@@ -1,0 +1,7 @@
+{
+  "selected_device": "slow-edge",
+  "decision_status": "PROVISIONAL",
+  "winner_cost_source": "estimated",
+  "runner_up": "MSI",
+  "runner_up_cost_source": "measured"
+}

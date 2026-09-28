@@ -1,0 +1,43 @@
+{
+  "method": "full_model_fedavg",
+  "base_checkpoint": "checkpoints/m5_candidates/global_step_0030",
+  "delta_cosine_similarity": 0.005617302842438221,
+  "client_A_upload_bytes": 10341944,
+  "client_B_upload_bytes": 10341944,
+  "baseline": [
+    {
+      "loss": 2.872507095336914,
+      "accuracy": 0.3828125
+    },
+    {
+      "loss": 2.7521049976348877,
+      "accuracy": 0.37890625
+    },
+    {
+      "loss": 2.7451350688934326,
+      "accuracy": 0.5546875
+    },
+    {
+      "loss": 2.730595111846924,
+      "accuracy": 0.609375
+    }
+  ],
+  "federated": [
+    {
+      "loss": 1.4670823812484741,
+      "accuracy": 0.6171875
+    },
+    {
+      "loss": 1.0128514766693115,
+      "accuracy": 0.94921875
+    },
+    {
+      "loss": 3.0917792320251465,
+      "accuracy": 0.2421875
+    },
+    {
+      "loss": 3.105961322784424,
+      "accuracy": 0.2109375
+    }
+  ]
+}

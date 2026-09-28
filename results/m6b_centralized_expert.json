@@ -1,0 +1,84 @@
+{
+  "method": "centralized_expert",
+  "base_checkpoint": "checkpoints/m5_candidates/global_step_0030",
+  "target_layer": 0,
+  "target_expert": 6,
+  "training_steps": 240,
+  "training_tokens": 122880,
+  "trainable_parameters": 98304,
+  "delta_l2_norm": 8.024131143184746,
+  "baseline": [
+    {
+      "loss": 2.872507095336914,
+      "accuracy": 0.3828125
+    },
+    {
+      "loss": 2.7521049976348877,
+      "accuracy": 0.37890625
+    },
+    {
+      "loss": 2.7451350688934326,
+      "accuracy": 0.5546875
+    },
+    {
+      "loss": 2.730595111846924,
+      "accuracy": 0.609375
+    }
+  ],
+  "centralized": [
+    {
+      "loss": 2.089444160461426,
+      "accuracy": 0.79296875
+    },
+    {
+      "loss": 2.3011317253112793,
+      "accuracy": 0.61328125
+    },
+    {
+      "loss": 2.7704415321350098,
+      "accuracy": 0.52734375
+    },
+    {
+      "loss": 2.730316162109375,
+      "accuracy": 0.60546875
+    }
+  ],
+  "comparison": {
+    "Global V0": {
+      "accuracies": [
+        38.28125,
+        37.890625,
+        55.46875,
+        60.9375
+      ],
+      "mean_accuracy": 48.14453125
+    },
+    "Expert FedAvg": {
+      "accuracies": [
+        74.609375,
+        58.59375,
+        53.125,
+        60.9375
+      ],
+      "mean_accuracy": 61.81640625
+    },
+    "Full FedAvg": {
+      "accuracies": [
+        61.71875,
+        94.921875,
+        24.21875,
+        21.09375
+      ],
+      "mean_accuracy": 50.48828125
+    },
+    "Centralized Expert": {
+      "accuracies": [
+        79.296875,
+        61.328125,
+        52.734375,
+        60.546875
+      ],
+      "mean_accuracy": 63.4765625
+    }
+  }
+}

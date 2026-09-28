@@ -1,0 +1,46 @@
+{
+  "global_version": 105,
+  "min_quorum": 2,
+  "history": [
+    {
+      "attempt": 1,
+      "accepted": [
+        "B"
+      ],
+      "rejected": [
+        {
+          "client_id": "B",
+          "base_version": 105,
+          "status": "complete",
+          "weight": 120,
+          "reason": "DUPLICATE_UPDATE"
+        },
+        {
+          "client_id": "C",
+          "base_version": 104,
+          "status": "complete",
+          "weight": 120,
+          "reason": "STALE_UPDATE"
+        },
+        {
+          "client_id": "A",
+          "base_version": 105,
+          "status": "dropout",
+          "weight": 0,
+          "reason": "DROPOUT"
+        }
+      ],
+      "decision": "RETRY"
+    },
+    {
+      "attempt": 2,
+      "accepted": [
+        "A",
+        "B"
+      ],
+      "rejected": [],
+      "decision": "COMMIT"
+    }
+  ],
+  "final_status": "COMMITTED"
+}

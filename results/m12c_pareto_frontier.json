@@ -1,0 +1,114 @@
+{
+  "expert_options": [
+    {
+      "name": "L1-E4",
+      "target_gain": 0.07060278952121735,
+      "retention_change": 0.0
+    },
+    {
+      "name": "L0-E7",
+      "target_gain": 0.08963113278150558,
+      "retention_change": -0.0017094016075134277
+    },
+    {
+      "name": "L0-E3",
+      "target_gain": 0.07348178327083588,
+      "retention_change": -0.0034863054752349854
+    }
+  ],
+  "expert_frontier": [
+    {
+      "name": "L1-E4",
+      "target_gain": 0.07060278952121735,
+      "retention_change": 0.0
+    },
+    {
+      "name": "L0-E7",
+      "target_gain": 0.08963113278150558,
+      "retention_change": -0.0017094016075134277
+    }
+  ],
+  "scheduler_cases": [
+    {
+      "label": "existing_M11E2",
+      "options": [
+        {
+          "name": "original",
+          "target_gain": 0.08666665852069855,
+          "retention_change": -0.0008547008037567139
+        },
+        {
+          "name": "balanced",
+          "target_gain": 0.09666667133569717,
+          "retention_change": -0.007193736732006073
+        }
+      ],
+      "frontier": [
+        {
+          "name": "original",
+          "target_gain": 0.08666665852069855,
+          "retention_change": -0.0008547008037567139
+        },
+        {
+          "name": "balanced",
+          "target_gain": 0.09666667133569717,
+          "retention_change": -0.007193736732006073
+        }
+      ]
+    },
+    {
+      "label": "seed_20260930",
+      "options": [
+        {
+          "name": "original",
+          "target_gain": 0.08666668087244034,
+          "retention_change": 0.0009259283542633057
+        },
+        {
+          "name": "balanced",
+          "target_gain": 0.08666668087244034,
+          "retention_change": 0.0009259283542633057
+        }
+      ],
+      "frontier": [
+        {
+          "name": "original",
+          "target_gain": 0.08666668087244034,
+          "retention_change": 0.0009259283542633057
+        },
+        {
+          "name": "balanced",
+          "target_gain": 0.08666668087244034,
+          "retention_change": 0.0009259283542633057
+        }
+      ]
+    },
+    {
+      "label": "seed_20261002",
+      "options": [
+        {
+          "name": "original",
+          "target_gain": 0.12166666239500046,
+          "retention_change": 0.0009259283542633057
+        },
+        {
+          "name": "balanced",
+          "target_gain": 0.12166666239500046,
+          "retention_change": 0.0009259283542633057
+        }
+      ],
+      "frontier": [
+        {
+          "name": "original",
+          "target_gain": 0.12166666239500046,
+          "retention_change": 0.0009259283542633057
+        },
+        {
+          "name": "balanced",
+          "target_gain": 0.12166666239500046,
+          "retention_change": 0.0009259283542633057
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "min_quorum": 2,
+  "results": [
+    {
+      "name": "healthy_partial",
+      "valid_clients": 3,
+      "decision": "COMMIT"
+    },
+    {
+      "name": "minimum_valid",
+      "valid_clients": 2,
+      "decision": "COMMIT"
+    },
+    {
+      "name": "too_few",
+      "valid_clients": 1,
+      "decision": "ABORT"
+    },
+    {
+      "name": "none",
+      "valid_clients": 0,
+      "decision": "ABORT"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "fast_affinity": 0.2,
+  "fast_round_seconds": 4.06,
+  "partner_affinity_limit": 0.4,
+  "results": [
+    {
+      "slow_round_seconds": 5.0,
+      "required_shared_affinity": 0.24630541871921185,
+      "partner_affinity_limit": 0.4,
+      "possible": true
+    },
+    {
+      "slow_round_seconds": 6.0,
+      "required_shared_affinity": 0.29556650246305427,
+      "partner_affinity_limit": 0.4,
+      "possible": true
+    },
+    {
+      "slow_round_seconds": 8.0,
+      "required_shared_affinity": 0.394088669950739,
+      "partner_affinity_limit": 0.4,
+      "possible": true
+    },
+    {
+      "slow_round_seconds": 10.0,
+      "required_shared_affinity": 0.4926108374384237,
+      "partner_affinity_limit": 0.4,
+      "possible": false
+    },
+    {
+      "slow_round_seconds": 11.24,
+      "required_shared_affinity": 0.5536945812807883,
+      "partner_affinity_limit": 0.4,
+      "possible": false
+    },
+    {
+      "slow_round_seconds": 14.0,
+      "required_shared_affinity": 0.6896551724137933,
+      "partner_affinity_limit": 0.4,
+      "possible": false
+    }
+  ]
+}

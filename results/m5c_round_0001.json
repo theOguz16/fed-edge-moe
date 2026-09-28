@@ -1,0 +1,47 @@
+{
+  "from_global_version": 30,
+  "to_global_version": 31,
+  "layer": 0,
+  "expert": 6,
+  "client_A_tokens": 61440,
+  "client_B_tokens": 61440,
+  "delta_cosine_similarity": 0.01901167258620262,
+  "client_A_upload_bytes": 393472,
+  "client_B_upload_bytes": 393472,
+  "baseline": [
+    {
+      "loss": 2.8743574917316437,
+      "accuracy": 0.386199951171875
+    },
+    {
+      "loss": 2.7527021765708923,
+      "accuracy": 0.376678466796875
+    },
+    {
+      "loss": 2.745511293411255,
+      "accuracy": 0.55352783203125
+    },
+    {
+      "loss": 2.732103407382965,
+      "accuracy": 0.6090087890625
+    }
+  ],
+  "federated": [
+    {
+      "loss": 2.5637573301792145,
+      "accuracy": 0.746795654296875
+    },
+    {
+      "loss": 2.6053077578544617,
+      "accuracy": 0.578582763671875
+    },
+    {
+      "loss": 2.745632380247116,
+      "accuracy": 0.531341552734375
+    },
+    {
+      "loss": 2.731401026248932,
+      "accuracy": 0.6090087890625
+    }
+  ]
+}

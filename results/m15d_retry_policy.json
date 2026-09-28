@@ -1,0 +1,22 @@
+{
+  "min_quorum": 2,
+  "max_attempts": 3,
+  "history": [
+    {
+      "attempt": 1,
+      "valid_clients": [
+        "B"
+      ],
+      "decision": "RETRY"
+    },
+    {
+      "attempt": 2,
+      "valid_clients": [
+        "A",
+        "B"
+      ],
+      "decision": "COMMIT"
+    }
+  ],
+  "final_status": "SUCCESS"
+}

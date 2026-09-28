@@ -1,0 +1,92 @@
+{
+  "policy": "maximize target gain subject to retention budget",
+  "budgets_pp": [
+    0.0,
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "results": [
+    {
+      "budget_pp": 0.0,
+      "winner": "L1-E4",
+      "feasible": [
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0
+        }
+      ]
+    },
+    {
+      "budget_pp": 0.1,
+      "winner": "L1-E4",
+      "feasible": [
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0
+        }
+      ]
+    },
+    {
+      "budget_pp": 0.2,
+      "winner": "L0-E7",
+      "feasible": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0
+        }
+      ]
+    },
+    {
+      "budget_pp": 0.5,
+      "winner": "L0-E7",
+      "feasible": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0
+        }
+      ]
+    },
+    {
+      "budget_pp": 1.0,
+      "winner": "L0-E7",
+      "feasible": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0
+        }
+      ]
+    }
+  ]
+}

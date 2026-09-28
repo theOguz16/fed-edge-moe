@@ -1,0 +1,120 @@
+{
+  "experiment": "M11F stochastic replication",
+  "synthetic_version": "V3",
+  "scheduler_formulas_locked": true,
+  "federated_base_step": 100,
+  "fixed_horizon_rounds": 5,
+  "test_used": false,
+  "num_replications": 3,
+  "balanced_higher": 1,
+  "original_higher": 0,
+  "same_selection": 2,
+  "tie": 0,
+  "mean_global_difference": 0.0006101628144582113,
+  "mean_target_gain_difference": 0.0033333376049995422,
+  "mean_retention_difference": -0.00211301197608312,
+  "replications": [
+    {
+      "label": "existing_M11E2",
+      "base_seed": 20260928,
+      "fl_seed": 20260929,
+      "original_pick": {
+        "layer": 1,
+        "expert": 5,
+        "A": 0.2649621069431305,
+        "B": 0.19585686922073364,
+        "shared_min": 0.19585686922073364,
+        "balance_ratio": 0.7391882238571228,
+        "balanced_score": 0.14477509128949087
+      },
+      "balanced_pick": {
+        "layer": 0,
+        "expert": 0,
+        "A": 0.1672348529100418,
+        "B": 0.1790960431098938,
+        "shared_min": 0.1672348529100418,
+        "balance_ratio": 0.9337719025284443,
+        "balanced_score": 0.15615920677087428
+      },
+      "same_selection": false,
+      "comparison": "balanced_higher",
+      "original_final_global": 0.24553418904542923,
+      "balanced_final_global": 0.24736467748880386,
+      "global_difference": 0.0018304884433746338,
+      "original_target_gain": 0.08666665852069855,
+      "balanced_target_gain": 0.09666667133569717,
+      "target_gain_difference": 0.010000012814998627,
+      "original_retention_change": -0.0008547008037567139,
+      "balanced_retention_change": -0.007193736732006073,
+      "retention_difference": -0.006339035928249359
+    },
+    {
+      "label": "seed_20260930",
+      "base_seed": 20260930,
+      "fl_seed": 20260931,
+      "original_pick": {
+        "layer": 2,
+        "expert": 6,
+        "A": 0.2642045319080353,
+        "B": 0.35762712359428406,
+        "shared_min": 0.2642045319080353,
+        "balance_ratio": 0.7387709557728245,
+        "balanced_score": 0.19518663455721091
+      },
+      "balanced_pick": {
+        "layer": 2,
+        "expert": 6,
+        "A": 0.2642045319080353,
+        "B": 0.35762712359428406,
+        "shared_min": 0.2642045319080353,
+        "balance_ratio": 0.7387709557728245,
+        "balanced_score": 0.19518663455721091
+      },
+      "same_selection": true,
+      "comparison": "same_expert_selected",
+      "original_final_global": 0.23700855299830437,
+      "balanced_final_global": 0.23700855299830437,
+      "global_difference": 0.0,
+      "original_target_gain": 0.08666668087244034,
+      "balanced_target_gain": 0.08666668087244034,
+      "target_gain_difference": 0.0,
+      "original_retention_change": 0.0009259283542633057,
+      "balanced_retention_change": 0.0009259283542633057,
+      "retention_difference": 0.0
+    },
+    {
+      "label": "seed_20261002",
+      "base_seed": 20261002,
+      "fl_seed": 20261003,
+      "original_pick": {
+        "layer": 1,
+        "expert": 3,
+        "A": 0.3030303120613098,
+        "B": 0.2819209098815918,
+        "shared_min": 0.2819209098815918,
+        "balance_ratio": 0.9303389748829909,
+        "balanced_score": 0.2622820102973202
+      },
+      "balanced_pick": {
+        "layer": 1,
+        "expert": 3,
+        "A": 0.3030303120613098,
+        "B": 0.2819209098815918,
+        "shared_min": 0.2819209098815918,
+        "balance_ratio": 0.9303389748829909,
+        "balanced_score": 0.2622820102973202
+      },
+      "same_selection": true,
+      "comparison": "same_expert_selected",
+      "original_final_global": 0.2730555571615696,
+      "balanced_final_global": 0.2730555571615696,
+      "global_difference": 0.0,
+      "original_target_gain": 0.12166666239500046,
+      "balanced_target_gain": 0.12166666239500046,
+      "target_gain_difference": 0.0,
+      "original_retention_change": 0.0009259283542633057,
+      "balanced_retention_change": 0.0009259283542633057,
+      "retention_difference": 0.0
+    }
+  ]
+}

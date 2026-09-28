@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "devices": [
+    {
+      "device_id": "mac_m4",
+      "role": "server_edge",
+      "compute": {
+        "backend": "mps",
+        "memory_gb": 16.0
+      },
+      "network": {
+        "type": "lan"
+      },
+      "capabilities": {
+        "federated_local_training": true,
+        "split_execution": true
+      },
+      "measured": {
+        "local_train_seconds_120": 3.462
+      }
+    },
+    {
+      "device_id": "msi_rtx3050",
+      "role": "edge",
+      "compute": {
+        "backend": "cuda",
+        "gpu": "RTX 3050 Laptop",
+        "gpu_memory_gb": 4.0,
+        "system_memory_gb": 8.0
+      },
+      "network": {
+        "type": "lan"
+      },
+      "capabilities": {
+        "federated_local_training": true,
+        "split_execution": true
+      },
+      "measured": {
+        "federated_e2e_seconds_120": 7.712,
+        "split_e2e_seconds_1": 1.94,
+        "snapshot_download_seconds": 0.295
+      }
+    },
+    {
+      "device_id": "slow_edge_sim",
+      "role": "edge",
+      "compute": {
+        "backend": "simulated",
+        "memory_gb": 2.0
+      },
+      "network": {
+        "type": "simulated_slow"
+      },
+      "capabilities": {
+        "federated_local_training": false,
+        "split_execution": true
+      },
+      "measured": {},
+      "estimated": {
+        "round_seconds": 11.24
+      }
+    }
+  ]
+}

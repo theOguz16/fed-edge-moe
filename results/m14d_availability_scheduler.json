@@ -1,0 +1,13 @@
+{
+  "expert": "L0-E7",
+  "selected_device": "msi_rtx3050",
+  "eligible_devices": [
+    {
+      "device_id": "msi_rtx3050",
+      "affinity": 0.191,
+      "training_seconds": 3.458,
+      "available": true,
+      "score": 0.055234239444765756
+    }
+  ]
+}

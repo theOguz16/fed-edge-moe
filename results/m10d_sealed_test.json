@@ -1,0 +1,86 @@
+{
+  "base_checkpoint": "checkpoints/m10_candidates/global_step_0100",
+  "final_checkpoint": "checkpoints/m10c/global_v0105",
+  "selection_used_test": false,
+  "test_opened_after_selection": true,
+  "base": [
+    {
+      "loss": 2.766589403152466,
+      "accuracy": 0.1230769231915474,
+      "num_sequences": 39,
+      "num_tokens": 585
+    },
+    {
+      "loss": 2.7503774166107178,
+      "accuracy": 0.1087719276547432,
+      "num_sequences": 38,
+      "num_tokens": 570
+    },
+    {
+      "loss": 1.3447750806808472,
+      "accuracy": 0.8491228222846985,
+      "num_sequences": 38,
+      "num_tokens": 570
+    },
+    {
+      "loss": 1.010725736618042,
+      "accuracy": 0.8512820601463318,
+      "num_sequences": 39,
+      "num_tokens": 585
+    }
+  ],
+  "final": [
+    {
+      "loss": 2.590593099594116,
+      "accuracy": 0.19316239655017853,
+      "num_sequences": 39,
+      "num_tokens": 585
+    },
+    {
+      "loss": 2.5650343894958496,
+      "accuracy": 0.2754386067390442,
+      "num_sequences": 38,
+      "num_tokens": 570
+    },
+    {
+      "loss": 1.3484420776367188,
+      "accuracy": 0.8491228222846985,
+      "num_sequences": 38,
+      "num_tokens": 570
+    },
+    {
+      "loss": 1.0108915567398071,
+      "accuracy": 0.8512820601463318,
+      "num_sequences": 39,
+      "num_tokens": 585
+    }
+  ],
+  "per_domain_change": [
+    {
+      "domain": 0,
+      "accuracy_delta": 0.07008547335863113,
+      "loss_delta": -0.1759963035583496
+    },
+    {
+      "domain": 1,
+      "accuracy_delta": 0.166666679084301,
+      "loss_delta": -0.18534302711486816
+    },
+    {
+      "domain": 2,
+      "accuracy_delta": 0.0,
+      "loss_delta": 0.003666996955871582
+    },
+    {
+      "domain": 3,
+      "accuracy_delta": 0.0,
+      "loss_delta": 0.00016582012176513672
+    }
+  ],
+  "base_mean_accuracy": 0.4830634333193302,
+  "final_mean_accuracy": 0.5422514714300632,
+  "mean_accuracy_delta": 0.05918803811073303,
+  "base_mean_loss": 1.9681169092655182,
+  "final_mean_loss": 1.878740280866623,
+  "mean_loss_delta": -0.08937662839889526
+}

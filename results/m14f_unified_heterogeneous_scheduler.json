@@ -1,0 +1,28 @@
+{
+  "task": {
+    "expert": "L0-E7",
+    "mode": "FEDERATED_LOCAL",
+    "required_memory_gb": 3.5
+  },
+  "candidates": [
+    {
+      "id": "mac_m4",
+      "available": true,
+      "fl_capable": true,
+      "memory_gb": 16.0,
+      "affinity": 0.214,
+      "train_seconds": 3.462,
+      "score": 0.06181398035817446
+    },
+    {
+      "id": "msi_rtx3050",
+      "available": true,
+      "fl_capable": true,
+      "memory_gb": 4.0,
+      "affinity": 0.191,
+      "train_seconds": 3.458,
+      "score": 0.055234239444765756
+    }
+  ],
+  "selected_device": "mac_m4"
+}

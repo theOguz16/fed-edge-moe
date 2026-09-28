@@ -1,0 +1,15 @@
+{
+  "task": {
+    "task_id": "train_L0_E7",
+    "target_expert": "L0-E7",
+    "mode": "FEDERATED_LOCAL",
+    "local_steps": 120
+  },
+  "eligible_devices": [
+    "mac_m4",
+    "msi_rtx3050"
+  ],
+  "rejected_devices": [
+    "slow_edge_sim"
+  ]
+}

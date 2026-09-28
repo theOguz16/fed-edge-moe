@@ -1,0 +1,16 @@
+{
+  "global_version": 105,
+  "accepted_clients": [
+    "client_A",
+    "client_B"
+  ],
+  "total_weight": 360,
+  "aggregated_delta": [
+    2.3333332538604736,
+    3.3333332538604736,
+    4.333333492279053
+  ],
+  "max_difference": 0.0,
+  "stale_contamination": false,
+  "robust": true
+}

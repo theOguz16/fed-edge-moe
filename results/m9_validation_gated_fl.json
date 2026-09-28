@@ -1,0 +1,439 @@
+{
+  "method": "validation_gated_expert_fedavg",
+  "start_version": 30,
+  "max_rounds": 5,
+  "min_mean_improvement": 0.001,
+  "final_version": 32,
+  "early_stopped": true,
+  "history": [
+    {
+      "round": 0,
+      "version": 30,
+      "accepted": true,
+      "evaluation": [
+        {
+          "loss": 2.872507095336914,
+          "accuracy": 0.3828125
+        },
+        {
+          "loss": 2.7521049976348877,
+          "accuracy": 0.37890625
+        },
+        {
+          "loss": 2.7451350688934326,
+          "accuracy": 0.5546875
+        },
+        {
+          "loss": 2.730595111846924,
+          "accuracy": 0.609375
+        }
+      ],
+      "mean_accuracy": 0.4814453125
+    },
+    {
+      "round": 1,
+      "base_version": 30,
+      "candidate_version": 31,
+      "accepted": true,
+      "delta_cosine_similarity": 0.018850713968276978,
+      "previous_mean_accuracy": 0.4814453125,
+      "candidate_mean_accuracy": 0.619140625,
+      "improvement": 0.1376953125,
+      "evaluation": [
+        {
+          "loss": 2.5644450187683105,
+          "accuracy": 0.75
+        },
+        {
+          "loss": 2.6019721031188965,
+          "accuracy": 0.5859375
+        },
+        {
+          "loss": 2.7457923889160156,
+          "accuracy": 0.53125
+        },
+        {
+          "loss": 2.7298216819763184,
+          "accuracy": 0.609375
+        }
+      ],
+      "client_A": {
+        "client_id": "client_A_mac_mps",
+        "round": 1,
+        "domain": 0,
+        "base_global_version": 30,
+        "layer": 0,
+        "expert": 6,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 3.4663710839995474,
+        "delta_l2_norm": 6.6435645923599544,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.872507095336914,
+            "accuracy": 0.3828125
+          },
+          {
+            "loss": 2.7521049976348877,
+            "accuracy": 0.37890625
+          },
+          {
+            "loss": 2.7451350688934326,
+            "accuracy": 0.5546875
+          },
+          {
+            "loss": 2.730595111846924,
+            "accuracy": 0.609375
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.0979931354522705,
+            "accuracy": 0.79296875
+          },
+          {
+            "loss": 2.75777268409729,
+            "accuracy": 0.375
+          },
+          {
+            "loss": 2.762885570526123,
+            "accuracy": 0.5078125
+          },
+          {
+            "loss": 2.730099678039551,
+            "accuracy": 0.61328125
+          }
+        ]
+      },
+      "client_B": {
+        "client_id": "client_B_physical_msi",
+        "round": 1,
+        "domain": 1,
+        "base_global_version": 30,
+        "layer": 0,
+        "expert": 6,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 3.483907200000033,
+        "snapshot_download_bytes": 9589180,
+        "snapshot_download_seconds": 0.3780959999999709,
+        "delta_l2_norm": 6.159863994199261,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.872507095336914,
+            "accuracy": 0.3828125
+          },
+          {
+            "loss": 2.7521049976348877,
+            "accuracy": 0.37890625
+          },
+          {
+            "loss": 2.7451353073120117,
+            "accuracy": 0.5546875
+          },
+          {
+            "loss": 2.730595111846924,
+            "accuracy": 0.609375
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.8939695358276367,
+            "accuracy": 0.35546875
+          },
+          {
+            "loss": 2.29213809967041,
+            "accuracy": 0.6171875
+          },
+          {
+            "loss": 2.7495570182800293,
+            "accuracy": 0.55078125
+          },
+          {
+            "loss": 2.7317862510681152,
+            "accuracy": 0.60546875
+          }
+        ],
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      "round_seconds": 52.051067458000034
+    },
+    {
+      "round": 2,
+      "base_version": 31,
+      "candidate_version": 32,
+      "accepted": true,
+      "delta_cosine_similarity": -0.03452877327799797,
+      "previous_mean_accuracy": 0.619140625,
+      "candidate_mean_accuracy": 0.638671875,
+      "improvement": 0.01953125,
+      "evaluation": [
+        {
+          "loss": 2.287914991378784,
+          "accuracy": 0.79296875
+        },
+        {
+          "loss": 2.4310317039489746,
+          "accuracy": 0.6171875
+        },
+        {
+          "loss": 2.754333257675171,
+          "accuracy": 0.53125
+        },
+        {
+          "loss": 2.7302284240722656,
+          "accuracy": 0.61328125
+        }
+      ],
+      "client_A": {
+        "client_id": "client_A_mac_mps",
+        "round": 2,
+        "domain": 0,
+        "base_global_version": 31,
+        "layer": 0,
+        "expert": 6,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 1.9447737090013106,
+        "delta_l2_norm": 4.04099680406217,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.5644450187683105,
+            "accuracy": 0.75
+          },
+          {
+            "loss": 2.6019721031188965,
+            "accuracy": 0.5859375
+          },
+          {
+            "loss": 2.7457923889160156,
+            "accuracy": 0.53125
+          },
+          {
+            "loss": 2.7298216819763184,
+            "accuracy": 0.609375
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.079019546508789,
+            "accuracy": 0.796875
+          },
+          {
+            "loss": 2.6523194313049316,
+            "accuracy": 0.578125
+          },
+          {
+            "loss": 2.7675013542175293,
+            "accuracy": 0.49609375
+          },
+          {
+            "loss": 2.730663776397705,
+            "accuracy": 0.61328125
+          }
+        ]
+      },
+      "client_B": {
+        "client_id": "client_B_physical_msi",
+        "round": 2,
+        "domain": 1,
+        "base_global_version": 31,
+        "layer": 0,
+        "expert": 6,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 3.1598251000000346,
+        "snapshot_download_bytes": 9589049,
+        "snapshot_download_seconds": 0.2701358000000482,
+        "delta_l2_norm": 3.7621991097418226,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.5644450187683105,
+            "accuracy": 0.75
+          },
+          {
+            "loss": 2.6019721031188965,
+            "accuracy": 0.5859375
+          },
+          {
+            "loss": 2.7457926273345947,
+            "accuracy": 0.53125
+          },
+          {
+            "loss": 2.7298221588134766,
+            "accuracy": 0.609375
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.6797075271606445,
+            "accuracy": 0.71875
+          },
+          {
+            "loss": 2.280475378036499,
+            "accuracy": 0.6171875
+          },
+          {
+            "loss": 2.7540335655212402,
+            "accuracy": 0.54296875
+          },
+          {
+            "loss": 2.732210159301758,
+            "accuracy": 0.60546875
+          }
+        ],
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      "round_seconds": 6.176135082998371
+    },
+    {
+      "round": 3,
+      "base_version": 32,
+      "candidate_version": 33,
+      "accepted": false,
+      "delta_cosine_similarity": -0.06830596923828125,
+      "previous_mean_accuracy": 0.638671875,
+      "candidate_mean_accuracy": 0.6357421875,
+      "improvement": -0.0029296875,
+      "evaluation": [
+        {
+          "loss": 2.162477970123291,
+          "accuracy": 0.79296875
+        },
+        {
+          "loss": 2.3456597328186035,
+          "accuracy": 0.6171875
+        },
+        {
+          "loss": 2.7648086547851562,
+          "accuracy": 0.51953125
+        },
+        {
+          "loss": 2.731158971786499,
+          "accuracy": 0.61328125
+        }
+      ],
+      "client_A": {
+        "client_id": "client_A_mac_mps",
+        "round": 3,
+        "domain": 0,
+        "base_global_version": 32,
+        "layer": 0,
+        "expert": 6,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 2.3806001670018304,
+        "delta_l2_norm": 3.1060168664281482,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.287914991378784,
+            "accuracy": 0.79296875
+          },
+          {
+            "loss": 2.4310317039489746,
+            "accuracy": 0.6171875
+          },
+          {
+            "loss": 2.754333257675171,
+            "accuracy": 0.53125
+          },
+          {
+            "loss": 2.7302284240722656,
+            "accuracy": 0.61328125
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.0694148540496826,
+            "accuracy": 0.796875
+          },
+          {
+            "loss": 2.527512550354004,
+            "accuracy": 0.62109375
+          },
+          {
+            "loss": 2.7762980461120605,
+            "accuracy": 0.5
+          },
+          {
+            "loss": 2.7312073707580566,
+            "accuracy": 0.61328125
+          }
+        ]
+      },
+      "client_B": {
+        "client_id": "client_B_physical_msi",
+        "round": 3,
+        "domain": 1,
+        "base_global_version": 32,
+        "layer": 0,
+        "expert": 6,
+        "local_steps": 120,
+        "batch_size": 32,
+        "local_tokens_seen": 61440,
+        "trainable_parameters": 98304,
+        "training_seconds": 3.051262300000019,
+        "snapshot_download_bytes": 9589113,
+        "snapshot_download_seconds": 0.3587190000000078,
+        "delta_l2_norm": 2.7962310731713664,
+        "delta_bytes": 393472,
+        "before": [
+          {
+            "loss": 2.2879152297973633,
+            "accuracy": 0.79296875
+          },
+          {
+            "loss": 2.4310319423675537,
+            "accuracy": 0.6171875
+          },
+          {
+            "loss": 2.754333257675171,
+            "accuracy": 0.53125
+          },
+          {
+            "loss": 2.7302284240722656,
+            "accuracy": 0.61328125
+          }
+        ],
+        "after": [
+          {
+            "loss": 2.4238710403442383,
+            "accuracy": 0.796875
+          },
+          {
+            "loss": 2.2763075828552246,
+            "accuracy": 0.6171875
+          },
+          {
+            "loss": 2.763591766357422,
+            "accuracy": 0.5390625
+          },
+          {
+            "loss": 2.7319931983947754,
+            "accuracy": 0.60546875
+          }
+        ],
+        "device": "cuda",
+        "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+      },
+      "round_seconds": 6.078640332998475
+    }
+  ]
+}

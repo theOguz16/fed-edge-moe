@@ -1,0 +1,12 @@
+{
+  "target": "L0-E7",
+  "routed_tokens": 200,
+  "monolithic_loss": 2.7126028537750244,
+  "split_loss": 2.7126028537750244,
+  "loss_diff": 0.0,
+  "logits_max_diff": 0.0,
+  "gradient_to_edge_norm": 0.00967325083911419,
+  "expert_gradient_max_diff": 0.0,
+  "expert_update_max_diff": 0.0,
+  "equivalent": true
+}

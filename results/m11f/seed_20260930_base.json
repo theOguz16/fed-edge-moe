@@ -1,0 +1,306 @@
+{
+  "experiment": "M11E independent replication",
+  "seed": 20260930,
+  "synthetic_version": "V3",
+  "federated_base_step": 100,
+  "federated_base_checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0100",
+  "balanced_scheduler_formula": "min(A,B) * (min(A,B)/max(A,B))",
+  "scheduler_formula_fixed_before_results": true,
+  "test_evaluated": false,
+  "history": [
+    {
+      "step": 0,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 4.148480415344238,
+          "accuracy": 0.03712121397256851
+        },
+        {
+          "domain": 1,
+          "loss": 4.127573490142822,
+          "accuracy": 0.01807909645140171
+        },
+        {
+          "domain": 2,
+          "loss": 4.237839698791504,
+          "accuracy": 0.005524862091988325
+        },
+        {
+          "domain": 3,
+          "loss": 4.132664680480957,
+          "accuracy": 0.012318840250372887
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 4.142940521240234,
+          "accuracy": 0.036666665226221085
+        },
+        {
+          "domain": 1,
+          "loss": 4.109762191772461,
+          "accuracy": 0.021666666492819786
+        },
+        {
+          "domain": 2,
+          "loss": 4.224048614501953,
+          "accuracy": 0.013675213791429996
+        },
+        {
+          "domain": 3,
+          "loss": 4.144835948944092,
+          "accuracy": 0.020370369777083397
+        }
+      ],
+      "checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0000",
+      "federated_base": false
+    },
+    {
+      "step": 25,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 3.3441994190216064,
+          "accuracy": 0.10984848439693451
+        },
+        {
+          "domain": 1,
+          "loss": 3.3699188232421875,
+          "accuracy": 0.10621468722820282
+        },
+        {
+          "domain": 2,
+          "loss": 3.2866384983062744,
+          "accuracy": 0.09834253787994385
+        },
+        {
+          "domain": 3,
+          "loss": 3.3331494331359863,
+          "accuracy": 0.09420289844274521
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 3.363370418548584,
+          "accuracy": 0.09833333641290665
+        },
+        {
+          "domain": 1,
+          "loss": 3.3722522258758545,
+          "accuracy": 0.10000000149011612
+        },
+        {
+          "domain": 2,
+          "loss": 3.3115856647491455,
+          "accuracy": 0.08717948943376541
+        },
+        {
+          "domain": 3,
+          "loss": 3.3349266052246094,
+          "accuracy": 0.09074074029922485
+        }
+      ],
+      "checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0025",
+      "federated_base": false
+    },
+    {
+      "step": 50,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.9799270629882812,
+          "accuracy": 0.1450757533311844
+        },
+        {
+          "domain": 1,
+          "loss": 3.0182547569274902,
+          "accuracy": 0.1152542382478714
+        },
+        {
+          "domain": 2,
+          "loss": 2.928779363632202,
+          "accuracy": 0.14696133136749268
+        },
+        {
+          "domain": 3,
+          "loss": 2.97000789642334,
+          "accuracy": 0.12934783101081848
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 3.0187950134277344,
+          "accuracy": 0.12166666984558105
+        },
+        {
+          "domain": 1,
+          "loss": 3.0151822566986084,
+          "accuracy": 0.11833333224058151
+        },
+        {
+          "domain": 2,
+          "loss": 2.969128131866455,
+          "accuracy": 0.13504274189472198
+        },
+        {
+          "domain": 3,
+          "loss": 2.967967987060547,
+          "accuracy": 0.14074073731899261
+        }
+      ],
+      "checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0050",
+      "federated_base": false
+    },
+    {
+      "step": 75,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.787201404571533,
+          "accuracy": 0.15303030610084534
+        },
+        {
+          "domain": 1,
+          "loss": 2.8180251121520996,
+          "accuracy": 0.1235404908657074
+        },
+        {
+          "domain": 2,
+          "loss": 2.6850483417510986,
+          "accuracy": 0.1808471381664276
+        },
+        {
+          "domain": 3,
+          "loss": 2.7745234966278076,
+          "accuracy": 0.16340579092502594
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 2.859833240509033,
+          "accuracy": 0.10999999940395355
+        },
+        {
+          "domain": 1,
+          "loss": 2.8264660835266113,
+          "accuracy": 0.125
+        },
+        {
+          "domain": 2,
+          "loss": 2.7438900470733643,
+          "accuracy": 0.1418803483247757
+        },
+        {
+          "domain": 3,
+          "loss": 2.7661242485046387,
+          "accuracy": 0.1648148149251938
+        }
+      ],
+      "checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0075",
+      "federated_base": false
+    },
+    {
+      "step": 100,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.6153969764709473,
+          "accuracy": 0.18863636255264282
+        },
+        {
+          "domain": 1,
+          "loss": 2.680320978164673,
+          "accuracy": 0.15404896438121796
+        },
+        {
+          "domain": 2,
+          "loss": 2.388674259185791,
+          "accuracy": 0.27808472514152527
+        },
+        {
+          "domain": 3,
+          "loss": 2.5031416416168213,
+          "accuracy": 0.2561594247817993
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 2.6694393157958984,
+          "accuracy": 0.1616666615009308
+        },
+        {
+          "domain": 1,
+          "loss": 2.6940412521362305,
+          "accuracy": 0.15833333134651184
+        },
+        {
+          "domain": 2,
+          "loss": 2.458220958709717,
+          "accuracy": 0.23247863352298737
+        },
+        {
+          "domain": 3,
+          "loss": 2.5209028720855713,
+          "accuracy": 0.2203703671693802
+        }
+      ],
+      "checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0100",
+      "federated_base": true
+    },
+    {
+      "step": 120,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.220808506011963,
+          "accuracy": 0.2867424190044403
+        },
+        {
+          "domain": 1,
+          "loss": 2.5684547424316406,
+          "accuracy": 0.17401130497455597
+        },
+        {
+          "domain": 2,
+          "loss": 1.9458831548690796,
+          "accuracy": 0.37937384843826294
+        },
+        {
+          "domain": 3,
+          "loss": 2.148115634918213,
+          "accuracy": 0.3173913061618805
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 2.243980646133423,
+          "accuracy": 0.28333333134651184
+        },
+        {
+          "domain": 1,
+          "loss": 2.586735725402832,
+          "accuracy": 0.16333332657814026
+        },
+        {
+          "domain": 2,
+          "loss": 1.9951058626174927,
+          "accuracy": 0.34358975291252136
+        },
+        {
+          "domain": 3,
+          "loss": 2.1692450046539307,
+          "accuracy": 0.3037036955356598
+        }
+      ],
+      "checkpoint": "checkpoints/m11f/seed_20260930/base/global_step_0120",
+      "federated_base": false
+    }
+  ]
+}

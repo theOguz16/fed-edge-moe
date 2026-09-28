@@ -1,0 +1,29 @@
+{
+  "policy": "hybrid_execution",
+  "results": [
+    {
+      "name": "capable_edge_120_steps",
+      "local_training_capable": true,
+      "steps": 120,
+      "network_budget_mb": 5.0,
+      "mode": "FEDERATED_LOCAL",
+      "traffic_bytes": 786944
+    },
+    {
+      "name": "thin_edge_1_step",
+      "local_training_capable": false,
+      "steps": 1,
+      "network_budget_mb": 5.0,
+      "mode": "SPLIT_TRAINING",
+      "traffic_bytes": 1094400
+    },
+    {
+      "name": "thin_edge_120_steps",
+      "local_training_capable": false,
+      "steps": 120,
+      "network_budget_mb": 5.0,
+      "mode": "SKIP_DEVICE",
+      "traffic_bytes": null
+    }
+  ]
+}

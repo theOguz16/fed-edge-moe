@@ -1,0 +1,182 @@
+{
+  "scheduler_method": "max shared minimum train-routing affinity",
+  "test_used": false,
+  "results": [
+    {
+      "scheduler_rank": 1,
+      "layer": 1,
+      "expert": 4,
+      "shared_affinity": 0.25381749868392944,
+      "accepted_rounds": 5,
+      "baseline_global_accuracy": 0.49676114320755005,
+      "final_global_accuracy": 0.5320625379681587,
+      "global_gain": 0.03530139476060867,
+      "baseline_target_accuracy": 0.14563652873039246,
+      "final_target_accuracy": 0.2162393182516098,
+      "target_gain": 0.07060278952121735,
+      "baseline_retention_accuracy": 0.8478857576847076,
+      "final_retention_accuracy": 0.8478857576847076,
+      "retention_change": 0.0,
+      "final_checkpoint": "checkpoints/m11b/L1_E4/global_v0105",
+      "history": [
+        {
+          "round": 1,
+          "base_version": 100,
+          "delta_cosine_similarity": 0.02297237515449524,
+          "global_mean_accuracy": 0.5002361796796322,
+          "target_mean_accuracy": 0.15258660167455673,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.003475036472082138,
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "base_version": 101,
+          "delta_cosine_similarity": -0.009964442811906338,
+          "global_mean_accuracy": 0.5114597491919994,
+          "target_mean_accuracy": 0.17503374069929123,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.011223569512367249,
+          "accepted": true
+        },
+        {
+          "round": 3,
+          "base_version": 102,
+          "delta_cosine_similarity": -0.047215819358825684,
+          "global_mean_accuracy": 0.5226608291268349,
+          "target_mean_accuracy": 0.1974359005689621,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.011201079934835434,
+          "accepted": true
+        },
+        {
+          "round": 4,
+          "base_version": 103,
+          "delta_cosine_similarity": -0.07746347784996033,
+          "global_mean_accuracy": 0.5282276310026646,
+          "target_mean_accuracy": 0.2085695043206215,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.005566801875829697,
+          "accepted": true
+        },
+        {
+          "round": 5,
+          "base_version": 104,
+          "delta_cosine_similarity": -0.10515917837619781,
+          "global_mean_accuracy": 0.5320625379681587,
+          "target_mean_accuracy": 0.2162393182516098,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.003834906965494156,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "scheduler_rank": 2,
+      "layer": 0,
+      "expert": 7,
+      "shared_affinity": 0.1914338916540146,
+      "accepted_rounds": 5,
+      "baseline_global_accuracy": 0.49676114320755005,
+      "final_global_accuracy": 0.5407220087945461,
+      "global_gain": 0.04396086558699608,
+      "baseline_target_accuracy": 0.14563652873039246,
+      "final_target_accuracy": 0.23526766151189804,
+      "target_gain": 0.08963113278150558,
+      "baseline_retention_accuracy": 0.8478857576847076,
+      "final_retention_accuracy": 0.8461763560771942,
+      "retention_change": -0.0017094016075134277,
+      "final_checkpoint": "checkpoints/m11b/L0_E7/global_v0105",
+      "history": [
+        {
+          "round": 1,
+          "base_version": 100,
+          "delta_cosine_similarity": 0.023004991933703423,
+          "global_mean_accuracy": 0.5010796338319778,
+          "target_mean_accuracy": 0.15512821078300476,
+          "retention_mean_accuracy": 0.8470310568809509,
+          "improvement": 0.004318490624427795,
+          "accepted": true
+        },
+        {
+          "round": 2,
+          "base_version": 101,
+          "delta_cosine_similarity": -0.00494743324816227,
+          "global_mean_accuracy": 0.507512379437685,
+          "target_mean_accuracy": 0.16713900119066238,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.006432745605707169,
+          "accepted": true
+        },
+        {
+          "round": 3,
+          "base_version": 102,
+          "delta_cosine_similarity": -0.046886295080184937,
+          "global_mean_accuracy": 0.5195681601762772,
+          "target_mean_accuracy": 0.19125056266784668,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.012055780738592148,
+          "accepted": true
+        },
+        {
+          "round": 4,
+          "base_version": 103,
+          "delta_cosine_similarity": -0.07193648815155029,
+          "global_mean_accuracy": 0.5324898883700371,
+          "target_mean_accuracy": 0.21709401905536652,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.012921728193759918,
+          "accepted": true
+        },
+        {
+          "round": 5,
+          "base_version": 104,
+          "delta_cosine_similarity": -0.09474240988492966,
+          "global_mean_accuracy": 0.5407220087945461,
+          "target_mean_accuracy": 0.23526766151189804,
+          "retention_mean_accuracy": 0.8461763560771942,
+          "improvement": 0.008232120424509048,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "scheduler_rank": 3,
+      "layer": 0,
+      "expert": 3,
+      "shared_affinity": 0.1471135914325714,
+      "accepted_rounds": 0,
+      "baseline_global_accuracy": 0.49676114320755005,
+      "final_global_accuracy": 0.49676114320755005,
+      "global_gain": 0.0,
+      "baseline_target_accuracy": 0.14563652873039246,
+      "final_target_accuracy": 0.14563652873039246,
+      "target_gain": 0.0,
+      "baseline_retention_accuracy": 0.8478857576847076,
+      "final_retention_accuracy": 0.8478857576847076,
+      "retention_change": 0.0,
+      "final_checkpoint": "checkpoints/m10_candidates/global_step_0100",
+      "history": [
+        {
+          "round": 1,
+          "base_version": 100,
+          "delta_cosine_similarity": 0.026424366980791092,
+          "global_mean_accuracy": 0.4975596144795418,
+          "target_mean_accuracy": 0.14723347127437592,
+          "retention_mean_accuracy": 0.8478857576847076,
+          "improvement": 0.0007984712719917297,
+          "accepted": false
+        }
+      ]
+    }
+  ],
+  "scheduler_selected": {
+    "layer": 1,
+    "expert": 4
+  },
+  "validation_best": {
+    "layer": 0,
+    "expert": 7
+  },
+  "scheduler_prediction_correct": false
+}

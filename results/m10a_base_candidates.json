@@ -1,0 +1,117 @@
+{
+  "seed": 20260926,
+  "train_steps": 300,
+  "batch_size": 32,
+  "seq_len": 16,
+  "history": [
+    {
+      "step": 0,
+      "train": {
+        "mean_loss": 4.185652136802673,
+        "accuracy": 0.016108007448789572
+      },
+      "validation": {
+        "mean_loss": 4.182456135749817,
+        "accuracy": 0.01645021645021645
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0000"
+    },
+    {
+      "step": 25,
+      "train": {
+        "mean_loss": 3.2154220938682556,
+        "accuracy": 0.15893854748603353
+      },
+      "validation": {
+        "mean_loss": 3.271260678768158,
+        "accuracy": 0.12813852813852813
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0025"
+    },
+    {
+      "step": 50,
+      "train": {
+        "mean_loss": 2.67385196685791,
+        "accuracy": 0.334171322160149
+      },
+      "validation": {
+        "mean_loss": 2.7362125515937805,
+        "accuracy": 0.2995670995670996
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0050"
+    },
+    {
+      "step": 75,
+      "train": {
+        "mean_loss": 2.1946712136268616,
+        "accuracy": 0.4812849162011173
+      },
+      "validation": {
+        "mean_loss": 2.2681646049022675,
+        "accuracy": 0.441991341991342
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0075"
+    },
+    {
+      "step": 100,
+      "train": {
+        "mean_loss": 1.8531322181224823,
+        "accuracy": 0.5121973929236499
+      },
+      "validation": {
+        "mean_loss": 1.935487762093544,
+        "accuracy": 0.49653679653679655
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0100"
+    },
+    {
+      "step": 150,
+      "train": {
+        "mean_loss": 1.4602802395820618,
+        "accuracy": 0.5764432029795158
+      },
+      "validation": {
+        "mean_loss": 1.5734888762235641,
+        "accuracy": 0.535064935064935
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0150"
+    },
+    {
+      "step": 200,
+      "train": {
+        "mean_loss": 1.0461314469575882,
+        "accuracy": 0.6803538175046555
+      },
+      "validation": {
+        "mean_loss": 1.179883949458599,
+        "accuracy": 0.6108225108225108
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0200"
+    },
+    {
+      "step": 250,
+      "train": {
+        "mean_loss": 0.7886446639895439,
+        "accuracy": 0.728584729981378
+      },
+      "validation": {
+        "mean_loss": 0.9352836087346077,
+        "accuracy": 0.6584415584415585
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0250"
+    },
+    {
+      "step": 300,
+      "train": {
+        "mean_loss": 0.5830551162362099,
+        "accuracy": 0.7947858472998138
+      },
+      "validation": {
+        "mean_loss": 0.7440224811434746,
+        "accuracy": 0.7134199134199134
+      },
+      "checkpoint": "checkpoints/m10_candidates/global_step_0300"
+    }
+  ],
+  "test_evaluated": false
+}

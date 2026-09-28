@@ -1,0 +1,306 @@
+{
+  "experiment": "M11E independent replication",
+  "seed": 20260928,
+  "synthetic_version": "V3",
+  "federated_base_step": 100,
+  "federated_base_checkpoint": "checkpoints/m11e_replication/global_step_0100",
+  "balanced_scheduler_formula": "min(A,B) * (min(A,B)/max(A,B))",
+  "scheduler_formula_fixed_before_results": true,
+  "test_evaluated": false,
+  "history": [
+    {
+      "step": 0,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 4.285511493682861,
+          "accuracy": 0.0060606058686971664
+        },
+        {
+          "domain": 1,
+          "loss": 4.215273380279541,
+          "accuracy": 0.0015065913321450353
+        },
+        {
+          "domain": 2,
+          "loss": 4.11403751373291,
+          "accuracy": 0.01767955720424652
+        },
+        {
+          "domain": 3,
+          "loss": 4.117152690887451,
+          "accuracy": 0.04275362193584442
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 4.309391498565674,
+          "accuracy": 0.004999999888241291
+        },
+        {
+          "domain": 1,
+          "loss": 4.215425491333008,
+          "accuracy": 0.0016666667070239782
+        },
+        {
+          "domain": 2,
+          "loss": 4.102510452270508,
+          "accuracy": 0.013675213791429996
+        },
+        {
+          "domain": 3,
+          "loss": 4.104297637939453,
+          "accuracy": 0.04444444552063942
+        }
+      ],
+      "checkpoint": "checkpoints/m11e_replication/global_step_0000",
+      "federated_base": false
+    },
+    {
+      "step": 25,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 3.310474395751953,
+          "accuracy": 0.11856060475111008
+        },
+        {
+          "domain": 1,
+          "loss": 3.326024055480957,
+          "accuracy": 0.10018832236528397
+        },
+        {
+          "domain": 2,
+          "loss": 3.3206541538238525,
+          "accuracy": 0.13149170577526093
+        },
+        {
+          "domain": 3,
+          "loss": 3.3340137004852295,
+          "accuracy": 0.10289855301380157
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 3.3388986587524414,
+          "accuracy": 0.09666666388511658
+        },
+        {
+          "domain": 1,
+          "loss": 3.3209826946258545,
+          "accuracy": 0.08833333104848862
+        },
+        {
+          "domain": 2,
+          "loss": 3.345082998275757,
+          "accuracy": 0.11965811997652054
+        },
+        {
+          "domain": 3,
+          "loss": 3.3342628479003906,
+          "accuracy": 0.11296296119689941
+        }
+      ],
+      "checkpoint": "checkpoints/m11e_replication/global_step_0025",
+      "federated_base": false
+    },
+    {
+      "step": 50,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.9543890953063965,
+          "accuracy": 0.1462121158838272
+        },
+        {
+          "domain": 1,
+          "loss": 3.000540256500244,
+          "accuracy": 0.12090395390987396
+        },
+        {
+          "domain": 2,
+          "loss": 2.949193239212036,
+          "accuracy": 0.15506446361541748
+        },
+        {
+          "domain": 3,
+          "loss": 2.9778337478637695,
+          "accuracy": 0.13623188436031342
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 3.0040459632873535,
+          "accuracy": 0.11666666716337204
+        },
+        {
+          "domain": 1,
+          "loss": 2.9972269535064697,
+          "accuracy": 0.12666666507720947
+        },
+        {
+          "domain": 2,
+          "loss": 2.9678497314453125,
+          "accuracy": 0.13333334028720856
+        },
+        {
+          "domain": 3,
+          "loss": 2.9661221504211426,
+          "accuracy": 0.11851851642131805
+        }
+      ],
+      "checkpoint": "checkpoints/m11e_replication/global_step_0050",
+      "federated_base": false
+    },
+    {
+      "step": 75,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.7690510749816895,
+          "accuracy": 0.1613636314868927
+        },
+        {
+          "domain": 1,
+          "loss": 2.814251184463501,
+          "accuracy": 0.13295668363571167
+        },
+        {
+          "domain": 2,
+          "loss": 2.6989870071411133,
+          "accuracy": 0.18158379197120667
+        },
+        {
+          "domain": 3,
+          "loss": 2.7745485305786133,
+          "accuracy": 0.1612318903207779
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 2.8435323238372803,
+          "accuracy": 0.10999999940395355
+        },
+        {
+          "domain": 1,
+          "loss": 2.82914137840271,
+          "accuracy": 0.11833333224058151
+        },
+        {
+          "domain": 2,
+          "loss": 2.753673791885376,
+          "accuracy": 0.1487179547548294
+        },
+        {
+          "domain": 3,
+          "loss": 2.756087303161621,
+          "accuracy": 0.1537037044763565
+        }
+      ],
+      "checkpoint": "checkpoints/m11e_replication/global_step_0075",
+      "federated_base": false
+    },
+    {
+      "step": 100,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.4863998889923096,
+          "accuracy": 0.2393939346075058
+        },
+        {
+          "domain": 1,
+          "loss": 2.698636770248413,
+          "accuracy": 0.1438794732093811
+        },
+        {
+          "domain": 2,
+          "loss": 2.276618480682373,
+          "accuracy": 0.2972375750541687
+        },
+        {
+          "domain": 3,
+          "loss": 2.5529329776763916,
+          "accuracy": 0.21739129722118378
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 2.5662341117858887,
+          "accuracy": 0.20333333313465118
+        },
+        {
+          "domain": 1,
+          "loss": 2.7179386615753174,
+          "accuracy": 0.1366666704416275
+        },
+        {
+          "domain": 2,
+          "loss": 2.315901517868042,
+          "accuracy": 0.2649572789669037
+        },
+        {
+          "domain": 3,
+          "loss": 2.57208251953125,
+          "accuracy": 0.20555555820465088
+        }
+      ],
+      "checkpoint": "checkpoints/m11e_replication/global_step_0100",
+      "federated_base": true
+    },
+    {
+      "step": 120,
+      "train": [
+        {
+          "domain": 0,
+          "loss": 2.16056752204895,
+          "accuracy": 0.34166666865348816
+        },
+        {
+          "domain": 1,
+          "loss": 2.61142897605896,
+          "accuracy": 0.14538607001304626
+        },
+        {
+          "domain": 2,
+          "loss": 1.954352617263794,
+          "accuracy": 0.37826886773109436
+        },
+        {
+          "domain": 3,
+          "loss": 2.1555356979370117,
+          "accuracy": 0.34166666865348816
+        }
+      ],
+      "validation": [
+        {
+          "domain": 0,
+          "loss": 2.2029199600219727,
+          "accuracy": 0.3083333373069763
+        },
+        {
+          "domain": 1,
+          "loss": 2.637439489364624,
+          "accuracy": 0.13333334028720856
+        },
+        {
+          "domain": 2,
+          "loss": 1.9977359771728516,
+          "accuracy": 0.3401709496974945
+        },
+        {
+          "domain": 3,
+          "loss": 2.177628993988037,
+          "accuracy": 0.32777777314186096
+        }
+      ],
+      "checkpoint": "checkpoints/m11e_replication/global_step_0120",
+      "federated_base": false
+    }
+  ]
+}

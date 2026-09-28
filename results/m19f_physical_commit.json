@@ -1,0 +1,9 @@
+{
+  "target_gain": 0.06458449363708496,
+  "retention_damage": 0.012170791625976562,
+  "lambda": 2.0,
+  "utility": 0.040242910385131836,
+  "decision": "ACCEPT",
+  "committed": true,
+  "version": 1
+}

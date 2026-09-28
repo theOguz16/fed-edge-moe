@@ -1,0 +1,13 @@
+{
+  "trainable_params": 1152,
+  "routed_tokens": 17087,
+  "first_train_loss": 4.146285057067871,
+  "last_train_loss": 4.11376428604126,
+  "validation_before": 4.156955718994141,
+  "validation_after": 4.122956275939941,
+  "lora_change": 0.07878313213586807,
+  "e0_base_change": 0.0,
+  "e1_change": 0.0,
+  "router_change": 0.0,
+  "ok": true
+}

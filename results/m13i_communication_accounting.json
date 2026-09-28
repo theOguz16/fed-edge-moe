@@ -1,0 +1,19 @@
+{
+  "local_steps": 120,
+  "payloads": {
+    "job_bytes": 102488,
+    "forward_bytes": 102488,
+    "gradient_bytes": 102480,
+    "expert_bytes": 393472
+  },
+  "totals": {
+    "split_training_bytes": 37681664,
+    "federated_expert_only_bytes": 786944,
+    "federated_bundle_bytes": 1582983,
+    "old_full_snapshot_bytes": 10736752
+  },
+  "ratios": {
+    "split_vs_expert_only": 47.883539362394274,
+    "split_vs_bundle_fl": 23.804212679479186
+  }
+}

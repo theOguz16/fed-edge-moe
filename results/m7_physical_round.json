@@ -1,0 +1,116 @@
+{
+  "round": 1,
+  "base_global_version": 30,
+  "new_global_version": 31,
+  "target_layer": 0,
+  "target_expert": 6,
+  "client_A": {
+    "client_id": "client_A",
+    "domain": 0,
+    "base_global_version": 30,
+    "layer": 0,
+    "expert": 6,
+    "local_steps": 120,
+    "batch_size": 32,
+    "local_sequences_seen": 3840,
+    "local_tokens_seen": 61440,
+    "trainable_parameters": 98304,
+    "delta_l2_norm": 6.690882317674168,
+    "before_loss": 2.872869062423706,
+    "after_loss": 2.0892146587371827,
+    "before_accuracy": 0.383447265625,
+    "after_accuracy": 0.794091796875
+  },
+  "client_B_physical": {
+    "client_id": "client_B_physical_msi",
+    "domain": 1,
+    "base_global_version": 30,
+    "layer": 0,
+    "expert": 6,
+    "local_steps": 120,
+    "batch_size": 32,
+    "local_tokens_seen": 61440,
+    "trainable_parameters": 98304,
+    "delta_l2_norm": 6.270954329462898,
+    "before": [
+      {
+        "loss": 2.872507095336914,
+        "accuracy": 0.3828125
+      },
+      {
+        "loss": 2.7521049976348877,
+        "accuracy": 0.37890625
+      },
+      {
+        "loss": 2.7451353073120117,
+        "accuracy": 0.5546875
+      },
+      {
+        "loss": 2.730595111846924,
+        "accuracy": 0.609375
+      }
+    ],
+    "after": [
+      {
+        "loss": 2.8948943614959717,
+        "accuracy": 0.359375
+      },
+      {
+        "loss": 2.2884104251861572,
+        "accuracy": 0.6171875
+      },
+      {
+        "loss": 2.750642776489258,
+        "accuracy": 0.5546875
+      },
+      {
+        "loss": 2.7321999073028564,
+        "accuracy": 0.60546875
+      }
+    ],
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 3050 Laptop GPU"
+  },
+  "delta_cosine_similarity": 0.019574487581849098,
+  "baseline": [
+    {
+      "loss": 2.872507095336914,
+      "accuracy": 0.3828125
+    },
+    {
+      "loss": 2.7521049976348877,
+      "accuracy": 0.37890625
+    },
+    {
+      "loss": 2.7451350688934326,
+      "accuracy": 0.5546875
+    },
+    {
+      "loss": 2.730595111846924,
+      "accuracy": 0.609375
+    }
+  ],
+  "physical_fedavg": [
+    {
+      "loss": 2.56280255317688,
+      "accuracy": 0.74609375
+    },
+    {
+      "loss": 2.5977015495300293,
+      "accuracy": 0.5859375
+    },
+    {
+      "loss": 2.7458229064941406,
+      "accuracy": 0.53125
+    },
+    {
+      "loss": 2.7298507690429688,
+      "accuracy": 0.609375
+    }
+  ],
+  "client_A_delta_bytes": 393472,
+  "client_B_delta_bytes": 393472,
+  "client_B_metadata_bytes": 957,
+  "aggregated_delta_file": "checkpoints/m7/aggregated_expert_delta.safetensors",
+  "global_checkpoint": "checkpoints/m7/global_v0031_physical"
+}

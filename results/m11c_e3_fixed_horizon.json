@@ -1,0 +1,166 @@
+{
+  "experiment": "L0-E3 fixed horizon",
+  "target_layer": 0,
+  "target_expert": 3,
+  "rounds": 5,
+  "early_stop": false,
+  "validation_used_for_selection": false,
+  "test_used": false,
+  "baseline_global_accuracy": 0.49676114320755005,
+  "baseline_target_accuracy": 0.14563652873039246,
+  "baseline_retention_accuracy": 0.8478857576847076,
+  "best_round": 5,
+  "best_global_accuracy": 0.5317588821053505,
+  "history": [
+    {
+      "round": 1,
+      "version": 101,
+      "delta_cosine_similarity": 0.026424366980791092,
+      "global_accuracy": 0.4975596144795418,
+      "round_gain": 0.0007984712719917297,
+      "cumulative_gain": 0.0007984712719917297,
+      "target_accuracy": 0.14723347127437592,
+      "target_gain": 0.0015969425439834595,
+      "retention_accuracy": 0.8478857576847076,
+      "retention_change": 0.0,
+      "validation": [
+        {
+          "loss": 2.659825086593628,
+          "accuracy": 0.1508771926164627
+        },
+        {
+          "loss": 2.7374846935272217,
+          "accuracy": 0.14358974993228912
+        },
+        {
+          "loss": 1.3149937391281128,
+          "accuracy": 0.8273504376411438
+        },
+        {
+          "loss": 0.9987148642539978,
+          "accuracy": 0.8684210777282715
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "version": 102,
+      "delta_cosine_similarity": -0.007493462413549423,
+      "global_accuracy": 0.510110218077898,
+      "round_gain": 0.012550603598356247,
+      "cumulative_gain": 0.013349074870347977,
+      "target_accuracy": 0.17406658083200455,
+      "target_gain": 0.02843005210161209,
+      "retention_accuracy": 0.8461538553237915,
+      "retention_change": -0.0017319023609161377,
+      "validation": [
+        {
+          "loss": 2.6287753582000732,
+          "accuracy": 0.17719298601150513
+        },
+        {
+          "loss": 2.7081212997436523,
+          "accuracy": 0.17094017565250397
+        },
+        {
+          "loss": 1.3248199224472046,
+          "accuracy": 0.8256410360336304
+        },
+        {
+          "loss": 1.0195958614349365,
+          "accuracy": 0.8666666746139526
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "version": 103,
+      "delta_cosine_similarity": -0.04614535719156265,
+      "global_accuracy": 0.5205015800893307,
+      "round_gain": 0.010391362011432648,
+      "cumulative_gain": 0.023740436881780624,
+      "target_accuracy": 0.19484930485486984,
+      "target_gain": 0.049212776124477386,
+      "retention_accuracy": 0.8461538553237915,
+      "retention_change": -0.0017319023609161377,
+      "validation": [
+        {
+          "loss": 2.5986430644989014,
+          "accuracy": 0.19824561476707458
+        },
+        {
+          "loss": 2.679612398147583,
+          "accuracy": 0.1914529949426651
+        },
+        {
+          "loss": 1.3348994255065918,
+          "accuracy": 0.8256410360336304
+        },
+        {
+          "loss": 1.047363519668579,
+          "accuracy": 0.8666666746139526
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "version": 104,
+      "delta_cosine_similarity": -0.0767676830291748,
+      "global_accuracy": 0.5261021144688129,
+      "round_gain": 0.005600534379482269,
+      "cumulative_gain": 0.029340971261262894,
+      "target_accuracy": 0.2069275751709938,
+      "target_gain": 0.06129104644060135,
+      "retention_accuracy": 0.8452766537666321,
+      "retention_change": -0.0026091039180755615,
+      "validation": [
+        {
+          "loss": 2.5718464851379395,
+          "accuracy": 0.20701754093170166
+        },
+        {
+          "loss": 2.6581125259399414,
+          "accuracy": 0.20683760941028595
+        },
+        {
+          "loss": 1.3448216915130615,
+          "accuracy": 0.8256410360336304
+        },
+        {
+          "loss": 1.0800288915634155,
+          "accuracy": 0.8649122714996338
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "version": 105,
+      "delta_cosine_similarity": -0.10456441342830658,
+      "global_accuracy": 0.5317588821053505,
+      "round_gain": 0.005656767636537552,
+      "cumulative_gain": 0.034997738897800446,
+      "target_accuracy": 0.21911831200122833,
+      "target_gain": 0.07348178327083588,
+      "retention_accuracy": 0.8443994522094727,
+      "retention_change": -0.0034863054752349854,
+      "validation": [
+        {
+          "loss": 2.5547783374786377,
+          "accuracy": 0.224561408162117
+        },
+        {
+          "loss": 2.645768642425537,
+          "accuracy": 0.21367521584033966
+        },
+        {
+          "loss": 1.355510950088501,
+          "accuracy": 0.8256410360336304
+        },
+        {
+          "loss": 1.1144756078720093,
+          "accuracy": 0.8631578683853149
+        }
+      ]
+    }
+  ]
+}

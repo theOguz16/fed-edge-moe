@@ -1,0 +1,17 @@
+{
+  "mac_mps": {
+    "training_seconds": 2.093,
+    "download_seconds": 0.0,
+    "relative_training_cost": 1.0
+  },
+  "msi_cuda": {
+    "training_seconds": 3.355,
+    "download_seconds": 0.463,
+    "snapshot_mb": 9.589,
+    "delta_kb": 393.472,
+    "relative_training_cost": 1.6029622551361682,
+    "communication_mb": 9.982472
+  },
+  "aggregation_seconds": 0.239,
+  "steady_round_seconds": 5.948
+}

@@ -1,0 +1,7 @@
+{
+  "network_budget_mb": 5.0,
+  "max_split_steps_network": 13,
+  "max_split_steps_latency": 3,
+  "safe_split_steps": 3,
+  "limiting_factor": "LATENCY"
+}

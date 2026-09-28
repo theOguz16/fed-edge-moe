@@ -1,0 +1,45 @@
+{
+  "a_affinity": 0.4,
+  "b_affinity": 0.2,
+  "b_round_seconds": 4.06,
+  "b_efficiency": 0.049261083743842374,
+  "c_round_seconds": 11.24,
+  "results": [
+    {
+      "c_affinity": 0.2,
+      "c_shared_affinity": 0.2,
+      "c_efficiency": 0.017793594306049824,
+      "winner": "MSI"
+    },
+    {
+      "c_affinity": 0.3,
+      "c_shared_affinity": 0.3,
+      "c_efficiency": 0.02669039145907473,
+      "winner": "MSI"
+    },
+    {
+      "c_affinity": 0.4,
+      "c_shared_affinity": 0.4,
+      "c_efficiency": 0.03558718861209965,
+      "winner": "MSI"
+    },
+    {
+      "c_affinity": 0.5,
+      "c_shared_affinity": 0.4,
+      "c_efficiency": 0.03558718861209965,
+      "winner": "MSI"
+    },
+    {
+      "c_affinity": 0.6,
+      "c_shared_affinity": 0.4,
+      "c_efficiency": 0.03558718861209965,
+      "winner": "MSI"
+    },
+    {
+      "c_affinity": 0.8,
+      "c_shared_affinity": 0.4,
+      "c_efficiency": 0.03558718861209965,
+      "winner": "MSI"
+    }
+  ]
+}

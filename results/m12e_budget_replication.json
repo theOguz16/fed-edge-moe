@@ -1,0 +1,90 @@
+{
+  "policy": "maximize target gain subject to retention budget",
+  "results": [
+    {
+      "budget_pp": 0.0,
+      "decisions": [
+        {
+          "label": "existing_M11E2",
+          "decision": null
+        },
+        {
+          "label": "seed_20260930",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20261002",
+          "decision": "original"
+        }
+      ]
+    },
+    {
+      "budget_pp": 0.1,
+      "decisions": [
+        {
+          "label": "existing_M11E2",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20260930",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20261002",
+          "decision": "original"
+        }
+      ]
+    },
+    {
+      "budget_pp": 0.2,
+      "decisions": [
+        {
+          "label": "existing_M11E2",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20260930",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20261002",
+          "decision": "original"
+        }
+      ]
+    },
+    {
+      "budget_pp": 0.5,
+      "decisions": [
+        {
+          "label": "existing_M11E2",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20260930",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20261002",
+          "decision": "original"
+        }
+      ]
+    },
+    {
+      "budget_pp": 1.0,
+      "decisions": [
+        {
+          "label": "existing_M11E2",
+          "decision": "balanced"
+        },
+        {
+          "label": "seed_20260930",
+          "decision": "original"
+        },
+        {
+          "label": "seed_20261002",
+          "decision": "original"
+        }
+      ]
+    }
+  ]
+}

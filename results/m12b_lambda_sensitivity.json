@@ -1,0 +1,194 @@
+{
+  "lambdas": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "expert_results": [
+    {
+      "lambda": 0.0,
+      "winner": "L0-E7",
+      "ranking": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277,
+          "utility": 0.08963113278150558
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854,
+          "utility": 0.07348178327083588
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0,
+          "utility": 0.07060278952121735
+        }
+      ]
+    },
+    {
+      "lambda": 0.5,
+      "winner": "L0-E7",
+      "ranking": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277,
+          "utility": 0.08877643197774887
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854,
+          "utility": 0.07173863053321838
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0,
+          "utility": 0.07060278952121735
+        }
+      ]
+    },
+    {
+      "lambda": 1.0,
+      "winner": "L0-E7",
+      "ranking": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277,
+          "utility": 0.08792173117399216
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0,
+          "utility": 0.07060278952121735
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854,
+          "utility": 0.06999547779560089
+        }
+      ]
+    },
+    {
+      "lambda": 2.0,
+      "winner": "L0-E7",
+      "ranking": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277,
+          "utility": 0.08621232956647873
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0,
+          "utility": 0.07060278952121735
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854,
+          "utility": 0.0665091723203659
+        }
+      ]
+    },
+    {
+      "lambda": 4.0,
+      "winner": "L0-E7",
+      "ranking": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277,
+          "utility": 0.08279352635145187
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0,
+          "utility": 0.07060278952121735
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854,
+          "utility": 0.059536561369895935
+        }
+      ]
+    },
+    {
+      "lambda": 8.0,
+      "winner": "L0-E7",
+      "ranking": [
+        {
+          "expert": "L0-E7",
+          "target_gain": 0.08963113278150558,
+          "retention_change": -0.0017094016075134277,
+          "utility": 0.07595591992139816
+        },
+        {
+          "expert": "L1-E4",
+          "target_gain": 0.07060278952121735,
+          "retention_change": 0.0,
+          "utility": 0.07060278952121735
+        },
+        {
+          "expert": "L0-E3",
+          "target_gain": 0.07348178327083588,
+          "retention_change": -0.0034863054752349854,
+          "utility": 0.045591339468955994
+        }
+      ]
+    }
+  ],
+  "replication_results": [
+    {
+      "lambda": 0.0,
+      "original_wins": 0,
+      "balanced_wins": 1,
+      "ties": 2
+    },
+    {
+      "lambda": 0.5,
+      "original_wins": 0,
+      "balanced_wins": 1,
+      "ties": 2
+    },
+    {
+      "lambda": 1.0,
+      "original_wins": 0,
+      "balanced_wins": 1,
+      "ties": 2
+    },
+    {
+      "lambda": 2.0,
+      "original_wins": 1,
+      "balanced_wins": 0,
+      "ties": 2
+    },
+    {
+      "lambda": 4.0,
+      "original_wins": 1,
+      "balanced_wins": 0,
+      "ties": 2
+    },
+    {
+      "lambda": 8.0,
+      "original_wins": 1,
+      "balanced_wins": 0,
+      "ties": 2
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "client_a": {
+    "domain": 0,
+    "before": 4.156955718994141,
+    "after": 4.039117813110352,
+    "first_loss": 4.148428440093994,
+    "last_loss": 4.041486740112305,
+    "routed_tokens": 22615,
+    "trainable_params": 1152,
+    "delta_norm": 2.5275144577026367
+  },
+  "client_b": {
+    "domain": 1,
+    "before": 4.183436870574951,
+    "after": 4.046753406524658,
+    "first_loss": 4.195633411407471,
+    "last_loss": 4.040596961975098,
+    "routed_tokens": 25884,
+    "trainable_params": 1152,
+    "delta_norm": 2.5600438117980957
+  },
+  "baseline": [
+    4.156955718994141,
+    4.183436870574951,
+    4.213577747344971,
+    4.175812721252441
+  ],
+  "final": [
+    4.097744941711426,
+    4.113478183746338,
+    4.226083755493164,
+    4.187648296356201
+  ],
+  "mean_before": 4.182445764541626,
+  "mean_after": 4.156238794326782,
+  "upload_per_client_bytes": 4608,
+  "other_expert_change": 0.0,
+  "router_change": 0.0,
+  "mechanics_ok": true,
+  "global_improved": true
+}

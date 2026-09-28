@@ -1,0 +1,43 @@
+{
+  "m11b": [
+    {
+      "expert": "L0-E7",
+      "target_gain": 0.08963113278150558,
+      "retention_change": -0.0017094016075134277,
+      "utility": 0.08621232956647873
+    },
+    {
+      "expert": "L1-E4",
+      "target_gain": 0.07060278952121735,
+      "retention_change": 0.0,
+      "utility": 0.07060278952121735
+    },
+    {
+      "expert": "L0-E3",
+      "target_gain": 0.0,
+      "retention_change": 0.0,
+      "utility": 0.0
+    }
+  ],
+  "m11f": [
+    {
+      "label": "existing_M11E2",
+      "original_utility": 0.08495725691318512,
+      "balanced_utility": 0.08227919787168503,
+      "winner": "original"
+    },
+    {
+      "label": "seed_20260930",
+      "original_utility": 0.08666668087244034,
+      "balanced_utility": 0.08666668087244034,
+      "winner": "tie"
+    },
+    {
+      "label": "seed_20261002",
+      "original_utility": 0.12166666239500046,
+      "balanced_utility": 0.12166666239500046,
+      "winner": "tie"
+    }
+  ],
+  "lambda_retention": 2.0
+}

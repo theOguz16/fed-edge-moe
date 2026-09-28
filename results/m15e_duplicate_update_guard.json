@@ -1,0 +1,36 @@
+{
+  "round": 7,
+  "global_version": 105,
+  "accepted": [
+    {
+      "client_id": "A",
+      "round": 7,
+      "base_version": 105,
+      "weight": 120
+    },
+    {
+      "client_id": "B",
+      "round": 7,
+      "base_version": 105,
+      "weight": 120
+    }
+  ],
+  "rejected": [
+    {
+      "client_id": "B",
+      "round": 7,
+      "base_version": 105,
+      "weight": 120,
+      "reason": "DUPLICATE_UPDATE"
+    },
+    {
+      "client_id": "C",
+      "round": 7,
+      "base_version": 104,
+      "weight": 120,
+      "reason": "STALE_UPDATE"
+    }
+  ],
+  "aggregation_weight": 240,
+  "safe": true
+}

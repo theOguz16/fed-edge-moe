@@ -1,0 +1,614 @@
+{
+  "experiment": "M11E2 independent scheduler replication",
+  "synthetic_version": "V3",
+  "base_checkpoint": "checkpoints/m11e_replication/global_step_0100",
+  "scheduler_formulas_locked": true,
+  "test_used": false,
+  "fixed_horizon_rounds": 5,
+  "original_pick": {
+    "layer": 1,
+    "expert": 5,
+    "A": 0.2649621069431305,
+    "B": 0.19585686922073364,
+    "shared_min": 0.19585686922073364,
+    "balance_ratio": 0.7391882238571228,
+    "balanced_score": 0.14477509128949087
+  },
+  "balanced_pick": {
+    "layer": 0,
+    "expert": 0,
+    "A": 0.1672348529100418,
+    "B": 0.1790960431098938,
+    "shared_min": 0.1672348529100418,
+    "balance_ratio": 0.9337719025284443,
+    "balanced_score": 0.15615920677087428
+  },
+  "same_selection": false,
+  "results": [
+    {
+      "label": "original",
+      "layer": 1,
+      "expert": 5,
+      "baseline_global": 0.2026282101869583,
+      "baseline_target": 0.17000000178813934,
+      "baseline_retention": 0.23525641858577728,
+      "best_round": 5,
+      "best_global": 0.24553418904542923,
+      "best_global_gain": 0.04290597885847092,
+      "final_global": 0.24553418904542923,
+      "final_global_gain": 0.04290597885847092,
+      "final_target": 0.2566666603088379,
+      "final_target_gain": 0.08666665852069855,
+      "final_retention": 0.23440171778202057,
+      "final_retention_change": -0.0008547008037567139,
+      "history": [
+        {
+          "round": 1,
+          "version": 101,
+          "cosine": 0.012985431589186192,
+          "global_accuracy": 0.20971154049038887,
+          "global_gain": 0.007083330303430557,
+          "target_accuracy": 0.18416666239500046,
+          "target_gain": 0.014166660606861115,
+          "retention_accuracy": 0.23525641858577728,
+          "retention_change": 0.0
+        },
+        {
+          "round": 2,
+          "version": 102,
+          "cosine": -0.01172721479088068,
+          "global_accuracy": 0.22470086067914963,
+          "global_gain": 0.022072650492191315,
+          "target_accuracy": 0.2150000035762787,
+          "target_gain": 0.04500000178813934,
+          "retention_accuracy": 0.23440171778202057,
+          "retention_change": -0.0008547008037567139
+        },
+        {
+          "round": 3,
+          "version": 103,
+          "cosine": -0.039627183228731155,
+          "global_accuracy": 0.23429487273097038,
+          "global_gain": 0.03166666254401207,
+          "target_accuracy": 0.23333332687616348,
+          "target_gain": 0.06333332508802414,
+          "retention_accuracy": 0.23525641858577728,
+          "retention_change": 0.0
+        },
+        {
+          "round": 4,
+          "version": 104,
+          "cosine": -0.06773525476455688,
+          "global_accuracy": 0.24011752754449844,
+          "global_gain": 0.03748931735754013,
+          "target_accuracy": 0.24583333730697632,
+          "target_gain": 0.07583333551883698,
+          "retention_accuracy": 0.23440171778202057,
+          "retention_change": -0.0008547008037567139
+        },
+        {
+          "round": 5,
+          "version": 105,
+          "cosine": -0.09172964841127396,
+          "global_accuracy": 0.24553418904542923,
+          "global_gain": 0.04290597885847092,
+          "target_accuracy": 0.2566666603088379,
+          "target_gain": 0.08666665852069855,
+          "retention_accuracy": 0.23440171778202057,
+          "retention_change": -0.0008547008037567139
+        }
+      ]
+    },
+    {
+      "label": "balanced",
+      "layer": 0,
+      "expert": 0,
+      "baseline_global": 0.2026282101869583,
+      "baseline_target": 0.17000000178813934,
+      "baseline_retention": 0.23525641858577728,
+      "best_round": 5,
+      "best_global": 0.24736467748880386,
+      "best_global_gain": 0.04473646730184555,
+      "final_global": 0.24736467748880386,
+      "final_global_gain": 0.04473646730184555,
+      "final_target": 0.2666666731238365,
+      "final_target_gain": 0.09666667133569717,
+      "final_retention": 0.2280626818537712,
+      "final_retention_change": -0.007193736732006073,
+      "history": [
+        {
+          "round": 1,
+          "version": 101,
+          "cosine": 0.024411458522081375,
+          "global_accuracy": 0.21397079899907112,
+          "global_gain": 0.011342588812112808,
+          "target_accuracy": 0.19083333015441895,
+          "target_gain": 0.020833328366279602,
+          "retention_accuracy": 0.2371082678437233,
+          "retention_change": 0.0018518492579460144
+        },
+        {
+          "round": 2,
+          "version": 102,
+          "cosine": -0.011861691251397133,
+          "global_accuracy": 0.22562678158283234,
+          "global_gain": 0.022998571395874023,
+          "target_accuracy": 0.2149999961256981,
+          "target_gain": 0.044999994337558746,
+          "retention_accuracy": 0.23625356703996658,
+          "retention_change": 0.0009971484541893005
+        },
+        {
+          "round": 3,
+          "version": 103,
+          "cosine": -0.041263554245233536,
+          "global_accuracy": 0.23501424863934517,
+          "global_gain": 0.032386038452386856,
+          "target_accuracy": 0.2383333370089531,
+          "target_gain": 0.06833333522081375,
+          "retention_accuracy": 0.23169516026973724,
+          "retention_change": -0.003561258316040039
+        },
+        {
+          "round": 4,
+          "version": 104,
+          "cosine": -0.07644687592983246,
+          "global_accuracy": 0.24370726943016052,
+          "global_gain": 0.04107905924320221,
+          "target_accuracy": 0.2575000002980232,
+          "target_gain": 0.08749999850988388,
+          "retention_accuracy": 0.22991453856229782,
+          "retention_change": -0.005341880023479462
+        },
+        {
+          "round": 5,
+          "version": 105,
+          "cosine": -0.109850212931633,
+          "global_accuracy": 0.24736467748880386,
+          "global_gain": 0.04473646730184555,
+          "target_accuracy": 0.2666666731238365,
+          "target_gain": 0.09666667133569717,
+          "retention_accuracy": 0.2280626818537712,
+          "retention_change": -0.007193736732006073
+        }
+      ]
+    }
+  ],
+  "comparison": "balanced_higher",
+  "original_ranking": [
+    {
+      "layer": 1,
+      "expert": 5,
+      "A": 0.2649621069431305,
+      "B": 0.19585686922073364,
+      "shared_min": 0.19585686922073364,
+      "balance_ratio": 0.7391882238571228,
+      "balanced_score": 0.14477509128949087
+    },
+    {
+      "layer": 0,
+      "expert": 0,
+      "A": 0.1672348529100418,
+      "B": 0.1790960431098938,
+      "shared_min": 0.1672348529100418,
+      "balance_ratio": 0.9337719025284443,
+      "balanced_score": 0.15615920677087428
+    },
+    {
+      "layer": 1,
+      "expert": 0,
+      "A": 0.05984848365187645,
+      "B": 0.2495291829109192,
+      "shared_min": 0.05984848365187645,
+      "balance_ratio": 0.23984562828966619,
+      "balanced_score": 0.014354397163668122
+    },
+    {
+      "layer": 0,
+      "expert": 5,
+      "A": 0.18409091234207153,
+      "B": 0.047080978751182556,
+      "shared_min": 0.047080978751182556,
+      "balance_ratio": 0.25574852203295223,
+      "balanced_score": 0.012040890731479768
+    },
+    {
+      "layer": 1,
+      "expert": 6,
+      "A": 0.06212121248245239,
+      "B": 0.046704333275556564,
+      "shared_min": 0.046704333275556564,
+      "balance_ratio": 0.7518258483565385,
+      "balanced_score": 0.035113524986821826
+    },
+    {
+      "layer": 1,
+      "expert": 1,
+      "A": 0.045075759291648865,
+      "B": 0.13163842260837555,
+      "shared_min": 0.045075759291648865,
+      "balance_ratio": 0.3424209922793537,
+      "balanced_score": 0.015434886224391701
+    },
+    {
+      "layer": 2,
+      "expert": 1,
+      "A": 0.42518940567970276,
+      "B": 0.03201506659388542,
+      "shared_min": 0.03201506659388542,
+      "balance_ratio": 0.07529601200365403,
+      "balanced_score": 0.00241060683855098
+    },
+    {
+      "layer": 1,
+      "expert": 2,
+      "A": 0.024621212854981422,
+      "B": 0.30075329542160034,
+      "shared_min": 0.024621212854981422,
+      "balance_ratio": 0.0818651473809025,
+      "balanced_score": 0.0020156192190696255
+    },
+    {
+      "layer": 0,
+      "expert": 7,
+      "A": 0.020454544574022293,
+      "B": 0.42598870396614075,
+      "shared_min": 0.020454544574022293,
+      "balance_ratio": 0.04801663608349601,
+      "balanced_score": 0.0009821584230644764
+    },
+    {
+      "layer": 1,
+      "expert": 3,
+      "A": 0.17481060326099396,
+      "B": 0.005273069720715284,
+      "shared_min": 0.005273069720715284,
+      "balance_ratio": 0.03016447299162133,
+      "balanced_score": 0.00015905936917345244
+    },
+    {
+      "layer": 0,
+      "expert": 2,
+      "A": 0.07045454531908035,
+      "B": 0.004143126308917999,
+      "shared_min": 0.004143126308917999,
+      "balance_ratio": 0.05880566385254872,
+      "balanced_score": 0.0002436392930208828
+    },
+    {
+      "layer": 0,
+      "expert": 1,
+      "A": 0.0022727272007614374,
+      "B": 0.3258003890514374,
+      "shared_min": 0.0022727272007614374,
+      "balance_ratio": 0.006975827154100234,
+      "balanced_score": 1.585415212093385e-05
+    },
+    {
+      "layer": 1,
+      "expert": 7,
+      "A": 0.3685606122016907,
+      "B": 0.0016949152341112494,
+      "shared_min": 0.0016949152341112494,
+      "balance_ratio": 0.0045987421824221575,
+      "balanced_score": 7.794478182737329e-06
+    },
+    {
+      "layer": 0,
+      "expert": 6,
+      "A": 0.48636364936828613,
+      "B": 0.0015065913321450353,
+      "shared_min": 0.0015065913321450353,
+      "balance_ratio": 0.003097664338405785,
+      "balanced_score": 4.6669142421369415e-06
+    },
+    {
+      "layer": 2,
+      "expert": 6,
+      "A": 0.14393939077854156,
+      "B": 0.001318267430178821,
+      "shared_min": 0.001318267430178821,
+      "balance_ratio": 0.009158489716043373,
+      "balanced_score": 1.2073338702287658e-05
+    },
+    {
+      "layer": 2,
+      "expert": 3,
+      "A": 0.1195075735449791,
+      "B": 0.001318267430178821,
+      "shared_min": 0.001318267430178821,
+      "balance_ratio": 0.011030827512221763,
+      "balanced_score": 1.4541580637282423e-05
+    },
+    {
+      "layer": 2,
+      "expert": 0,
+      "A": 0.3113636374473572,
+      "B": 0.0001883239165181294,
+      "shared_min": 0.0001883239165181294,
+      "balance_ratio": 0.0006048359341574357,
+      "balanced_score": 1.1390507197142975e-07
+    },
+    {
+      "layer": 2,
+      "expert": 4,
+      "A": 0.0,
+      "B": 0.5,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 5,
+      "A": 0.0,
+      "B": 0.2930320203304291,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 2,
+      "A": 0.0,
+      "B": 0.15273070335388184,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 0,
+      "expert": 3,
+      "A": 0.06912878900766373,
+      "B": 0.0,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 1,
+      "expert": 4,
+      "A": 0.0,
+      "B": 0.06854990869760513,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 7,
+      "A": 0.0,
+      "B": 0.01939736306667328,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 0,
+      "expert": 4,
+      "A": 0.0,
+      "B": 0.016384180635213852,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    }
+  ],
+  "balanced_ranking": [
+    {
+      "layer": 0,
+      "expert": 0,
+      "A": 0.1672348529100418,
+      "B": 0.1790960431098938,
+      "shared_min": 0.1672348529100418,
+      "balance_ratio": 0.9337719025284443,
+      "balanced_score": 0.15615920677087428
+    },
+    {
+      "layer": 1,
+      "expert": 5,
+      "A": 0.2649621069431305,
+      "B": 0.19585686922073364,
+      "shared_min": 0.19585686922073364,
+      "balance_ratio": 0.7391882238571228,
+      "balanced_score": 0.14477509128949087
+    },
+    {
+      "layer": 1,
+      "expert": 6,
+      "A": 0.06212121248245239,
+      "B": 0.046704333275556564,
+      "shared_min": 0.046704333275556564,
+      "balance_ratio": 0.7518258483565385,
+      "balanced_score": 0.035113524986821826
+    },
+    {
+      "layer": 1,
+      "expert": 1,
+      "A": 0.045075759291648865,
+      "B": 0.13163842260837555,
+      "shared_min": 0.045075759291648865,
+      "balance_ratio": 0.3424209922793537,
+      "balanced_score": 0.015434886224391701
+    },
+    {
+      "layer": 1,
+      "expert": 0,
+      "A": 0.05984848365187645,
+      "B": 0.2495291829109192,
+      "shared_min": 0.05984848365187645,
+      "balance_ratio": 0.23984562828966619,
+      "balanced_score": 0.014354397163668122
+    },
+    {
+      "layer": 0,
+      "expert": 5,
+      "A": 0.18409091234207153,
+      "B": 0.047080978751182556,
+      "shared_min": 0.047080978751182556,
+      "balance_ratio": 0.25574852203295223,
+      "balanced_score": 0.012040890731479768
+    },
+    {
+      "layer": 2,
+      "expert": 1,
+      "A": 0.42518940567970276,
+      "B": 0.03201506659388542,
+      "shared_min": 0.03201506659388542,
+      "balance_ratio": 0.07529601200365403,
+      "balanced_score": 0.00241060683855098
+    },
+    {
+      "layer": 1,
+      "expert": 2,
+      "A": 0.024621212854981422,
+      "B": 0.30075329542160034,
+      "shared_min": 0.024621212854981422,
+      "balance_ratio": 0.0818651473809025,
+      "balanced_score": 0.0020156192190696255
+    },
+    {
+      "layer": 0,
+      "expert": 7,
+      "A": 0.020454544574022293,
+      "B": 0.42598870396614075,
+      "shared_min": 0.020454544574022293,
+      "balance_ratio": 0.04801663608349601,
+      "balanced_score": 0.0009821584230644764
+    },
+    {
+      "layer": 0,
+      "expert": 2,
+      "A": 0.07045454531908035,
+      "B": 0.004143126308917999,
+      "shared_min": 0.004143126308917999,
+      "balance_ratio": 0.05880566385254872,
+      "balanced_score": 0.0002436392930208828
+    },
+    {
+      "layer": 1,
+      "expert": 3,
+      "A": 0.17481060326099396,
+      "B": 0.005273069720715284,
+      "shared_min": 0.005273069720715284,
+      "balance_ratio": 0.03016447299162133,
+      "balanced_score": 0.00015905936917345244
+    },
+    {
+      "layer": 0,
+      "expert": 1,
+      "A": 0.0022727272007614374,
+      "B": 0.3258003890514374,
+      "shared_min": 0.0022727272007614374,
+      "balance_ratio": 0.006975827154100234,
+      "balanced_score": 1.585415212093385e-05
+    },
+    {
+      "layer": 2,
+      "expert": 3,
+      "A": 0.1195075735449791,
+      "B": 0.001318267430178821,
+      "shared_min": 0.001318267430178821,
+      "balance_ratio": 0.011030827512221763,
+      "balanced_score": 1.4541580637282423e-05
+    },
+    {
+      "layer": 2,
+      "expert": 6,
+      "A": 0.14393939077854156,
+      "B": 0.001318267430178821,
+      "shared_min": 0.001318267430178821,
+      "balance_ratio": 0.009158489716043373,
+      "balanced_score": 1.2073338702287658e-05
+    },
+    {
+      "layer": 1,
+      "expert": 7,
+      "A": 0.3685606122016907,
+      "B": 0.0016949152341112494,
+      "shared_min": 0.0016949152341112494,
+      "balance_ratio": 0.0045987421824221575,
+      "balanced_score": 7.794478182737329e-06
+    },
+    {
+      "layer": 0,
+      "expert": 6,
+      "A": 0.48636364936828613,
+      "B": 0.0015065913321450353,
+      "shared_min": 0.0015065913321450353,
+      "balance_ratio": 0.003097664338405785,
+      "balanced_score": 4.6669142421369415e-06
+    },
+    {
+      "layer": 2,
+      "expert": 0,
+      "A": 0.3113636374473572,
+      "B": 0.0001883239165181294,
+      "shared_min": 0.0001883239165181294,
+      "balance_ratio": 0.0006048359341574357,
+      "balanced_score": 1.1390507197142975e-07
+    },
+    {
+      "layer": 0,
+      "expert": 3,
+      "A": 0.06912878900766373,
+      "B": 0.0,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 0,
+      "expert": 4,
+      "A": 0.0,
+      "B": 0.016384180635213852,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 1,
+      "expert": 4,
+      "A": 0.0,
+      "B": 0.06854990869760513,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 2,
+      "A": 0.0,
+      "B": 0.15273070335388184,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 4,
+      "A": 0.0,
+      "B": 0.5,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 5,
+      "A": 0.0,
+      "B": 0.2930320203304291,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    },
+    {
+      "layer": 2,
+      "expert": 7,
+      "A": 0.0,
+      "B": 0.01939736306667328,
+      "shared_min": 0.0,
+      "balance_ratio": 0.0,
+      "balanced_score": 0.0
+    }
+  ]
+}

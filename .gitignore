@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Model checkpoints / weights
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Hugging Face / ML cache
+.cache/
+huggingface/
+wandb/
+
+# Temporary files
+tmp/
+temp/
+*.log
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Build
+dist/
+build/
+
+# Archived unrelated prototype
+legacy/
