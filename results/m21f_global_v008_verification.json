@@ -1,0 +1,34 @@
+{
+  "version": 8,
+  "registry_ok": true,
+  "accepted_shard_checks": [
+    {
+      "layer": 0,
+      "expert": 0,
+      "path": "checkpoints/m20/global_v006/L0_E0.safetensors",
+      "max_diff": 0.0
+    },
+    {
+      "layer": 0,
+      "expert": 3,
+      "path": "checkpoints/m21/global_v007/L0_E3.safetensors",
+      "max_diff": 0.0
+    },
+    {
+      "layer": 1,
+      "expert": 2,
+      "path": "checkpoints/m21/global_v008/L1_E2.safetensors",
+      "max_diff": 0.0
+    }
+  ],
+  "accepted_shard_max_diff": 0.0,
+  "unrelated_expert_max_diff": 0.0,
+  "router_max_diff": 0.0,
+  "validation_losses": {
+    "D0": 4.017849445343018,
+    "D1": 4.028367042541504,
+    "D2": 4.253384113311768,
+    "D3": 4.221296787261963
+  },
+  "integrity_ok": true
+}

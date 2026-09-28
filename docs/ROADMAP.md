@@ -16,10 +16,11 @@ FedEdgeMoE araştırması küçük ve kontrollü prototiplerden başlayarak daha
 | M17 | Generic expert interface ve Qwen2-MoE integration | ✅ |
 | M18–M19 | End-to-end ve physical Qwen2-MoE federation | ✅ |
 | M20 | Multi-round federation, rollback ve adaptive retry | ✅ |
+| M21 | Multi-expert physical federation ve versioned expert registry | ✅ |
 
 ---
 
-## M21 — Multi-Expert Federation
+## M21 — Multi-Expert Federation ✅
 
 ### Hedef
 

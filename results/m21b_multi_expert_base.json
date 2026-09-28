@@ -1,0 +1,27 @@
+{
+  "global_version": "V006",
+  "targets": [
+    {
+      "client": "mac_A",
+      "domain": 0,
+      "layer": 0,
+      "expert": 3,
+      "affinity_pct": 32.97,
+      "parameters": 6144,
+      "bytes": 24800,
+      "reload_max_diff": 0.0,
+      "path": "checkpoints/m21/base_v006/L0_E3.safetensors"
+    },
+    {
+      "client": "msi_B",
+      "domain": 1,
+      "layer": 1,
+      "expert": 2,
+      "affinity_pct": 27.45,
+      "parameters": 6144,
+      "bytes": 24800,
+      "reload_max_diff": 0.0,
+      "path": "checkpoints/m21/base_v006/L1_E2.safetensors"
+    }
+  ]
+}
