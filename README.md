@@ -172,21 +172,24 @@ Detaylı deney günlükları [`docs/`](docs/) klasöründe bulunmaktadır.
 
 Seçilmiş deney çıktıları ise [`results/`](results/) klasöründe tutulmaktadır.
 
-## Sonraki Aşamalar
+## Roadmap
 
-Bir sonraki araştırma aşamalarında şu konular hedeflenmektedir:
+FedEdgeMoE araştırması kontrollü prototiplerden başlayarak multi-expert,
+dynamic scheduling, pretrained MoE ve daha büyük fiziksel testbed aşamalarına
+doğru ilerlemektedir.
 
-1. multi-expert federated training,
-2. dynamic expert placement,
-3. pretrained MoE modelleri,
-4. daha gerçekçi dataset ve non-IID workloads,
-5. daha büyük fiziksel edge testbed,
-6. baseline comparison,
-7. communication / latency / memory analysis,
-8. privacy ve robustness evaluation,
-9. daha büyük sparse MoE modellerinin multi-node edge cluster üzerinde çalıştırılması.
+Mevcut ana hedefler:
 
-Uzun vadeli hedeflerden biri, central server üzerinde büyük bir sparse MoE modeli çalıştırırken modelin expert'lerini farklı edge cihazlara dinamik olarak yerleştiren ve bu expert'leri local data üzerinde federatif olarak adapte edebilen bir runtime geliştirmektir.
+- **M21:** Multi-Expert Federation
+- **M22:** Dynamic Expert Placement
+- **M23:** Pretrained MoE + Realistic Data
+- **M24:** Multi-Node Physical Testbed
+- **Long-term:** Large Sparse MoE Deployment
+
+Detaylı araştırma planı, KPI'lar ve success criteria:
+
+➡️ [Research Roadmap](docs/ROADMAP.md)
+
 
 ## Sınırlamalar
 
