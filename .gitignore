@@ -48,3 +48,9 @@ build/
 
 # Archived unrelated prototype
 legacy/
+
+lhm.zip
+tools/
+results/msi_cpu_*_workload.txt
+benchmarks/distilgpt2_easy_cuda_power_final.py
+results/distilgpt2_easy_cuda_power_final.csv
