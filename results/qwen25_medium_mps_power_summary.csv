@@ -1,0 +1,4 @@
+profile,context,output,batch,throughput_tok_sec,power_w,energy_run_j,energy_token_j
+light,128,64,1,24.40,6.76,17.71,0.2768
+medium,512,128,2,41.81,8.64,52.93,0.2068
+heavy,1024,128,4,53.96,11.96,113.46,0.2216

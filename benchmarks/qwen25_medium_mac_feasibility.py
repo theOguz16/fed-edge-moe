@@ -1,4 +1,4 @@
-﻿import time
+import time
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
@@ -40,8 +40,6 @@ load_time = time.perf_counter() - load_start
 
 print(f"Model load time: {load_time:.2f}s")
 
-
-# Controlled 128-token synthetic context
 text = (
     "Artificial intelligence on edge devices enables "
     "distributed and resource aware machine learning systems. "
@@ -77,7 +75,6 @@ def sync():
         torch.mps.synchronize()
 
 
-# Warm-up
 print("\nWarm-up...")
 
 with torch.inference_mode():
@@ -91,12 +88,6 @@ with torch.inference_mode():
 
 sync()
 
-
-if DEVICE == "cuda":
-    torch.cuda.reset_peak_memory_stats()
-
-
-# Measured inference
 print("Measured inference...")
 
 sync()
@@ -121,7 +112,6 @@ generated_tokens = (
 
 throughput = generated_tokens / elapsed
 
-
 print("\n================================")
 print("RESULT")
 print("================================")
@@ -132,19 +122,11 @@ print(f"Batch          : {BATCH}")
 print(f"Latency        : {elapsed:.3f} s")
 print(f"Throughput     : {throughput:.2f} tok/s")
 
-if DEVICE == "cuda":
-    allocated = torch.cuda.memory_allocated() / 1024**3
-    peak = torch.cuda.max_memory_allocated() / 1024**3
-
-    print(f"VRAM allocated : {allocated:.2f} GB")
-    print(f"VRAM peak      : {peak:.2f} GB")
-
-elif DEVICE == "mps":
+if DEVICE == "mps":
     try:
-        memory = torch.mps.current_allocated_memory() / 1024**3
-        print(f"MPS allocated  : {memory:.2f} GB")
+        allocated = torch.mps.current_allocated_memory() / 1024**3
+        print(f"MPS allocated  : {allocated:.2f} GB")
     except Exception:
         pass
 
 print("Status         : PASS")
-
