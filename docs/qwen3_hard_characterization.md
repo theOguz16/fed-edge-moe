@@ -291,28 +291,222 @@ Power sonuçları monitored operating condition'a aittir.
 
 ---
 
-## 14. Mac Power
+## 14. Mac Accelerator Power
 
-Measurement:
+İlk Mac power ölçümünde `powermetrics`, benchmark process'i model yüklemeden önce
+başlatıldığı için model-load enerjisinin ölçüme karışma ihtimali vardı.
 
-- powermetrics
-- 100 ms sampling
+Bu nedenle önceki power tablosu final sonuç olarak kullanılmamıştır.
+
+Final ölçümde:
+
+- runtime: llama.cpp
+- model: Qwen3-1.7B Q4_K_M
+- GPU offload: enabled
+- `powermetrics` benchmark model load tamamlandıktan sonra başlatıldı
+- sampling interval: 100 ms
 - 3 repeats
-- Power boundary: CPU + GPU + ANE combined SoC power
+- power boundary: CPU + GPU + ANE combined SoC power
 
 | Profile | Throughput | Power | J/run | J/token |
 |---|---:|---:|---:|---:|
-| Light | 78.56 | 12.76 W | 12.30 | 0.1921 |
-| Medium | 106.72 | 13.47 W | 46.85 | 0.1830 |
-| Heavy | 87.00 | 13.52 W | 138.03 | 0.2696 |
+| Light | 72.22 | 13.44 W | 14.03 | 0.2192 |
+| Medium | 113.38 | 16.35 W | 52.81 | 0.2063 |
+| Heavy | 91.29 | 17.19 W | 164.50 | 0.3213 |
 
-Mac üzerinde Medium profil hem en yüksek sustained throughput hem de en düşük energy/token değerini verdi.
+No-monitor Q4 sweep ile karşılaştırıldığında:
 
-Heavy profile daha yüksek batch kullanmasına rağmen throughput düştü ve J/token kötüleşti.
+- Light: 76.19 -> 72.22 tok/s, yaklaşık -5.2%
+- Medium: 112.75 -> 113.38 tok/s, yaklaşık +0.6%
+- Heavy: 91.46 -> 91.29 tok/s, yaklaşık -0.2%
+
+Medium ve Heavy profillerinde monitoring etkisi ihmal edilebilir düzeydedir.
+
+Light profil çok kısa sürdüğü için sampling overhead ve kısa-workload state etkilerine
+daha hassastır. Bu nedenle Light power sonucu kullanılabilir ancak diğer iki profile
+göre daha yüksek belirsizlik taşır.
+
+Mac üzerinde Medium profil hem Light'tan daha yüksek throughput sağlamakta hem de
+Light'a göre daha düşük J/token göstermektedir.
+
+Heavy profil ise daha yüksek batch'e rağmen throughput kaybetmiş ve enerji/token
+maliyeti belirgin biçimde artmıştır.
 
 ---
 
-## 15. Device-Specific Batch Behavior
+## 15. CPU Backfill Characterization
+
+Hard/Text karakterizasyonunda eksik kalan CPU-only `long_single` ve `batch`
+workload'ları Q4_K_M model ve llama.cpp kullanılarak tamamlandı.
+
+GPU offload tamamen kapatıldı:
+
+`-ngl 0`
+
+### 15.1 Workload tanımları
+
+#### Long single
+
+- PP = 128
+- TG = 128
+- Batch = 1
+
+#### Batch workload
+
+- PP = 128
+- TG = 64
+- Parallel prompts = 4
+
+---
+
+### 15.2 Mac CPU Thread Scaling
+
+#### Long single
+
+| Threads | S_TG | Total time |
+|---:|---:|---:|
+| 1 | 19.90 tok/s | 10.006 s |
+| 2 | 36.93 tok/s | 5.345 s |
+| 4 | 54.56 tok/s | 3.555 s |
+| 6 | 55.08 tok/s | 3.350 s |
+| 8 | **58.56 tok/s** | **3.066 s** |
+| 10 | 32.09 tok/s | 5.127 s |
+
+8 thread en sağlam operating point'tir.
+
+10 thread seviyesinde hem throughput düşüşü hem yüksek tekrar varyasyonu görülmüştür.
+
+#### Batch
+
+| Threads | S_TG | Total time |
+|---:|---:|---:|
+| 1 | 30.79 tok/s | 22.833 s |
+| 2 | 56.14 tok/s | 11.976 s |
+| 4 | 88.50 tok/s | 7.172 s |
+| 6 | 89.23 tok/s | 6.825 s |
+| 8 | **94.87 tok/s** | 6.282 s |
+| 10 | 84.94 tok/s | **5.988 s** |
+
+Generation throughput açısından 8 thread daha sağlam noktadır.
+
+10 thread toplam latency açısından düşük sonuç verse de tekrarlar arasında daha yüksek
+varyasyon gözlenmiştir.
+
+---
+
+### 15.3 Mac CPU Power
+
+Power ölçümü model load tamamlandıktan sonra başlatılmıştır.
+
+Power boundary:
+
+- CPU + GPU + ANE combined SoC power
+
+#### Long single
+
+| Threads | Throughput | Power | J/token |
+|---:|---:|---:|---:|
+| 1 | 20.08 | 8.89 W | 0.6934 |
+| 4 | 53.98 | 24.49 W | 0.6936 |
+| 8 | **59.60** | 23.29 W | **0.5875** |
+
+#### Batch
+
+| Threads | Throughput | Power | J/token |
+|---:|---:|---:|---:|
+| 1 | 30.14 | 10.75 W | 0.9920 |
+| 4 | 81.22 | 21.15 W | 0.6462 |
+| 8 | **98.74** | 22.93 W | **0.5475** |
+
+Mac'te 8 thread hem long_single hem batch workload için en iyi measured
+throughput/energy operating point olmuştur.
+
+---
+
+### 15.4 MSI CPU Thread Scaling
+
+#### Long single
+
+| Threads | S_TG | Total time |
+|---:|---:|---:|
+| 1 | 9.13 tok/s | 15.285 s |
+| 2 | 15.17 tok/s | 9.846 s |
+| 4 | 18.23 tok/s | 7.994 s |
+| 8 | **19.09 tok/s** | **7.617 s** |
+| 16 | 17.89 tok/s | 8.006 s |
+
+Long single için throughput optimumu 8 thread'dir.
+
+#### Batch
+
+| Threads | S_TG | Total time |
+|---:|---:|---:|
+| 1 | 6.43 tok/s | 42.479 s |
+| 2 | 16.32 tok/s | 18.887 s |
+| 4 | 28.83 tok/s | 11.533 s |
+| 8 | 44.08 tok/s | 7.961 s |
+| 16 | **48.85 tok/s** | **7.361 s** |
+
+Batch workload 16 thread'e kadar ölçeklenmeye devam etmiştir.
+
+---
+
+### 15.5 MSI CPU Power
+
+CPU Package power, LibreHardwareMonitor üzerinden ölçülmüştür.
+
+#### Long single
+
+| Threads | Throughput | Package Power | J/token |
+|---:|---:|---:|---:|
+| 1 | 9.20 | 21.85 W | 2.5489 |
+| 4 | 18.17 | 33.84 W | **2.1102** |
+| 8 | **19.27** | 40.20 W | 2.3761 |
+| 16 | 18.03 | 40.48 W | 2.5332 |
+
+Bu workload scheduler açısından önemli bir trade-off göstermektedir:
+
+- throughput optimumu: 8 thread
+- energy/token optimumu: 4 thread
+
+8 thread yaklaşık %6 daha yüksek throughput sağlarken token başına enerji maliyeti
+4 thread'e göre yaklaşık %12.6 daha yüksektir.
+
+#### Batch
+
+| Threads | Throughput | Package Power | J/token |
+|---:|---:|---:|---:|
+| 4 | 29.41 | 33.31 W | 1.5301 |
+| 8 | 43.92 | 37.60 W | 1.1788 |
+| 16 | **49.05** | 38.45 W | **1.0964** |
+
+Batch workload için 16 thread hem throughput hem measured energy/token açısından
+en iyi noktadır.
+
+### MSI Batch/1t variability
+
+Batch/1t workload farklı session'larda belirgin state sensitivity göstermiştir.
+
+Generation throughput gözlemleri:
+
+- ilk scaling median: 6.43 tok/s
+- ilk power session median: 7.92 tok/s
+- tekrar power session son üç medianı: 9.90 tok/s
+
+Tekrar session'ındaki son üç run:
+
+- 9.55 tok/s
+- 9.90 tok/s
+- 9.92 tok/s
+
+kendi içinde stabil olmasına rağmen önceki session'larla aynı seviyede değildir.
+
+Bu nedenle batch/1t power değeri canonical scheduler operating point olarak
+kullanılmamıştır ve sonuç session-state sensitive olarak işaretlenmiştir.
+
+---
+
+## 16. Device-Specific Batch Behavior
 
 Bu characterization aşamasının en önemli bulgularından biri batch optimumunun cihazdan bağımsız olmamasıdır.
 
@@ -336,7 +530,7 @@ Bu nedenle global olarak sabit bir batch size kullanmak optimal değildir.
 
 ---
 
-## 16. Measurement Boundary Caveat
+## 17. Measurement Boundary Caveat
 
 Mac ve RTX absolute energy değerleri doğrudan cihazlar arası winner belirlemek için kullanılmamalıdır.
 
@@ -355,7 +549,7 @@ Bu nedenle enerji sonuçları öncelikle aynı platform içerisindeki configurat
 
 ---
 
-## 17. Scheduler Implications
+## 18. Scheduler Implications
 
 Hard/Text sonuçları scheduler'ın en az şu özellikleri dikkate alması gerektiğini göstermektedir:
 
@@ -388,7 +582,7 @@ Dolayısıyla scheduler cihaz-spesifik operating point seçmelidir.
 
 ---
 
-## 18. Native vs Quantized Execution
+## 19. Native vs Quantized Execution
 
 Native FP16 sonuçları:
 
@@ -406,22 +600,26 @@ Bu sonuç daha sonraki expert-placement ve MoE scheduling aşaması için öneml
 
 ---
 
-## 19. Main Findings
+## 20. Main Findings
 
-1. Native FP16 Qwen3 Mac üzerinde çalışırken RTX 3050 4 GB üzerinde OOM oluştu.
-2. Q4_K_M quantization her iki cihazda kontrollü karşılaştırmayı mümkün kıldı.
+1. Native FP16 Qwen3 Mac üzerinde çalışırken RTX 3050 4 GB üzerinde model-load aşamasında OOM oluştu.
+2. Q4_K_M quantization iki cihaz üzerinde kontrollü cross-device karşılaştırmayı mümkün kıldı.
 3. RTX controlled Q4 sweep'te 18/18 workload'da daha yüksek generation throughput verdi.
-4. Mac Batch 2'de optimum noktaya ulaşıp Batch 4'te geriledi.
+4. Mac accelerator tarafında Batch 2 belirgin sweet spot oluştururken Batch 4'te throughput geriledi.
 5. RTX Batch 4'e kadar throughput scaling göstermeye devam etti.
-6. RTX sustained throughput yaklaşık 60 saniye içinde yalnızca yaklaşık %4 azaldı.
-7. RTX workload sırasında yaklaşık 59 W ve %96–97 GPU utilization seviyesine ulaştı.
-8. Mac Medium profile en iyi sustained throughput ve J/token değerini verdi.
-9. RTX Medium ve Heavy enerji/token değerleri neredeyse aynıydı.
-10. Scheduler cihaz, workload shape, memory ve batch behavior'ı birlikte değerlendirmelidir.
+6. RTX sustained throughput yaklaşık 60 saniyede yalnızca yaklaşık %4 azaldı.
+7. RTX representative workload'larda yaklaşık 59 W ve %96-97 GPU utilization seviyesine ulaştı.
+8. Senkronize Mac power ölçümünde Medium profil 113.38 tok/s ve 0.2063 J/token ile en dengeli accelerator operating point oldu.
+9. Mac CPU tarafında 8 thread hem long_single hem batch workload için güçlü ortak throughput/energy noktasıdır.
+10. MSI long_single workload'da throughput optimumu 8 thread iken energy/token optimumu 4 thread'dir.
+11. MSI batch workload'da 16 thread hem throughput hem energy/token açısından en iyi measured noktadır.
+12. MSI batch/1t workload session-state sensitivity göstermiştir ve canonical scheduler noktası olarak kullanılmamıştır.
+13. Thread optimumu workload'a ve optimization objective'e bağlıdır; tek bir global CPU thread optimumu yoktur.
+14. Scheduler cihaz, workload shape, batch, memory, latency, energy ve runtime state'i birlikte değerlendirmelidir.
 
 ---
 
-## 20. Hard/Text Completion Checklist
+## 21. Hard/Text Completion Checklist
 
 - [x] Mac native FP16 feasibility
 - [x] MSI native FP16 feasibility
@@ -434,7 +632,15 @@ Bu sonuç daha sonraki expert-placement ve MoE scheduling aşaması için öneml
 - [x] Mac vs MSI controlled comparison
 - [x] RTX sustained validation
 - [x] RTX NVML power
-- [x] Mac powermetrics power
+- [x] Mac synchronized accelerator power
+- [x] Mac CPU long_single thread scaling
+- [x] Mac CPU batch thread scaling
+- [x] Mac CPU power/energy
+- [x] MSI CPU long_single thread scaling
+- [x] MSI CPU batch thread scaling
+- [x] MSI CPU power/energy
+- [x] CPU workload-dependent thread optimum characterization
+- [x] MSI batch/1t session variability characterization
 - [x] Monitoring overhead characterization
 - [x] Measurement boundary caveat
 - [x] Scheduler implications
@@ -443,7 +649,7 @@ Bu sonuç daha sonraki expert-placement ve MoE scheduling aşaması için öneml
 
 ---
 
-## 21. Next Step
+## 22. Next Step
 
 Text characterization status:
 
@@ -451,14 +657,24 @@ Text characterization status:
 - Medium: COMPLETE
 - Hard: COMPLETE
 
-Next major stage:
+Vision characterization status:
 
-**Vision characterization**
+- Vision Easy / ResNet50: COMPLETE
+- Vision Medium / ConvNeXt-Base: NEXT
+- Vision Hard / ConvNeXt-Large: pending
 
-Planned progression:
+Bir sonraki ana aşama:
 
-- Vision Easy
-- Vision Medium
-- Vision Hard
+**Vision Medium — ConvNeXt-Base characterization**
 
-The same data-first methodology will be reused before building the resource-aware scheduler.
+Vision Medium için aynı veri-first metodoloji korunacaktır:
+
+- feasibility
+- CPU thread scaling
+- resolution × batch sweep
+- FP32 / FP16 accelerator comparison
+- memory behavior
+- sustained performance
+- power / energy
+- Mac vs MSI crossover
+- scheduler implications
