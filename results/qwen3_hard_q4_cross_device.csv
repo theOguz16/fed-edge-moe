@@ -1,0 +1,37 @@
+device,backend,precision,pp,tg,batch,throughput_tok_sec,status
+Apple M4,llama.cpp/metal,q4_k_m,128,64,1,76.19,PASS
+Apple M4,llama.cpp/metal,q4_k_m,128,64,2,112.18,PASS
+Apple M4,llama.cpp/metal,q4_k_m,128,64,4,98.21,PASS
+Apple M4,llama.cpp/metal,q4_k_m,128,128,1,72.66,PASS
+Apple M4,llama.cpp/metal,q4_k_m,128,128,2,119.03,PASS
+Apple M4,llama.cpp/metal,q4_k_m,128,128,4,102.99,PASS
+Apple M4,llama.cpp/metal,q4_k_m,512,64,1,75.83,PASS
+Apple M4,llama.cpp/metal,q4_k_m,512,64,2,113.27,PASS
+Apple M4,llama.cpp/metal,q4_k_m,512,64,4,97.86,PASS
+Apple M4,llama.cpp/metal,q4_k_m,512,128,1,75.81,PASS
+Apple M4,llama.cpp/metal,q4_k_m,512,128,2,112.75,PASS
+Apple M4,llama.cpp/metal,q4_k_m,512,128,4,97.55,PASS
+Apple M4,llama.cpp/metal,q4_k_m,1024,64,1,72.72,PASS
+Apple M4,llama.cpp/metal,q4_k_m,1024,64,2,105.34,PASS
+Apple M4,llama.cpp/metal,q4_k_m,1024,64,4,91.62,PASS
+Apple M4,llama.cpp/metal,q4_k_m,1024,128,1,72.38,PASS
+Apple M4,llama.cpp/metal,q4_k_m,1024,128,2,104.92,PASS
+Apple M4,llama.cpp/metal,q4_k_m,1024,128,4,91.46,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,128,64,1,117.88,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,128,64,2,223.4,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,128,64,4,300.64,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,128,128,1,119.7,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,128,128,2,222.87,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,128,128,4,299.03,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,512,64,1,114.82,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,512,64,2,208.36,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,512,64,4,274.67,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,512,128,1,113.83,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,512,128,2,207.74,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,512,128,4,273.17,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,1024,64,1,109.15,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,1024,64,2,194.63,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,1024,64,4,252.51,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,1024,128,1,109.8,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,1024,128,2,194.7,PASS
+RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,1024,128,4,250.55,PASS
