@@ -1,0 +1,7 @@
+precision,profile,no_monitor_img_s,monitored_img_s,monitor_delta_pct,power_w,j_per_img,allocated_mb
+fp32,light,39.71,40.11,-0.09,14.28,0.3549,754.7
+fp32,medium,28.23,27.91,-2.19,15.8,0.5434,756.8
+fp32,heavy,14.27,14.33,0.32,14.83,1.0258,773.4
+fp16,light,47.23,46.87,-0.99,13.67,0.2917,381.4
+fp16,medium,35.41,33.56,-0.16,17.09,0.5092,382.4
+fp16,heavy,17.73,18.01,1.13,17.29,0.9593,390.7

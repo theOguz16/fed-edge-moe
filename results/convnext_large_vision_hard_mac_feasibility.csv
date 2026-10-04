@@ -1,0 +1,4 @@
+model,params,backend,precision,resolution,batch,cpu_threads,median_latency_ms,throughput_img_s,mps_allocated_mb,mps_driver_mb,status
+convnext_large,197767336,cpu,float32,224,1,4,785.355542000616,1.2733086436909815,,,PASS
+convnext_large,197767336,mps,float32,224,1,,40.411541995126754,24.745405659615525,755.016357421875,1674.78125,PASS
+convnext_large,197767336,mps,float16,224,1,,38.31316699506715,26.100687529400815,381.510986328125,1354.78125,PASS
