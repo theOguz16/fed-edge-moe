@@ -285,6 +285,14 @@ def infer_precision(filename, row, backend):
     if filename.startswith("qwen3_hard_q4"):
         return "q4_k_m"
 
+    # Qwen2.5 methodology explicitly controlled:
+    # accelerator = FP16, CPU = FP32.
+    if filename.startswith("qwen25_medium"):
+        if backend in ("mps", "cuda"):
+            return "fp16"
+        if backend == "cpu":
+            return "fp32"
+
     # Vision CPU policy was controlled FP32.
     if (
         "vision_" in filename
@@ -292,7 +300,17 @@ def infer_precision(filename, row, backend):
     ):
         return "fp32"
 
-    # Do not silently invent precision for legacy text files.
+    # DistilGPT2 Easy did not explicitly record/control dtype
+    # in the canonical result files. Do not invent FP32/FP16.
+    if (
+        filename.startswith("distilgpt2_easy")
+        or filename in (
+            "mac_text_latency.csv",
+            "msi_cpu_repeated_power.csv",
+        )
+    ):
+        return "default_uncontrolled"
+
     return "unspecified"
 
 
