@@ -1,0 +1,4 @@
+model,params,backend,precision,resolution,batch,cpu_threads,median_latency_ms,throughput_img_s,cuda_allocated_mb,cuda_peak_mb,status
+convnext_base,88591464,cpu,float32,224,1,4,140.61370003037155,7.111682572779233,,,PASS
+convnext_base,88591464,cuda,float32,224,1,,16.347199969459325,61.17255565896613,346.65283203125,364.3330078125,PASS
+convnext_base,88591464,cuda,float16,224,1,,13.511299970559776,74.01212334704533,177.56640625,187.095703125,PASS
