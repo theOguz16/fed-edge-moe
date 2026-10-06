@@ -107,8 +107,13 @@ for modality in modality_order:
         if rows.empty:
             matrix[modality][difficulty] = "--"
         else:
+            model_name = rows.iloc[0]["model"]
+
+            if model_name == "Qwen2.5-1.5B-Instruct":
+                model_name = "Qwen2.5-1.5B"
+
             matrix[modality][difficulty] = latex_escape(
-                rows.iloc[0]["model"]
+                model_name
             )
 
 

@@ -57,3 +57,7 @@ results/distilgpt2_easy_cuda_power_final.csv
 
 # Local raw power logs
 results/qwen3_cpu_*_power.txt
+
+# Generated Overleaf upload package
+paper/overleaf_initial_draft.zip
+paper/overleaf_initial_draft/
