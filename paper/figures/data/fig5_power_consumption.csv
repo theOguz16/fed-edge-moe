@@ -1,0 +1,13 @@
+device,profile,precision,energy_boundary,power_w
+Apple M4,heavy,fp16,combined_soc,17.29
+Apple M4,heavy,fp32,combined_soc,14.83
+Apple M4,light,fp16,combined_soc,13.67
+Apple M4,light,fp32,combined_soc,14.28
+Apple M4,medium,fp16,combined_soc,17.09
+Apple M4,medium,fp32,combined_soc,15.8
+RTX 3050 Laptop,heavy,fp16,gpu_board,57.57652380952381
+RTX 3050 Laptop,heavy,fp32,gpu_board,57.89376923076923
+RTX 3050 Laptop,light,fp16,gpu_board,57.0657
+RTX 3050 Laptop,light,fp32,gpu_board,57.1539
+RTX 3050 Laptop,medium,fp16,gpu_board,57.27675
+RTX 3050 Laptop,medium,fp32,gpu_board,57.41833333333334

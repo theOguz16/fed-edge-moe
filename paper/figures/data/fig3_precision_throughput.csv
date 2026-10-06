@@ -1,0 +1,13 @@
+device,profile,precision,throughput
+Apple M4,heavy,fp16,17.73
+Apple M4,heavy,fp32,14.27
+Apple M4,light,fp16,47.23
+Apple M4,light,fp32,39.71
+Apple M4,medium,fp16,35.41
+Apple M4,medium,fp32,28.23
+RTX 3050 Laptop,heavy,fp16,60.90866941046307
+RTX 3050 Laptop,heavy,fp32,19.66405604053286
+RTX 3050 Laptop,light,fp16,102.7879316691874
+RTX 3050 Laptop,light,fp32,47.629224113218605
+RTX 3050 Laptop,medium,fp16,94.10077459251468
+RTX 3050 Laptop,medium,fp32,37.30040966056431

@@ -1,0 +1,7 @@
+model,median_msi_over_mac,order,display_model
+DistilGPT2,1.2866777284775717,0,DistilGPT2
+Qwen2.5-1.5B-Instruct,1.3163728603210765,1,Qwen2.5-1.5B
+Qwen3-1.7B,1.8516679030941037,2,Qwen3-1.7B
+ResNet50,1.9352815195331936,3,ResNet50
+ConvNeXt-Base,1.5753835796885958,4,ConvNeXt-Base
+ConvNeXt-Large,1.7500891593942687,5,ConvNeXt-Large

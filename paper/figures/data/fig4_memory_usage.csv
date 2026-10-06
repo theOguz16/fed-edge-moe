@@ -1,0 +1,13 @@
+device,profile_plot,precision,memory_allocated_mb
+Apple M4,heavy,fp16,390.75244140625
+Apple M4,heavy,fp32,773.499267578125
+Apple M4,light,fp16,381.370361328125
+Apple M4,light,fp32,754.735107421875
+Apple M4,medium,fp16,382.417236328125
+Apple M4,medium,fp32,756.82861328125
+RTX 3050 Laptop,heavy,fp16,394.953125
+RTX 3050 Laptop,heavy,fp32,782.2392578125
+RTX 3050 Laptop,light,fp16,385.69580078125
+RTX 3050 Laptop,light,fp32,763.72509765625
+RTX 3050 Laptop,medium,fp16,387.55517578125
+RTX 3050 Laptop,medium,fp32,765.74072265625
