@@ -61,3 +61,5 @@ results/qwen3_cpu_*_power.txt
 # Generated Overleaf upload package
 paper/overleaf_initial_draft.zip
 paper/overleaf_initial_draft/
+
+paper/overleaf_upload_tmp/
