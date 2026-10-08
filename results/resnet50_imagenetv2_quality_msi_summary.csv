@@ -1,0 +1,2 @@
+model,dataset,images,device,batch_size,fp32_top1_accuracy_pct,fp16_top1_accuracy_pct,fp32_top5_accuracy_pct,fp16_top5_accuracy_pct,top1_agreement_pct,mean_top5_overlap_pct,mean_kl_fp32_to_fp16,mean_confidence_drift,max_confidence_drift,max_abs_logit_diff,prediction_changes,fp32_time_s,fp16_time_s
+resnet50,imagenetv2_matched_frequency,10000,cuda,16,69.91999745368958,69.9400007724762,88.84999752044678,88.85999917984009,99.80999827384949,99.738,8.618471838417463e-06,0.0008455999195575714,0.010007664561271667,0.1254153847694397,19,84.49572259999695,75.30966050000279
