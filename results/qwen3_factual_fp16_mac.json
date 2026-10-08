@@ -1,0 +1,251 @@
+{
+  "model": "qwen3",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "precision": "fp16",
+  "device": "mps",
+  "prompts": 20,
+  "samples_per_prompt": 5,
+  "generation_time_s": 107.1799991250009,
+  "records": [
+    {
+      "prompt_idx": 0,
+      "prompt": "Who wrote Pride and Prejudice, and when was it first published?",
+      "main_answer": "Jane Austen wrote *Pride and Prejudice*, and it was first published in 1813.",
+      "samples": [
+        "Jane Austen wrote *Pride and Prejudice*, and it was first published in 1813.",
+        "Jane Austen wrote *Pride and Prejudice*, and it was first published in 1813.",
+        "Jane Austen wrote *Pride and Prejudice*, and it was first published in 1813.",
+        "Jane Austen wrote *Pride and Prejudice*, and it was first published in 1813.",
+        "Jane Austen wrote *Pride and Prejudice*, and it was first published in 1813."
+      ]
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the role of mitochondria in eukaryotic cells?",
+      "main_answer": "Mitochondria produce energy for the cell through cellular respiration, generate ATP, and play a role in apoptosis.",
+      "samples": [
+        "Mitochondria generate energy in the form of ATP through cellular respiration. They also regulate cellular metabolism and apoptosis.",
+        "Mitochondria produce energy in the form of ATP through cellular respiration. They also regulate cell death and play a role in signaling pathways.",
+        "Mitochondria produce energy for the cell through cellular respiration, generate ATP, and are involved in various other cellular processes such as apoptosis and calcium homeostasis.",
+        "Mitochondria generate energy in the form of ATP through cellular respiration. They also regulate cellular metabolism and participate in apoptosis.",
+        "Mitochondria generate energy for the cell through cellular respiration, producing ATP. They also regulate cellular processes such as apoptosis and calcium homeostasis."
+      ]
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+      "samples": [
+        "The capital of Australia is Canberra, and it is located in the territory of New South Wales.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of New South Wales.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory."
+      ]
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "Who developed the theory of general relativity?",
+      "main_answer": "Albert Einstein developed the theory of general relativity.",
+      "samples": [
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity."
+      ]
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "What process allows plants to convert light energy into chemical energy?",
+      "main_answer": "Photosynthesis.",
+      "samples": [
+        "Photosynthesis.",
+        "Photosynthesis.",
+        "Photosynthesis.",
+        "Photosynthesis.",
+        "Photosynthesis."
+      ]
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the largest planet in the Solar System?",
+      "main_answer": "The largest planet in the Solar System is Jupiter.",
+      "samples": [
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter."
+      ]
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Who wrote the novel 1984?",
+      "main_answer": "George Orwell wrote the novel 1984.",
+      "samples": [
+        "George Orwell wrote the novel 1984.",
+        "George Orwell wrote the novel 1984.",
+        "George Orwell wrote the novel 1984.",
+        "George Orwell wrote the novel 1984.",
+        "George Orwell wrote the novel 1984."
+      ]
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the chemical symbol for gold and what is its atomic number?",
+      "main_answer": "The chemical symbol for gold is Au, and its atomic number is 79.",
+      "samples": [
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and its atomic number is 79."
+      ]
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "What is the function of hemoglobin in the human body?",
+      "main_answer": "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It binds to oxygen in the lungs and releases it in tissues throughout the body.",
+      "samples": [
+        "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body and returns carbon dioxide from the body to the lungs.",
+        "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It binds to oxygen in the lungs and releases it in tissues throughout the body.",
+        "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It binds to oxygen in the lungs and releases it in tissues throughout the body.",
+        "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body. It binds to oxygen in the lungs and releases it in tissues throughout the body.",
+        "Hemoglobin is a protein in red blood cells that carries oxygen from the lungs to the rest of the body and returns carbon dioxide from the body to the lungs."
+      ]
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Which ocean is the largest on Earth?",
+      "main_answer": "The largest ocean on Earth is the Pacific Ocean.",
+      "samples": [
+        "The largest ocean on Earth is the Pacific Ocean.",
+        "The largest ocean on Earth is the Pacific Ocean.",
+        "The largest ocean on Earth is the Pacific Ocean.",
+        "The largest ocean on Earth is the Pacific Ocean.",
+        "The largest ocean on Earth is the Pacific Ocean."
+      ]
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "Who painted The Starry Night?",
+      "main_answer": "The Starry Night was painted by Vincent van Gogh.",
+      "samples": [
+        "The Starry Night was painted by Vincent van Gogh.",
+        "The Starry Night was painted by Vincent van Gogh.",
+        "The Starry Night was painted by Vincent van Gogh.",
+        "The Starry Night was painted by Vincent van Gogh.",
+        "The Starry Night was painted by Vincent van Gogh."
+      ]
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "What is the boiling point of water at standard atmospheric pressure in Celsius?",
+      "main_answer": "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100°C.",
+      "samples": [
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100°C.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100°C.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100°C.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100°C.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100°C."
+      ]
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "What is DNA primarily responsible for in living organisms?",
+      "main_answer": "DNA is primarily responsible for storing and transmitting genetic information, and it plays a crucial role in determining an organism's traits and functions.",
+      "samples": [
+        "DNA is primarily responsible for storing and transmitting genetic information, and it plays a crucial role in determining an organism's traits and functions.",
+        "DNA is primarily responsible for storing and transmitting genetic information, and it plays a crucial role in determining an organism's traits and functions.",
+        "DNA is primarily responsible for storing and transmitting genetic information, and it plays a crucial role in determining an organism's traits and functions.",
+        "DNA is primarily responsible for storing and transmitting genetic information, enabling the inheritance of traits and the regulation of cellular functions.",
+        "DNA is primarily responsible for storing and transmitting genetic information in living organisms. It contains the instructions for building and maintaining an organism's structure and function."
+      ]
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "Which planet is known for its prominent ring system?",
+      "main_answer": "Jupiter is known for its prominent ring system.",
+      "samples": [
+        "Jupiter is known for its prominent ring system.",
+        "Saturn is known for its prominent ring system.",
+        "Jupiter is known for its prominent ring system.",
+        "Saturn is known for its prominent ring system.",
+        "Jupiter is known for its prominent ring system."
+      ]
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Who formulated the laws of motion and universal gravitation?",
+      "main_answer": "Isaac Newton formulated the laws of motion and universal gravitation.",
+      "samples": [
+        "Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Isaac Newton formulated the laws of motion and universal gravitation."
+      ]
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the primary function of the kidneys in the human body?",
+      "main_answer": "The primary function of the kidneys is to filter waste products and excess fluids from the blood, regulate electrolyte balance, and maintain proper fluid volume.",
+      "samples": [
+        "The primary function of the kidneys is to filter waste products and excess fluids from the blood, regulate electrolyte balance, and maintain proper fluid balance in the body.",
+        "The primary function of the kidneys is to filter waste products and excess fluids from the blood, regulate blood pressure, and maintain the balance of electrolytes and pH in the body.",
+        "The primary function of the kidneys is to filter waste products and excess fluids from the blood, regulate electrolyte balance, and maintain proper fluid volume.",
+        "The primary function of the kidneys is to filter blood, remove waste products, and regulate fluid balance and electrolyte levels in the body.",
+        "The primary function of the kidneys is to filter waste products and excess fluids from the blood, regulate electrolyte balance, and maintain fluid volume."
+      ]
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "What is the smallest prime number?",
+      "main_answer": "The smallest prime number is 2.",
+      "samples": [
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2."
+      ]
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "Which gas makes up the largest fraction of Earth's atmosphere?",
+      "main_answer": "Nitrogen makes up the largest fraction of Earth's atmosphere.",
+      "samples": [
+        "Nitrogen makes up the largest fraction of Earth's atmosphere.",
+        "Nitrogen makes up the largest fraction of Earth's atmosphere.",
+        "Nitrogen makes up the largest fraction of Earth's atmosphere.",
+        "Nitrogen makes up the largest fraction of Earth's atmosphere.",
+        "Nitrogen makes up the largest fraction of Earth's atmosphere."
+      ]
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "What is the basic function of an operating system in a computer?",
+      "main_answer": "The basic function of an operating system is to manage hardware and software resources, providing a platform for running applications.",
+      "samples": [
+        "The basic function of an operating system is to manage hardware and software resources, providing a common interface for applications to interact with the computer's hardware.",
+        "The basic function of an operating system is to manage hardware and software resources, providing a platform for running applications.",
+        "The basic function of an operating system is to manage hardware and software resources, providing a platform for running applications.",
+        "The basic function of an operating system is to manage hardware and software resources, providing a common interface for applications to interact with the computer's hardware.",
+        "The basic function of an operating system is to manage hardware and software resources, providing a common interface for applications to interact with the computer's hardware."
+      ]
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What does HTTP stand for and what is it used for?",
+      "main_answer": "HTTP stands for Hypertext Transfer Protocol. It is used for transferring hyperertext over the internet.",
+      "samples": [
+        "HTTP stands for Hypertext Transfer Protocol. It is used for transmitting hyperertext over the internet.",
+        "HTTP stands for Hypertext Transfer Protocol. It is used for transmitting hyperertext over the internet, enabling web browsers to request and receive web pages from servers.",
+        "HTTP stands for Hypertext Transfer Protocol. It is used for transmitting hyperertext over the internet, enabling web browsers to request and receive web pages from servers.",
+        "HTTP stands for Hypertext Transfer Protocol. It is used for transferring hyperertext over the internet.",
+        "HTTP stands for HyperText Transfer Protocol. It is used for transferring hyper-text documents, such as HTML pages, over the internet."
+      ]
+    }
+  ]
+}
