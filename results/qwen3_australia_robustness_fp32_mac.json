@@ -1,0 +1,96 @@
+{
+  "model": "qwen3",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "precision": "fp32",
+  "device": "mps",
+  "prompts": 5,
+  "samples_per_prompt": 10,
+  "generation_time_s": 100.00820787499833,
+  "records": [
+    {
+      "prompt_idx": 0,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+      "samples": [
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory (ACT)."
+      ]
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+      "samples": [
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT)."
+      ]
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+      "samples": [
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT)."
+      ]
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+      "samples": [
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory."
+      ]
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+      "samples": [
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian territory of the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, and it is located in the territory of the Australian Capital Territory."
+      ]
+    }
+  ]
+}

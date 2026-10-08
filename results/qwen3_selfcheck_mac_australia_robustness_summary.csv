@@ -1,0 +1,2 @@
+model,prompts,samples_per_prompt,fp32_mean_selfcheck_nli,fp16_mean_selfcheck_nli,delta_fp16_minus_fp32,mean_abs_prompt_score_drift,fp32_generation_time_s,fp16_generation_time_s
+qwen3,5,10,0.001365744432550855,0.1204731858643936,0.11910744143184274,0.11910744143184275,100.00820787499833,56.50196758299717

@@ -1,0 +1,3 @@
+precision,total_samples,correct_act,incorrect_nsw,other,factual_error_rate_pct
+fp32,50,50,0,0,0.0
+fp16,50,44,6,0,12.0
