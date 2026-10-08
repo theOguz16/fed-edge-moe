@@ -16,12 +16,16 @@ CONFIG_ORDERS = [
         "all_mps",
         "stage1_seq",
         "stage1_pipe",
+        "stage2_seq",
         "stage2_pipe",
+        "stage3_seq",
         "stage3_pipe",
     ],
     [
         "stage3_pipe",
+        "stage3_seq",
         "stage2_pipe",
+        "stage2_seq",
         "stage1_pipe",
         "stage1_seq",
         "all_mps",
@@ -29,9 +33,11 @@ CONFIG_ORDERS = [
     ],
     [
         "stage1_pipe",
+        "stage2_seq",
         "all_cpu",
         "stage3_pipe",
         "all_mps",
+        "stage3_seq",
         "stage1_seq",
         "stage2_pipe",
     ],
@@ -688,7 +694,9 @@ configs = [
     "all_mps",
     "stage1_seq",
     "stage1_pipe",
+    "stage2_seq",
     "stage2_pipe",
+    "stage3_seq",
     "stage3_pipe",
 ]
 

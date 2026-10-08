@@ -47,7 +47,9 @@ def parse_args():
             "all_mps",
             "stage1_seq",
             "stage1_pipe",
+            "stage2_seq",
             "stage2_pipe",
+            "stage3_seq",
             "stage3_pipe",
         ],
     )
