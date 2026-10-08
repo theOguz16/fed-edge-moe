@@ -1,0 +1,251 @@
+{
+  "model": "qwen25",
+  "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "precision": "fp16",
+  "device": "mps",
+  "prompts": 20,
+  "samples_per_prompt": 5,
+  "generation_time_s": 123.04275370800315,
+  "records": [
+    {
+      "prompt_idx": 0,
+      "prompt": "Who wrote Pride and Prejudice, and when was it first published?",
+      "main_answer": "Jane Austen wrote \"Pride and Prejudice\" in 1813.",
+      "samples": [
+        "Jane Austen wrote \"Pride and Prejudice\" between 1810 and 1813, first published in 1813.",
+        "Jane Austen wrote Pride and Prejudice between 1811 and 1813. It was first published on June 28, 1813.",
+        "Jane Austen wrote \"Pride and Prejudice\" between 1810 and 1813, initially serialized in a periodical before its publication as a book in December 1813.",
+        "Jane Austen wrote Pride and Prejudice between 1811 and 1813. It was first published on June 28, 1813.",
+        "Jane Austen wrote Pride and Prejudice between 1811 and 1812. It was first published on June 18, 1813."
+      ]
+    },
+    {
+      "prompt_idx": 1,
+      "prompt": "What is the role of mitochondria in eukaryotic cells?",
+      "main_answer": "Mitochondria are organelles that generate energy for cells through cellular respiration, converting nutrients into adenosine triphosphate (ATP). They play a crucial role in providing ATP, which powers various cellular processes including muscle contraction, nerve function, and cell division.",
+      "samples": [
+        "Mitochondria are organelles that serve as powerhouses, producing energy for cells through cellular respiration by converting nutrients into adenosine triphosphate (ATP). They contain their own DNA and ribosomes, allowing them to function independently within eukaryotic cells.",
+        "Mitochondria are organelles that generate energy for eukaryotic cells through cellular respiration, converting nutrients into ATP for use by the cell. They contain their own DNA separate from the nuclear DNA and have their own ribosomes.",
+        "Mitochondria are organelles that serve as powerhouses for cellular respiration, converting nutrients into adenosine triphosphate (ATP) which fuels various cellular processes. They also play a key role in cell signaling and stress response through their endoplasmic reticulum connections.",
+        "Mitochondria serve as powerhouses for cellular respiration, converting nutrients into adenosine triphosphate (ATP) to fuel various cellular processes. They also play a key role in apoptosis, programmed cell death.",
+        "Mitochondria are essential for cellular respiration, producing ATP through oxidative phosphorylation to provide energy for cell activities."
+      ]
+    },
+    {
+      "prompt_idx": 2,
+      "prompt": "What is the capital of Australia and in which territory is it located?",
+      "main_answer": "The capital of Australia is Canberra, which is located in the Australian Capital Territory (ACT).",
+      "samples": [
+        "The capital of Australia is Canberra, located in the Australian Capital Territory (ACT).",
+        "The capital of Australia is Canberra, located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, which is located in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, which is situated in the Australian Capital Territory.",
+        "The capital of Australia is Canberra, which is situated in the Australian Capital Territory (ACT)."
+      ]
+    },
+    {
+      "prompt_idx": 3,
+      "prompt": "Who developed the theory of general relativity?",
+      "main_answer": "Albert Einstein developed the theory of general relativity.",
+      "samples": [
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity in 1915.",
+        "Albert Einstein developed the theory of general relativity.",
+        "Albert Einstein developed the theory of general relativity."
+      ]
+    },
+    {
+      "prompt_idx": 4,
+      "prompt": "What process allows plants to convert light energy into chemical energy?",
+      "main_answer": "Plants use photosynthesis, a process involving chlorophyll in their leaves, to convert light energy from the sun into chemical energy stored in glucose molecules.",
+      "samples": [
+        "Plants use photosynthesis, a complex biochemical process involving chlorophyll, sunlight, water, carbon dioxide, and oxygen to synthesize glucose from carbon dioxide and store energy in its bonds.",
+        "Plants use photosynthesis, a process involving chlorophyll in their leaves, to convert light energy from sunlight into chemical energy stored in glucose molecules.",
+        "Plants use photosynthesis, a process involving chlorophyll that converts sunlight into chemical energy stored in glucose molecules.",
+        "Photosynthesis converts sunlight into chemical energy stored in glucose molecules within plant cells.",
+        "Photosynthesis converts sunlight into chemical energy stored in glucose molecules."
+      ]
+    },
+    {
+      "prompt_idx": 5,
+      "prompt": "What is the largest planet in the Solar System?",
+      "main_answer": "The largest planet in the Solar System is Jupiter.",
+      "samples": [
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter.",
+        "The largest planet in the Solar System is Jupiter."
+      ]
+    },
+    {
+      "prompt_idx": 6,
+      "prompt": "Who wrote the novel 1984?",
+      "main_answer": "George Orwell wrote the novel \"1984\".",
+      "samples": [
+        "George Orwell wrote the novel \"1984\".",
+        "George Orwell wrote the novel \"1984\".",
+        "George Orwell wrote the novel \"1984\".",
+        "George Orwell wrote the novel \"1984.\"",
+        "George Orwell wrote the novel \"1984\"."
+      ]
+    },
+    {
+      "prompt_idx": 7,
+      "prompt": "What is the chemical symbol for gold and what is its atomic number?",
+      "main_answer": "The chemical symbol for gold is Au, and its atomic number is 79.",
+      "samples": [
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and its atomic number is 79.",
+        "The chemical symbol for gold is Au, and it has an atomic number of 79.",
+        "The chemical symbol for gold is Au, and it has an atomic number of 79."
+      ]
+    },
+    {
+      "prompt_idx": 8,
+      "prompt": "What is the function of hemoglobin in the human body?",
+      "main_answer": "Hemoglobin binds oxygen in the lungs, transporting it throughout the body to tissues where it's used for cellular respiration.",
+      "samples": [
+        "Hemoglobin binds oxygen in the lungs, transporting it throughout the body to cells where it's used for cellular respiration.",
+        "Hemoglobin binds oxygen in the lungs, transporting it throughout the body to cells for respiration.",
+        "Hemoglobin binds oxygen in the lungs, transporting it to various tissues throughout the body via red blood cells.",
+        "Hemoglobin binds oxygen in the lungs, transporting it throughout the body to cells for respiration.",
+        "Hemoglobin binds oxygen in the lungs, delivering it to tissues throughout the body via red blood cells."
+      ]
+    },
+    {
+      "prompt_idx": 9,
+      "prompt": "Which ocean is the largest on Earth?",
+      "main_answer": "The Pacific Ocean is the largest ocean on Earth by area, covering approximately 63.8 million square kilometers.",
+      "samples": [
+        "The Pacific Ocean is the largest ocean on Earth by area, covering approximately 63.8 million square kilometers.",
+        "The Pacific Ocean is the largest ocean on Earth by area, covering approximately one-third of the planet's surface area.",
+        "The Pacific Ocean is the largest ocean on Earth by area, covering approximately 63.8 million square kilometers.",
+        "The Pacific Ocean is the largest ocean on Earth by surface area, covering approximately 63.8 million square kilometers.",
+        "The Pacific Ocean is the largest ocean on Earth by surface area, covering approximately one-third of the planet's water surface."
+      ]
+    },
+    {
+      "prompt_idx": 10,
+      "prompt": "Who painted The Starry Night?",
+      "main_answer": "The Starry Night was painted by Vincent van Gogh.",
+      "samples": [
+        "Vincent van Gogh painted \"The Starry Night\".",
+        "The Starry Night was painted by Vincent van Gogh.",
+        "The painting \"The Starry Night\" was created by Vincent van Gogh.",
+        "The painting \"The Starry Night\" was created by Vincent van Gogh.",
+        "The Starry Night was painted by Vincent van Gogh."
+      ]
+    },
+    {
+      "prompt_idx": 11,
+      "prompt": "What is the boiling point of water at standard atmospheric pressure in Celsius?",
+      "main_answer": "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100 degrees Celsius.",
+      "samples": [
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100 degrees Celsius.",
+        "Water boils at 100 degrees Celsius (212 Fahrenheit) under standard atmospheric pressure.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100 degrees Celsius.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100 degrees Celsius.",
+        "The boiling point of water at standard atmospheric pressure (1 atmosphere) is 100 degrees Celsius."
+      ]
+    },
+    {
+      "prompt_idx": 12,
+      "prompt": "What is DNA primarily responsible for in living organisms?",
+      "main_answer": "DNA (deoxyribonucleic acid) stores genetic information, carries instructions for proteins, and determines an organism's traits.",
+      "samples": [
+        "DNA (deoxyribonucleic acid) carries genetic information that determines an organism's traits, functions, and development. It stores this information as a sequence of nucleotide bases.",
+        "DNA (deoxyribonucleic acid) stores genetic information, carries instructions for the development, functioning, growth, reproduction, and inheritance of all known living organisms, and influences how organisms develop and behave.",
+        "DNA stores genetic information that determines traits and functions within an organism.",
+        "DNA stores genetic information, carries instructions for proteins, and determines hereditary traits.",
+        "DNA (deoxyribonucleic acid) carries genetic information that determines an organism's traits, inherited from its parents. It stores this genetic code which guides the development and functioning of life processes within cells."
+      ]
+    },
+    {
+      "prompt_idx": 13,
+      "prompt": "Which planet is known for its prominent ring system?",
+      "main_answer": "Jupiter is renowned for having a prominent ring system.",
+      "samples": [
+        "Jupiter is known for having a prominent ring system.",
+        "Jupiter is known for its prominent ring system.",
+        "Jupiter, the largest planet in our solar system, is renowned for having a spectacular ring system composed of numerous icy particles orbiting around it.",
+        "Jupiter is renowned for having a massive, complex ring system composed of numerous bands and spokes.",
+        "Jupiter is renowned for having a prominent ring system."
+      ]
+    },
+    {
+      "prompt_idx": 14,
+      "prompt": "Who formulated the laws of motion and universal gravitation?",
+      "main_answer": "Sir Isaac Newton formulated the laws of motion and universal gravitation.",
+      "samples": [
+        "Sir Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Sir Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Sir Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Sir Isaac Newton formulated the laws of motion and universal gravitation.",
+        "Sir Isaac Newton formulated the laws of motion and universal gravitation."
+      ]
+    },
+    {
+      "prompt_idx": 15,
+      "prompt": "What is the primary function of the kidneys in the human body?",
+      "main_answer": "The kidneys filter blood, removing waste products and excess water to maintain fluid balance and regulate electrolyte levels. They also produce urine for excretion of waste and control blood pressure through hormonal regulation.",
+      "samples": [
+        "The primary function of the kidneys is to filter blood, removing waste products and excess water from the bloodstream to maintain proper fluid balance and regulate electrolyte levels. They also produce urine which helps eliminate waste and excess substances from the body.",
+        "The primary function of the kidneys is to filter waste products, excess fluids, and metabolic wastes from the blood into urine for excretion. They regulate electrolyte balance and maintain acid-base equilibrium within the body. Additionally, they help control blood pressure by filtering out some of the sodium and water from the bloodstream.",
+        "The kidneys primarily filter waste products, excess water, and other substances from the blood to maintain fluid balance and remove toxins. They also regulate electrolyte levels and血压。",
+        "The primary function of the kidneys is to filter blood, remove waste products, regulate electrolyte balance, and maintain acid-base equilibrium.",
+        "The primary function of the kidneys is to filter blood, removing waste products, excess water, and regulating electrolyte balance. They also produce urine for excretion from the body."
+      ]
+    },
+    {
+      "prompt_idx": 16,
+      "prompt": "What is the smallest prime number?",
+      "main_answer": "The smallest prime number is 2.",
+      "samples": [
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2.",
+        "The smallest prime number is 2."
+      ]
+    },
+    {
+      "prompt_idx": 17,
+      "prompt": "Which gas makes up the largest fraction of Earth's atmosphere?",
+      "main_answer": "Nitrogen makes up the largest fraction of Earth's atmosphere, accounting for about 78%.",
+      "samples": [
+        "Nitrogen comprises the largest fraction, accounting for about 78% by volume of Earth's atmosphere.",
+        "Nitrogen comprises the largest fraction of Earth's atmosphere at about 78%.",
+        "Nitrogen makes up the largest fraction of Earth's atmosphere, accounting for about 78%.",
+        "Nitrogen constitutes the largest fraction of Earth's atmosphere, accounting for about 78%.",
+        "Nitrogen makes up the largest fraction of Earth's atmosphere, accounting for approximately 78%."
+      ]
+    },
+    {
+      "prompt_idx": 18,
+      "prompt": "What is the basic function of an operating system in a computer?",
+      "main_answer": "An operating system manages hardware resources, provides user interface, executes programs, allocates memory, and controls peripheral devices on a computer.",
+      "samples": [
+        "An operating system manages computer hardware resources, provides user interface for interacting with software applications, and controls data flow between software programs.",
+        "An operating system manages hardware resources, provides user interface, executes programs, controls peripheral devices, and ensures data integrity on a computer.",
+        "An operating system manages hardware resources, provides user interface, executes programs, allocates memory, and controls peripheral devices on a computer.",
+        "The primary function of an operating system (OS) is to manage hardware resources, provide user interfaces, facilitate communication between software applications, and ensure efficient operation of a computing device.",
+        "The primary function of an operating system (OS) in a computer is to manage hardware resources, provide common services for application programs, and serve as an interface between users and the underlying hardware. It also controls access to the computer's hardware components, manages files and directories on storage devices, and provides a platform for running various software applications."
+      ]
+    },
+    {
+      "prompt_idx": 19,
+      "prompt": "What does HTTP stand for and what is it used for?",
+      "main_answer": "HTTP stands for Hypertext Transfer Protocol, which is a set of rules for transferring data over the internet. It's primarily used to transfer web pages between a user's browser and a server.",
+      "samples": [
+        "HTTP stands for Hypertext Transfer Protocol, which is a set of rules for transmitting data between web servers and browsers over the internet. It's primarily used to transfer HTML documents, images, and other resources from websites to users' devices.",
+        "HTTP stands for Hypertext Transfer Protocol, which is a standard protocol for exchanging data over a network such as the Internet. It enables communication between web browsers and servers to transfer information including text, images, and other resources on websites.",
+        "HTTP stands for Hypertext Transfer Protocol, which is a set of rules for transmitting data between web servers and browsers over the internet. It's primarily used to transfer hypertext documents such as HTML pages from web servers to client computers through the World Wide Web.",
+        "HTTP stands for Hypertext Transfer Protocol, which is a set of rules for transmitting hypertext documents across the internet. It enables communication between web servers and browsers to exchange data efficiently.",
+        "HTTP stands for Hypertext Transfer Protocol, which is a set of rules for transmitting data over networks like the internet. It's primarily used to facilitate communication between web browsers and servers by enabling the exchange of information such as URLs, forms, cookies, and images."
+      ]
+    }
+  ]
+}
