@@ -219,7 +219,7 @@ fieldnames = (
 )
 
 with OUT.open("w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer = csv.DictWriter(f, lineterminator="\n", fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(out_rows)
 

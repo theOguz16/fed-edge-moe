@@ -7,6 +7,7 @@ SCRIPTS = [
     "benchmarks/build_scheduler_registry.py",
     "benchmarks/enrich_scheduler_memory.py",
     "benchmarks/summarize_scheduler_operating_ranges.py",
+    "benchmarks/build_service_candidate_matching.py",
 ]
 
 for script in SCRIPTS:

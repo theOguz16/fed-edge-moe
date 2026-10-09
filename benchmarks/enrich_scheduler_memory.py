@@ -257,7 +257,7 @@ if len(matched_keys) != 17:
 
 with OUT.open("w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(
-        f,
+        f, lineterminator="\n",
         fieldnames=original_columns + NEW_COLUMNS,
     )
     writer.writeheader()

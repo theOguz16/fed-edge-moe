@@ -1,0 +1,276 @@
+{
+  "schema_version": "0.1",
+  "status": "draft_not_ready_for_feasibility_decisions",
+  "throughput_contracts": {
+    "vision_pytorch": {
+      "throughput_unit": "img/s",
+      "throughput_semantics": "post_warmup_batch_aggregate"
+    },
+    "text_pytorch": {
+      "throughput_unit": "tok/s",
+      "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+    },
+    "text_llamacpp": {
+      "throughput_unit": "tok/s",
+      "throughput_semantics": "generation_phase_s_tg"
+    }
+  },
+  "constraints": {
+    "unknown_metric_policy": "not_proven_feasible",
+    "memory_budget_policy": "device_specific",
+    "quality_evidence_policy": "task_specific_required",
+    "energy_comparison_policy": "same_measurement_boundary_only"
+  },
+  "device_memory_budgets": {},
+  "services": {
+    "vision_easy": {
+      "task_type": "vision_classification",
+      "model": "resnet50",
+      "difficulty": "easy",
+      "profiles": {
+        "light": {
+          "input_shape": {
+            "resolution": 160,
+            "batch": 1
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "medium": {
+          "input_shape": {
+            "resolution": 224,
+            "batch": 4
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "heavy": {
+          "input_shape": {
+            "resolution": 320,
+            "batch": 16
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        }
+      }
+    },
+    "vision_medium": {
+      "task_type": "vision_classification",
+      "model": "convnext_base",
+      "difficulty": "medium",
+      "profiles": {
+        "light": {
+          "input_shape": {
+            "resolution": 160,
+            "batch": 1
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "medium": {
+          "input_shape": {
+            "resolution": 224,
+            "batch": 4
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "heavy": {
+          "input_shape": {
+            "resolution": 320,
+            "batch": 16
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        }
+      }
+    },
+    "vision_hard": {
+      "task_type": "vision_classification",
+      "model": "convnext_large",
+      "difficulty": "hard",
+      "profiles": {
+        "light": {
+          "input_shape": {
+            "resolution": 160,
+            "batch": 1
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "medium": {
+          "input_shape": {
+            "resolution": 224,
+            "batch": 4
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "heavy": {
+          "input_shape": {
+            "resolution": 320,
+            "batch": 16
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        }
+      }
+    },
+    "text_easy": {
+      "task_type": "text_generation",
+      "model": "distilgpt2",
+      "difficulty": "easy",
+      "profiles": {
+        "light": {
+          "input_shape": {
+            "context": 32,
+            "output": 32,
+            "batch": 1
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "medium": {
+          "input_shape": {
+            "context": 128,
+            "output": 64,
+            "batch": 4
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "heavy": {
+          "input_shape": {
+            "context": 512,
+            "output": 128,
+            "batch": 8
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        }
+      }
+    },
+    "text_medium": {
+      "task_type": "text_generation",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "difficulty": "medium",
+      "profiles": {
+        "light": {
+          "input_shape": {
+            "context": 128,
+            "output": 64,
+            "batch": 1
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "medium": {
+          "input_shape": {
+            "context": 512,
+            "output": 128,
+            "batch": 2
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "heavy": {
+          "input_shape": {
+            "context": 1024,
+            "output": 128,
+            "batch": 4
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        }
+      }
+    },
+    "text_hard": {
+      "task_type": "text_generation",
+      "model": "Qwen/Qwen3-1.7B",
+      "difficulty": "hard",
+      "profiles": {
+        "light": {
+          "input_shape": {
+            "context": 128,
+            "output": 64,
+            "batch": 1
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "medium": {
+          "input_shape": {
+            "context": 512,
+            "output": 128,
+            "batch": 2
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        },
+        "heavy": {
+          "input_shape": {
+            "context": 1024,
+            "output": 128,
+            "batch": 4
+          },
+          "min_throughput": null,
+          "max_latency_s": null,
+          "latency_semantics": null,
+          "min_quality": null,
+          "quality_metric": null
+        }
+      }
+    }
+  }
+}

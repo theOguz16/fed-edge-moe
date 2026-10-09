@@ -460,7 +460,7 @@ FIELDS = (
 )
 
 with OUT.open("w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(f, fieldnames=FIELDS)
+    writer = csv.DictWriter(f, lineterminator="\n", fieldnames=FIELDS)
     writer.writeheader()
     writer.writerows(out_rows)
 
