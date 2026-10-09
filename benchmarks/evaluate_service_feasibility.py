@@ -35,6 +35,11 @@ with INPUT.open(newline="", encoding="utf-8") as f:
     input_fields = reader.fieldnames or []
     candidates = list(reader)
 
+with (
+    ROOT / "scheduler_quality_evidence.csv"
+).open(newline="", encoding="utf-8") as f:
+    quality_evidence = list(csv.DictReader(f))
+
 GATES = ("throughput", "latency", "memory", "quality")
 
 def measured(value):
@@ -131,13 +136,117 @@ def memory_gate(row):
 
 def quality_gate(row, request):
     minimum = threshold(request.get("min_quality"))
+    maximum = threshold(request.get("max_quality"))
 
-    if minimum is None:
+    if minimum is None and maximum is None:
         return "NOT_CONFIGURED"
 
-    # Pending task-specific metric, protocol, and threshold
-    # evaluation. Evidence presence is not a quality PASS.
-    return "UNKNOWN"
+    if minimum is not None and maximum is not None:
+        raise ValueError("Only one quality bound is allowed")
+
+    metric = request.get("quality_metric")
+
+    directions = {
+        "top1_accuracy_pct": "higher",
+        "top5_accuracy_pct": "higher",
+        "perplexity": "lower",
+    }
+
+    if metric not in directions:
+        return "UNKNOWN"
+
+    direction = directions[metric]
+
+    if direction == "higher" and minimum is None:
+        raise ValueError(f"{metric} requires min_quality")
+
+    if direction == "lower" and maximum is None:
+        raise ValueError(f"{metric} requires max_quality")
+
+    # Benchmark evidence must be explicitly requested.
+    # It does not certify deployment quality.
+    if request.get("quality_scope") != "benchmark_reference":
+        return "UNKNOWN"
+
+    dataset = request.get("quality_dataset")
+
+    if not dataset:
+        return "UNKNOWN"
+
+    # Cross-device evidence and uncontrolled precision
+    # cannot prove a quality constraint.
+    if row["quality_evidence_status"] != "SUPPORTED":
+        return "UNKNOWN"
+
+    matches = [
+        evidence for evidence in quality_evidence
+        if (
+            evidence["service_id"] == row["service_id"]
+            and evidence["device"] == row["device"]
+            and evidence["backend"] == row["backend"]
+            and evidence["precision"] == row["precision"]
+            and evidence["quantization"] == row["quantization"]
+            and evidence["dataset"] == dataset
+            and evidence["metric"] == metric
+            and evidence["direction"] == direction
+        )
+    ]
+
+    if len(matches) != 1:
+        return "UNKNOWN"
+
+    evidence = matches[0]
+
+    if row["modality"] == "vision":
+        observed_resolution = measured(row.get("resolution"))
+        evaluated_resolution = measured(
+            evidence.get("evaluation_input_resolution")
+        )
+
+        if (
+            observed_resolution is None
+            or evaluated_resolution is None
+            or observed_resolution != evaluated_resolution
+        ):
+            return "UNKNOWN"
+
+        expected_preprocessing = request.get(
+            "quality_preprocessing"
+        )
+
+        if (
+            not expected_preprocessing
+            or expected_preprocessing
+            != evidence["preprocessing"]
+        ):
+            return "UNKNOWN"
+
+    elif row["modality"] == "text":
+        expected_seq = request.get("quality_eval_seq_len")
+        expected_tokens = request.get("quality_eval_tokens")
+
+        if (
+            expected_seq is None
+            or expected_tokens is None
+            or measured(evidence.get("evaluation_seq_len"))
+            != expected_seq
+            or measured(evidence.get("evaluation_tokens"))
+            != expected_tokens
+        ):
+            return "UNKNOWN"
+
+    else:
+        return "UNKNOWN"
+
+    observed = measured(evidence["value"])
+
+    if observed is None:
+        return "UNKNOWN"
+
+    if direction == "higher":
+        return "PASS" if observed >= minimum else "FAIL"
+
+    return "PASS" if observed <= maximum else "FAIL"
 
 def overall_status(results):
     statuses = set(results.values())
@@ -249,6 +358,7 @@ baseline_unconfigured = (
         request.get("min_throughput") is None
         and request.get("max_latency_s") is None
         and request.get("min_quality") is None
+        and request.get("max_quality") is None
         for service in services.values()
         for request in service["profiles"].values()
     )

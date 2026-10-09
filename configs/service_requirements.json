@@ -39,7 +39,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "medium": {
           "input_shape": {
@@ -52,7 +58,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "heavy": {
           "input_shape": {
@@ -65,7 +77,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         }
       }
     },
@@ -85,7 +103,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "medium": {
           "input_shape": {
@@ -98,7 +122,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "heavy": {
           "input_shape": {
@@ -111,7 +141,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         }
       }
     },
@@ -131,7 +167,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "medium": {
           "input_shape": {
@@ -144,7 +186,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "heavy": {
           "input_shape": {
@@ -157,7 +205,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "img/s",
-          "throughput_semantics": "post_warmup_batch_aggregate"
+          "throughput_semantics": "post_warmup_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         }
       }
     },
@@ -178,7 +232,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+          "throughput_semantics": "post_warmup_generate_call_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "medium": {
           "input_shape": {
@@ -192,7 +252,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+          "throughput_semantics": "post_warmup_generate_call_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "heavy": {
           "input_shape": {
@@ -206,7 +272,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+          "throughput_semantics": "post_warmup_generate_call_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         }
       }
     },
@@ -227,7 +299,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+          "throughput_semantics": "post_warmup_generate_call_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "medium": {
           "input_shape": {
@@ -241,7 +319,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+          "throughput_semantics": "post_warmup_generate_call_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "heavy": {
           "input_shape": {
@@ -255,7 +339,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "post_warmup_generate_call_batch_aggregate"
+          "throughput_semantics": "post_warmup_generate_call_batch_aggregate",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         }
       }
     },
@@ -276,7 +366,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "generation_phase_s_tg"
+          "throughput_semantics": "generation_phase_s_tg",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "medium": {
           "input_shape": {
@@ -290,7 +386,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "generation_phase_s_tg"
+          "throughput_semantics": "generation_phase_s_tg",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         },
         "heavy": {
           "input_shape": {
@@ -304,7 +406,13 @@
           "min_quality": null,
           "quality_metric": null,
           "throughput_unit": "tok/s",
-          "throughput_semantics": "generation_phase_s_tg"
+          "throughput_semantics": "generation_phase_s_tg",
+          "max_quality": null,
+          "quality_scope": null,
+          "quality_dataset": null,
+          "quality_preprocessing": null,
+          "quality_eval_seq_len": null,
+          "quality_eval_tokens": null
         }
       }
     }
