@@ -1,132 +1,262 @@
 import csv
+import json
 import math
+import re
 import statistics
 from collections import defaultdict
 from pathlib import Path
 
-SRC = Path("results/scheduler_candidate_registry.csv")
+SRC = Path(
+    "results/scheduler_candidate_registry_memory_enriched.csv"
+)
+CONFIG = Path("configs/workload_profiles.json")
 OUT = Path("results/scheduler_operating_ranges.csv")
 
-def num(v):
+with SRC.open(newline="", encoding="utf-8") as f:
+    registry = list(csv.DictReader(f))
+
+profiles = json.loads(CONFIG.read_text(encoding="utf-8"))
+
+def is_true(value):
+    return str(value).strip().lower() in {"true", "1", "yes"}
+
+def number(value):
     try:
-        if v in ("", None, "nan", "None"):
-            return None
-        return float(v)
-    except Exception:
+        x = float(value)
+        return x if math.isfinite(x) else None
+    except (ValueError, TypeError):
         return None
 
-with SRC.open(newline="", encoding="utf-8") as f:
-    rows = list(csv.DictReader(f))
+def integer(value):
+    x = number(value)
+    if x is None:
+        return None
+    if not x.is_integer():
+        raise ValueError(f"Non-integer shape: {value}")
+    return int(x)
 
-rows = [
-    r for r in rows
-    if r.get("scheduler_core") == "1"
+def model_id(value):
+    name = value.split("/")[-1].lower()
+    return re.sub(r"[^a-z0-9]", "", name)
+
+def shape_profile(row):
+    config_key = f"{row['modality']}_{row['difficulty']}"
+    config = profiles.get(config_key)
+
+    if config is None:
+        return "unmapped"
+
+    if model_id(row["model"]) != model_id(config["model"]):
+        return "unmapped"
+
+    batch = integer(row["batch"])
+
+    if row["modality"] == "vision":
+        actual = (integer(row["resolution"]), batch)
+
+        if None in actual:
+            return "unknown_shape"
+
+        for name, p in config["profiles"].items():
+            if actual == (int(p["resolution"]), int(p["batch"])):
+                return name
+
+    else:
+        actual = (
+            integer(row["context_tokens"]),
+            integer(row["output_tokens"]),
+            batch,
+        )
+
+        if None in actual:
+            return "unknown_shape"
+
+        for name, p in config["profiles"].items():
+            expected = (
+                int(p["context"]),
+                int(p["output"]),
+                int(p["batch"]),
+            )
+            if actual == expected:
+                return name
+
+    return "noncanonical"
+
+def normalized_shape(value):
+    n = integer(value)
+    return "" if n is None else str(n)
+
+def metric_stats(rows, column):
+    vals = [
+        x for row in rows
+        if (x := number(row.get(column))) is not None
+    ]
+
+    if not vals:
+        return len(vals), "", "", ""
+
+    return (
+        len(vals),
+        min(vals),
+        statistics.median(vals),
+        max(vals),
+    )
+
+MEMORY_FIELDS = [
+    "memory_allocated_mb",
+    "memory_peak_mb",
+    "device_memory_used_mb",
+    "process_peak_rss_mib_max",
+    "macos_peak_footprint_mib_max",
+    "windows_peak_working_set_mib_max",
+    "windows_sampled_private_commit_mib_max",
+]
+
+GROUP_FIELDS = [
+    "modality",
+    "difficulty",
+    "model",
+    "shape_profile",
+    "resolution",
+    "context_tokens",
+    "output_tokens",
+    "batch",
+    "device",
+    "backend",
+    "precision",
+    "quantization",
+    "throughput_unit",
+    "energy_boundary",
+]
+
+core = [
+    row for row in registry
+    if is_true(row["scheduler_core"])
 ]
 
 groups = defaultdict(list)
 
-for r in rows:
-    key = (
-        r["modality"],
-        r["difficulty"],
-        r["model"],
-    )
-    groups[key].append(r)
+for row in core:
+    group_data = dict(row)
+    group_data["shape_profile"] = shape_profile(row)
+
+    for field in (
+        "resolution",
+        "context_tokens",
+        "output_tokens",
+        "batch",
+    ):
+        group_data[field] = normalized_shape(row[field])
+
+    key = tuple(group_data[field] for field in GROUP_FIELDS)
+    groups[key].append(group_data)
 
 out_rows = []
 
-for (modality, difficulty, model), group in sorted(groups.items()):
-    throughput = [
-        num(r["throughput"])
-        for r in group
-        if num(r["throughput"]) is not None
+for key, members in sorted(groups.items()):
+    result = dict(zip(GROUP_FIELDS, key))
+
+    result["candidate_count"] = len(members)
+    result["threads"] = ";".join(
+        sorted({
+            normalized_shape(row["threads"])
+            for row in members
+            if row["threads"]
+        }, key=int)
+    )
+
+    metrics = [
+        ("throughput", "throughput"),
+        ("latency", "latency_sec"),
+        ("energy", "energy_per_item_j"),
     ]
 
-    latency = [
-        num(r["latency_sec"])
-        for r in group
-        if num(r["latency_sec"]) is not None
+    for label, source in metrics:
+        count, low, med, high = metric_stats(members, source)
+
+        result[f"{label}_count"] = count
+        result[f"{label}_min"] = low
+        result[f"{label}_median"] = med
+        result[f"{label}_max"] = high
+
+    result["memory_any_count"] = sum(
+        is_true(row["has_any_memory_observation"])
+        for row in members
+    )
+
+    for field in MEMORY_FIELDS:
+        result[f"{field}_count"] = sum(
+            number(row.get(field)) is not None
+            for row in members
+        )
+
+    out_rows.append(result)
+
+assert sum(
+    row["candidate_count"] for row in out_rows
+) == len(core), "Candidate count mismatch"
+
+fieldnames = (
+    GROUP_FIELDS
+    + [
+        "threads",
+        "candidate_count",
+        "throughput_count",
+        "throughput_min",
+        "throughput_median",
+        "throughput_max",
+        "latency_count",
+        "latency_min",
+        "latency_median",
+        "latency_max",
+        "energy_count",
+        "energy_min",
+        "energy_median",
+        "energy_max",
+        "memory_any_count",
     ]
-
-    energy = [
-        num(r["energy_per_item_j"])
-        for r in group
-        if num(r["energy_per_item_j"]) is not None
-    ]
-
-    memory = []
-
-    for r in group:
-        vals = [
-            num(r.get("memory_peak_mb")),
-            num(r.get("device_memory_used_mb")),
-            num(r.get("memory_allocated_mb")),
-        ]
-        vals = [v for v in vals if v is not None]
-
-        if vals:
-            memory.append(max(vals))
-
-    row = {
-        "modality": modality,
-        "difficulty": difficulty,
-        "model": model,
-        "candidate_count": len(group),
-
-        "throughput_min": min(throughput) if throughput else "",
-        "throughput_median": statistics.median(throughput) if throughput else "",
-        "throughput_max": max(throughput) if throughput else "",
-
-        "latency_min_s": min(latency) if latency else "",
-        "latency_median_s": statistics.median(latency) if latency else "",
-        "latency_max_s": max(latency) if latency else "",
-
-        "energy_min_j_item": min(energy) if energy else "",
-        "energy_median_j_item": statistics.median(energy) if energy else "",
-        "energy_max_j_item": max(energy) if energy else "",
-
-        "memory_min_mb": min(memory) if memory else "",
-        "memory_median_mb": statistics.median(memory) if memory else "",
-        "memory_max_mb": max(memory) if memory else "",
-        "memory_candidate_count": len(memory),
-    }
-
-    out_rows.append(row)
+    + [f"{field}_count" for field in MEMORY_FIELDS]
+)
 
 with OUT.open("w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(
-        f,
-        fieldnames=out_rows[0].keys(),
-    )
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(out_rows)
 
+coverage = defaultdict(lambda: [0, 0, 0])
+
+for row in core:
+    key = (row["model"], shape_profile(row))
+    item = coverage[key]
+
+    item[0] += 1
+    item[1] += bool(row["latency_sec"])
+    item[2] += is_true(row["has_any_memory_observation"])
+
+print("=== OPERATING RANGES: SHAPE-AWARE ===")
+print("Core candidates       :", len(core))
+print("Execution groups      :", len(out_rows))
 print(
-    f"{'WORKLOAD':43s} "
-    f"{'N':>3s} "
-    f"{'THROUGHPUT[min/med/max]':>29s} "
-    f"{'ENERGY[min/med/max]':>27s} "
-    f"{'MEM N':>5s}"
+    "Core with memory      :",
+    sum(is_true(r["has_any_memory_observation"]) for r in core),
 )
-print("-" * 115)
+print(
+    "Unknown-shape core    :",
+    sum(shape_profile(r) == "unknown_shape" for r in core),
+)
 
-for r in out_rows:
-    name = (
-        f"{r['modality']}/"
-        f"{r['difficulty']}/"
-        f"{r['model']}"
-    )
+print("\nPROFILE COVERAGE (counts only)")
+print(
+    f"{'MODEL':28s} {'PROFILE':13s} "
+    f"{'N':>4s} {'LAT':>5s} {'MEM':>5s}"
+)
 
+for (model, profile), (n, latency, memory) in sorted(
+    coverage.items()
+):
     print(
-        f"{name:43s} "
-        f"{r['candidate_count']:3d} "
-        f"{r['throughput_min']:.3f}/"
-        f"{r['throughput_median']:.3f}/"
-        f"{r['throughput_max']:.3f} "
-        f"{r['energy_min_j_item']:.4f}/"
-        f"{r['energy_median_j_item']:.4f}/"
-        f"{r['energy_max_j_item']:.4f} "
-        f"{r['memory_candidate_count']:5d}"
+        f"{model:28s} {profile:13s} "
+        f"{n:4d} {latency:5d} {memory:5d}"
     )
 
 print(f"\nSaved: {OUT}")

@@ -113,6 +113,118 @@ for r in rows:
         r["batch"] = batch
 
 
+
+# ------------------------------------------------------------------
+# CONVNEXT_MPS_SHAPE_REPAIR
+#
+# Canonical sustained-power rows lost resolution and batch during
+# normalization. Recover them from the original 18-row power results.
+# Use existing sweep rows' numeric serialization to ensure that
+# corresponding power and latency records share the same identity.
+# ------------------------------------------------------------------
+
+raw_path = Path(
+    "results/convnext_large_vision_hard_mac_mps_power.csv"
+)
+
+raw_shapes = defaultdict(set)
+raw_counts = defaultdict(int)
+
+with raw_path.open(newline="", encoding="utf-8") as f:
+    for source in csv.DictReader(f):
+        identity = (source["precision"], source["profile"])
+        raw_shapes[identity].add((
+            int(source["resolution"]),
+            int(source["batch"]),
+        ))
+        raw_counts[identity] += 1
+
+if (
+    len(raw_shapes) != 6
+    or any(len(shapes) != 1 for shapes in raw_shapes.values())
+    or any(count != 3 for count in raw_counts.values())
+):
+    raise RuntimeError("Unexpected ConvNeXt MPS raw profile shapes")
+
+sweep_shapes = defaultdict(set)
+
+for r in rows:
+    if (
+        r.get("source_file")
+        != "convnext_large_vision_hard_mac_mps_sweep.csv"
+        or r.get("model") != "ConvNeXt-Large"
+        or r.get("device") != "Apple M4"
+        or r.get("backend") != "mps"
+    ):
+        continue
+
+    if not valid(r.get("resolution")) or not valid(r.get("batch")):
+        continue
+
+    shape_identity = (
+        r["precision"],
+        int(float(r["resolution"])),
+        int(float(r["batch"])),
+    )
+
+    sweep_shapes[shape_identity].add((
+        r["resolution"],
+        r["batch"],
+    ))
+
+recovered = 0
+
+for r in rows:
+    if r.get("source_file") != (
+        "convnext_large_vision_hard_mac_mps_power_canonical.csv"
+    ):
+        continue
+
+    if (
+        r.get("model") != "ConvNeXt-Large"
+        or r.get("device") != "Apple M4"
+        or r.get("backend") != "mps"
+    ):
+        raise RuntimeError("Unexpected canonical source identity")
+
+    profile_key = (r["precision"], r["profile"])
+
+    if profile_key not in raw_shapes:
+        raise RuntimeError(f"Missing raw profile: {profile_key}")
+
+    resolution, batch = next(iter(raw_shapes[profile_key]))
+
+    lookup = (r["precision"], resolution, batch)
+    serialized = sweep_shapes.get(lookup, set())
+
+    if len(serialized) != 1:
+        raise RuntimeError(
+            f"Cannot uniquely match canonical profile: {lookup}"
+        )
+
+    sweep_resolution, sweep_batch = next(iter(serialized))
+
+    for field, expected in (
+        ("resolution", resolution),
+        ("batch", batch),
+    ):
+        existing = r.get(field, "")
+        if valid(existing) and float(existing) != expected:
+            raise RuntimeError(
+                f"Conflicting {field} for {profile_key}"
+            )
+
+    r["resolution"] = sweep_resolution
+    r["batch"] = sweep_batch
+    recovered += 1
+
+if recovered != 6:
+    raise RuntimeError(
+        f"Expected 6 recovered profiles; found {recovered}"
+    )
+
+print(f"ConvNeXt MPS canonical shape recovery: {recovered}/6")
+
 # ------------------------------------------------------------------
 # 2. Physical configuration identity.
 #
