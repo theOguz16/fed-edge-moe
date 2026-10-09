@@ -10,6 +10,7 @@ SCRIPTS = [
     "benchmarks/build_service_candidate_matching.py",
     "benchmarks/build_scheduler_quality_evidence.py",
     "benchmarks/match_scheduler_quality_evidence.py",
+    "benchmarks/evaluate_service_feasibility.py",
 ]
 
 for script in SCRIPTS:

@@ -44,6 +44,15 @@ def shape_matches(row, shape, task):
         and number(row["batch"]) == shape["batch"]
     )
 
+LATENCY_CONTRACTS = {
+    "vision_easy": "batch_inference_completion",
+    "vision_medium": "batch_inference_completion",
+    "vision_hard": "batch_inference_completion",
+    "text_easy": "batch_generate_call_completion",
+    "text_medium": "batch_generate_call_completion",
+    "text_hard": "llamacpp_batched_benchmark_total",
+}
+
 contracts = {
     "vision_classification": "post_warmup_batch_aggregate",
     "text_pytorch": "post_warmup_generate_call_batch_aggregate",
@@ -83,6 +92,11 @@ for service_id, service in services.items():
                 "service_id": service_id,
                 "request_profile": profile,
                 "throughput_semantics": contract,
+                "latency_semantics": (
+                    LATENCY_CONTRACTS[service_id]
+                    if (row.get("latency_sec") or "").strip()
+                    else ""
+                ),
                 **row,
             }
 
@@ -102,10 +116,38 @@ for service_id, service in services.items():
                 f"No candidates: {service_id}/{profile}"
             )
 
+assert sum(
+    bool(r["latency_semantics"]) for r in matches
+) == 54
+
+assert all(
+    bool(r["latency_semantics"]) == bool(r["latency_sec"])
+    for r in matches
+)
+
+for r in matches:
+    if not r["latency_semantics"]:
+        continue
+
+    sources = r["source_files"]
+
+    if r["service_id"] == "text_hard":
+        assert r["backend"] == "llama.cpp/metal"
+        assert (
+            "qwen3_hard_q4_mac_accel_power_synced.csv"
+            in sources
+        )
+    else:
+        assert (
+            "sweep.csv" in sources
+            or "scaling.csv" in sources
+        )
+
 fieldnames = [
     "service_id",
     "request_profile",
     "throughput_semantics",
+    "latency_semantics",
     *registry_columns,
 ]
 
