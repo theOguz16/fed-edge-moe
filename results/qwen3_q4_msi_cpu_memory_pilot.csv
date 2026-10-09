@@ -1,0 +1,2 @@
+model,backend,quantization,workload,context_tokens,output_tokens,batch,threads,repeat,peak_working_set_mib,max_sampled_private_commit_mib,memory_measurement,poll_interval_s,samples,exit_code
+ggml-org/Qwen3-1.7B-GGUF:Q4_K_M,cpu,q4_k_m,long_single,128,128,1,4,1,2925.66796875,5590.07421875,windows_psapi,0.2,283,0
