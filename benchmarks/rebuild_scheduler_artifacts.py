@@ -8,6 +8,8 @@ SCRIPTS = [
     "benchmarks/enrich_scheduler_memory.py",
     "benchmarks/summarize_scheduler_operating_ranges.py",
     "benchmarks/build_service_candidate_matching.py",
+    "benchmarks/build_scheduler_quality_evidence.py",
+    "benchmarks/match_scheduler_quality_evidence.py",
 ]
 
 for script in SCRIPTS:
