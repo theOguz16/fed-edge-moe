@@ -1,0 +1,67 @@
+{
+  "vision_easy": {
+    "task_type": "vision_classification",
+    "model": "resnet50",
+    "difficulty": "easy",
+    "profiles": {
+      "light":  {"resolution": 160, "batch": 1},
+      "medium": {"resolution": 224, "batch": 4},
+      "heavy":  {"resolution": 320, "batch": 16}
+    }
+  },
+
+  "vision_medium": {
+    "task_type": "vision_classification",
+    "model": "convnext_base",
+    "difficulty": "medium",
+    "profiles": {
+      "light":  {"resolution": 160, "batch": 1},
+      "medium": {"resolution": 224, "batch": 4},
+      "heavy":  {"resolution": 320, "batch": 16}
+    }
+  },
+
+  "vision_hard": {
+    "task_type": "vision_classification",
+    "model": "convnext_large",
+    "difficulty": "hard",
+    "profiles": {
+      "light":  {"resolution": 160, "batch": 1},
+      "medium": {"resolution": 224, "batch": 4},
+      "heavy":  {"resolution": 320, "batch": 16}
+    }
+  },
+
+  "text_easy": {
+    "task_type": "text_generation",
+    "model": "distilgpt2",
+    "difficulty": "easy",
+    "profiles": {
+      "light":  {"context": 32, "output": 32, "batch": 1},
+      "medium": {"context": 128, "output": 64, "batch": 4},
+      "heavy":  {"context": 512, "output": 128, "batch": 8}
+    }
+  },
+
+  "text_medium": {
+    "task_type": "text_generation",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "difficulty": "medium",
+    "profiles": {
+      "light":  {"context": 128, "output": 64, "batch": 1},
+      "medium": {"context": 512, "output": 128, "batch": 2},
+      "heavy":  {"context": 1024, "output": 128, "batch": 4}
+    }
+  },
+
+  "text_hard": {
+    "task_type": "text_generation",
+    "model": "Qwen/Qwen3-1.7B",
+    "difficulty": "hard",
+    "profiles": {
+      "light":  {"context": 128, "output": 64, "batch": 1},
+      "medium": {"context": 512, "output": 128, "batch": 2},
+      "heavy":  {"context": 1024, "output": 128, "batch": 4}
+    }
+  }
+}

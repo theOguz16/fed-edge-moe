@@ -1,0 +1,10 @@
+backend,workload,profile,context_tokens,output_tokens,batch,threads,precision,repeat,peak_rss_mib,peak_footprint_mib,measurement
+metal,,light,128,64,1,,q4_k_m,1,2254.953125,1038.9086303710938,macos_time_l
+metal,,light,128,64,1,,q4_k_m,2,2254.609375,1038.5492324829102,macos_time_l
+metal,,light,128,64,1,,q4_k_m,3,2254.53125,1038.4867553710938,macos_time_l
+metal,,medium,512,128,2,,q4_k_m,1,2262.421875,1046.3460845947266,macos_time_l
+metal,,medium,512,128,2,,q4_k_m,2,2262.71875,1046.6586074829102,macos_time_l
+metal,,medium,512,128,2,,q4_k_m,3,2262.671875,1046.6273803710938,macos_time_l
+metal,,heavy,1024,128,4,,q4_k_m,1,2265.59375,1049.4867095947266,macos_time_l
+metal,,heavy,1024,128,4,,q4_k_m,2,2265.3125,1049.2054595947266,macos_time_l
+metal,,heavy,1024,128,4,,q4_k_m,3,2265.8125,1049.689811706543,macos_time_l
