@@ -1,3 +1,4 @@
+import argparse
 import csv
 import json
 import math
@@ -6,11 +7,28 @@ from pathlib import Path
 
 ROOT = Path("results")
 INPUT = ROOT / "service_candidate_quality_applicability.csv"
-CONFIG = Path("configs/service_requirements.json")
-OUTPUT = ROOT / "service_feasibility_baseline.csv"
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--requirements",
+    default="configs/service_requirements.json",
+)
+parser.add_argument(
+    "--memory-contracts",
+    default="configs/memory_metric_contracts.json",
+)
+parser.add_argument(
+    "--output",
+    default="results/service_feasibility_baseline.csv",
+)
+args = parser.parse_args()
+CONFIG = Path(args.requirements)
+OUTPUT = Path(args.output)
 
 config = json.loads(CONFIG.read_text(encoding="utf-8"))
 services = config["services"]
+memory_contracts = json.loads(
+    Path(args.memory_contracts).read_text(encoding="utf-8")
+)["contracts"]
 
 with INPUT.open(newline="", encoding="utf-8") as f:
     reader = csv.DictReader(f)
@@ -80,15 +98,36 @@ def latency_gate(row, request):
 
     return "PASS" if value <= maximum else "FAIL"
 
-def memory_gate(row):
-    budgets = config.get("device_memory_budgets", {})
+def memory_contract(row):
+    key = "|".join((
+        row["service_id"],
+        row["device"],
+        row["backend"],
+    ))
+    if key not in memory_contracts:
+        raise ValueError(f"Missing memory contract: {key}")
+    return memory_contracts[key]
 
-    if row["device"] not in budgets:
+def memory_gate(row):
+    contract = memory_contract(row)
+
+    if contract["unit"] != "MiB":
+        raise ValueError("Memory contract unit must be MiB")
+
+    budget = threshold(contract.get("budget_mib"))
+
+    if budget is None:
         return "NOT_CONFIGURED"
 
-    # Pending explicit memory metric/boundary contract.
-    # A memory observation is not proof of budget compliance.
-    return "UNKNOWN"
+    if budget <= 0:
+        raise ValueError("Memory budget must be positive")
+
+    observed = measured(row.get(contract["metric_field"]))
+
+    if observed is None or observed < 0:
+        return "UNKNOWN"
+
+    return "PASS" if observed <= budget else "FAIL"
 
 def quality_gate(row, request):
     minimum = threshold(request.get("min_quality"))
@@ -133,6 +172,15 @@ for row in candidates:
     for gate, status in gates.items():
         record[f"{gate}_gate"] = status
 
+    contract = memory_contract(row)
+    observed_field = contract["metric_field"]
+
+    record["memory_metric_used"] = observed_field
+    record["memory_observed_mib"] = row.get(observed_field, "")
+    record["memory_budget_mib"] = (
+        "" if contract["budget_mib"] is None
+        else contract["budget_mib"]
+    )
     record["feasibility_status"] = overall_status(gates)
     output.append(record)
 
@@ -142,6 +190,9 @@ assert len(seen_profiles) == 18
 fields = [
     *input_fields,
     *(f"{gate}_gate" for gate in GATES),
+    "memory_metric_used",
+    "memory_observed_mib",
+    "memory_budget_mib",
     "feasibility_status",
 ]
 
@@ -187,8 +238,23 @@ print(
     ),
 )
 
-assert counts == {"UNVERIFIED": 57}, (
-    f"Unexpected baseline outcomes: {counts}"
+assert sum(counts.values()) == 57
+
+baseline_unconfigured = (
+    all(
+        item["budget_mib"] is None
+        for item in memory_contracts.values()
+    )
+    and all(
+        request.get("min_throughput") is None
+        and request.get("max_latency_s") is None
+        and request.get("min_quality") is None
+        for service in services.values()
+        for request in service["profiles"].values()
+    )
 )
+
+if baseline_unconfigured:
+    assert counts == {"UNVERIFIED": 57}, counts
 
 print("\nSaved:", OUTPUT)

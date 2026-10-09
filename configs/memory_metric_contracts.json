@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1",
+  "status": "measurement_contracts_no_real_budgets",
+  "notes": "Metric-specific limits only; allocator allocation, process RSS and NVML VRAM are not interchangeable. Source *_mb quantities use 1024**2-byte conversion.",
+  "contracts": {
+    "text_easy|Apple M4|mps": {
+      "metric_field": "memory_allocated_mb",
+      "measurement_semantics": "torch_mps_allocated",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "text_easy|RTX 3050 Laptop|cuda": {
+      "metric_field": "device_memory_used_mb",
+      "measurement_semantics": "nvml_device_used",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "text_medium|Apple M4|mps": {
+      "metric_field": "memory_allocated_mb",
+      "measurement_semantics": "torch_mps_allocated",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "text_medium|RTX 3050 Laptop|cuda": {
+      "metric_field": "memory_peak_mb",
+      "measurement_semantics": "nvml_peak_device_used",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "text_hard|Apple M4|llama.cpp/metal": {
+      "metric_field": "process_peak_rss_mib_max",
+      "measurement_semantics": "macos_process_peak_rss",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "text_hard|RTX 3050 Laptop|llama.cpp/cuda": {
+      "metric_field": "memory_peak_mb",
+      "measurement_semantics": "nvml_peak_device_used",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_easy|Apple M4|mps": {
+      "metric_field": "memory_allocated_mb",
+      "measurement_semantics": "torch_mps_allocated",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_easy|RTX 3050 Laptop|cuda": {
+      "metric_field": "device_memory_used_mb",
+      "measurement_semantics": "nvml_device_used",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_medium|Apple M4|mps": {
+      "metric_field": "memory_allocated_mb",
+      "measurement_semantics": "torch_mps_allocated",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_medium|Intel i7-11800H|cpu": {
+      "metric_field": "windows_peak_working_set_mib_max",
+      "measurement_semantics": "windows_process_peak_working_set",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_medium|RTX 3050 Laptop|cuda": {
+      "metric_field": "device_memory_used_mb",
+      "measurement_semantics": "nvml_device_used",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_hard|Apple M4|mps": {
+      "metric_field": "memory_allocated_mb",
+      "measurement_semantics": "torch_mps_allocated",
+      "unit": "MiB",
+      "budget_mib": null
+    },
+    "vision_hard|RTX 3050 Laptop|cuda": {
+      "metric_field": "device_memory_used_mb",
+      "measurement_semantics": "nvml_device_used",
+      "unit": "MiB",
+      "budget_mib": null
+    }
+  }
+}
