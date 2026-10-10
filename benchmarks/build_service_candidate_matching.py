@@ -194,8 +194,8 @@ joint_count = sum(
 assert len(coverage) == 18
 assert len(matches) == 57
 assert latency_count == 57
-assert memory_count == 54
-assert joint_count == 54
+assert memory_count == 57
+assert joint_count == 57
 
 print("=== SERVICE-CANDIDATE MATCHING: PASS ===")
 print("Service profiles      :", len(coverage))

@@ -209,9 +209,11 @@ lines.extend([
     "can select FP32 as the sole eligible candidate even though "
     "FP16 has lower measured energy.",
     "",
-    "Intel CPU sensitivity is **partial evidence only**: "
-    "missing memory measurements and conditional quality "
-    "evidence prevent full feasibility certification.",
+    "Intel CPU sensitivity remains **partial evidence only**: "
+    "Windows process peak-working-set measurements are now "
+    "available for all three canonical thread settings, "
+    "but conditional quality evidence and unconfigured "
+    "deployment QoS prevent feasibility certification.",
     "",
     "## 6. Measurement boundaries and limitations",
     "",

@@ -4,7 +4,7 @@
 
 The experimental characterization produced 385 distinct configurations, of which 109 were included in the scheduler core. After matching execution configurations against canonical workload profiles, 57 candidates were retained across 18 service-profile combinations.
 
-Among these 57 candidates, measured batch-latency evidence was available for all 57 candidates, while memory evidence was available for 54; consequently, 54 candidates had both. The remaining memory coverage gaps were explicitly retained rather than replaced by estimates.
+Among these 57 candidates, measured batch-latency evidence and at least one memory observation were available for all 57 candidates. The final three memory gaps were closed using Windows process peak-working-set measurements for ConvNeXt-Base on Intel i7-11800H at one, eight, and 16 threads, each with three independent process runs. Memory metrics retain platform-specific semantics.
 
 Quality evidence applicability was classified as SUPPORTED for 42 candidates, CONDITIONAL for nine, and UNVERIFIED for six. Importantly, applicability indicates whether relevant benchmark evidence exists; it does not establish satisfaction of a deployment-level quality requirement.
 
@@ -40,7 +40,7 @@ For ResNet50 under the light profile, FP32 had a 4.80% lower median energy than 
 
 On Intel i7-11800H, the ConvNeXt-Base medium workload exhibited a trade-off between thread count and latency. Eight threads achieved approximately 403.40 ms batch latency, while 16 threads achieved approximately 428.08 ms. The 16-thread configuration had a 4.26% lower median energy than the eight-thread configuration, although their observed energy ranges overlapped.
 
-Because canonical Intel CPU memory measurements were unavailable and quality evidence was conditional, these thread-level comparisons were treated as partial evidence, not certified scheduler selections.
+Canonical Intel CPU process-memory observations are now available for all three thread configurations. However, quality evidence remains conditional and deployment QoS thresholds remain unconfigured. Thus, these thread-level comparisons remain descriptive sensitivity evidence, not certified scheduler selections.
 
 ## 4. Pareto Analysis
 

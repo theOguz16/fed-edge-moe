@@ -46,7 +46,15 @@ for row in cpu:
     assert float(row["batch"]) == 4
     assert row["energy_boundary"] == "cpu_package"
     assert row["quality_evidence_status"] == "CONDITIONAL"
-    assert not row.get("windows_peak_working_set_mib_max")
+    assert row["has_any_memory_observation"] == "True"
+    assert row["memory_observation_count"] == "3"
+    assert (
+        "convnext_base_vision_medium_msi_cpu_memory.csv"
+        in row["memory_source_files"]
+    )
+    assert (
+        0 < float(row["windows_peak_working_set_mib_max"]) < 4096
+    )
 
 lat = {
     thread: float(row["latency_sec"])
@@ -116,8 +124,9 @@ with tempfile.TemporaryDirectory() as dirname:
             "quality_preprocessing": reference["preprocessing"],
         })
 
-        # Intentionally synthetic. The CPU memory observation
-        # is missing, so this must produce UNKNOWN, not PASS.
+        # Synthetic Windows process working-set budget.
+        # Measured CPU memory should PASS; cross-device quality
+        # evidence remains CONDITIONAL and its gate UNKNOWN.
         memory["contracts"][
             "vision_medium|Intel i7-11800H|cpu"
         ]["budget_mib"] = 4096
@@ -163,8 +172,14 @@ with tempfile.TemporaryDirectory() as dirname:
 
         for row in evaluated:
             assert row["throughput_gate"] == "PASS"
-            assert row["memory_gate"] == "UNKNOWN"
+            assert row["memory_gate"] == "PASS"
             assert row["quality_gate"] == "UNKNOWN"
+            assert (
+                row["memory_metric_used"]
+                == "windows_peak_working_set_mib_max"
+            )
+            assert 0 < float(row["memory_observed_mib"]) < 4096
+            assert float(row["memory_budget_mib"]) == 4096
 
             thread = int(float(row["threads"]))
             if thread in expected_threads:

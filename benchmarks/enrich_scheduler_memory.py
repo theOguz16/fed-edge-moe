@@ -160,6 +160,76 @@ if not original_columns:
 if any(column in original_columns for column in NEW_COLUMNS):
     raise RuntimeError("Registry already contains enrichment columns")
 
+# CONVNEXT_BASE_CPU_MEMORY_INTEGRATION
+# Independent Windows process-memory evidence, matched by exact
+# model/device/backend/precision/shape/thread identity.
+convnext_path = Path(
+    "results/convnext_base_vision_medium_msi_cpu_memory.csv"
+)
+
+with convnext_path.open(newline="", encoding="utf-8-sig") as f:
+    convnext_raw = list(csv.DictReader(f))
+
+assert len(convnext_raw) == 9
+
+convnext_by_threads = defaultdict(list)
+
+for source in convnext_raw:
+    for field, expected in (
+        ("model", "ConvNeXt-Base"),
+        ("device", "Intel i7-11800H"),
+        ("backend", "cpu"),
+        ("precision", "fp32"),
+        ("workload", "batched_load"),
+        ("profile", "medium"),
+        ("weights", "ConvNeXt_Base_Weights.DEFAULT"),
+        (
+            "memory_measurement",
+            "windows_psapi_process_peak_working_set",
+        ),
+        (
+            "private_commit_semantics",
+            "sampled_at_phase_boundaries",
+        ),
+        ("exit_code", "0"),
+    ):
+        assert source[field] == expected, (field, source[field])
+
+    assert as_int(source["resolution"]) == 224
+    assert as_int(source["batch"]) == 4
+    assert as_int(source["warmup"]) == 2
+    assert as_int(source["inference_calls"]) == 3
+    assert "i7-11800H" in source["cpu_name"]
+
+    threads = as_int(source["threads"])
+    repeat = as_int(source["repeat"])
+
+    assert threads in (1, 8, 16)
+    assert repeat in (1, 2, 3)
+
+    working_set = float(source["peak_working_set_mib"])
+    private_commit = float(
+        source["max_sampled_private_commit_mib"]
+    )
+
+    assert 0 < working_set < float("inf")
+    assert 0 < private_commit < float("inf")
+
+    convnext_by_threads[threads].append({
+        "repeat": repeat,
+        "working_set": working_set,
+        "private_commit": private_commit,
+    })
+
+assert set(convnext_by_threads) == {1, 8, 16}
+
+for threads, samples in convnext_by_threads.items():
+    assert sorted(s["repeat"] for s in samples) == [1, 2, 3], (
+        threads, samples
+    )
+
+convnext_matched = set()
+
 matched_keys = set()
 
 for row in rows:
@@ -226,6 +296,55 @@ for row in rows:
                 sorted({sample["source"] for sample in samples})
             )
 
+    # Attach measured Intel CPU process memory to the three
+    # ConvNeXt-Base canonical configurations only.
+    is_convnext_target = (
+        row["model"] == "ConvNeXt-Base"
+        and row["device"] == "Intel i7-11800H"
+        and row["backend"] == "cpu"
+        and row["precision"] == "fp32"
+        and as_int(row.get("resolution", "")) == 224
+        and as_int(row.get("batch", "")) == 4
+        and as_int(row.get("threads", "")) in convnext_by_threads
+    )
+
+    if is_convnext_target:
+        threads = as_int(row["threads"])
+
+        if threads in convnext_matched:
+            raise RuntimeError(
+                f"Duplicate ConvNeXt registry config: {threads}t"
+            )
+
+        assert not row["memory_observation_count"]
+
+        assert not any(
+            str(row.get(field, "")).strip()
+            for field in (
+                "memory_allocated_mb",
+                "memory_peak_mb",
+                "device_memory_used_mb",
+            )
+        ), f"Unexpected pre-existing memory evidence: {threads}t"
+
+        samples = convnext_by_threads[threads]
+        working_set = [s["working_set"] for s in samples]
+        private_commit = [s["private_commit"] for s in samples]
+
+        row["windows_peak_working_set_mib_median"] = (
+            statistics.median(working_set)
+        )
+        row["windows_peak_working_set_mib_max"] = (
+            max(working_set)
+        )
+        row["windows_sampled_private_commit_mib_max"] = (
+            max(private_commit)
+        )
+        row["memory_observation_count"] = len(samples)
+        row["memory_source_files"] = str(convnext_path)
+
+        convnext_matched.add(threads)
+
     existing_memory = any(
         row.get(column, "").strip()
         for column in (
@@ -241,6 +360,12 @@ for row in rows:
         "True" if existing_memory or new_memory else "False"
     )
 
+
+if convnext_matched != {1, 8, 16}:
+    raise RuntimeError(
+        f"Unmatched ConvNeXt CPU memory configs: "
+        f"{set(convnext_by_threads) - convnext_matched}"
+    )
 
 unmatched = set(observations) - matched_keys
 
@@ -282,6 +407,9 @@ def memory_present(row):
 
 
 print(f"Registry rows            : {len(rows)}")
+print(
+    f"ConvNeXt CPU memory matches: {len(convnext_matched)}/3"
+)
 print(f"New memory matches       : {len(matched_keys)}")
 print(
     f"Qwen3 core memory        : "

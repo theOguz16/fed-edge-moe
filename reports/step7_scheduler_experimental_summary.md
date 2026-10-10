@@ -13,7 +13,7 @@
 | Canonical service candidates | 57 |
 | Service/profile combinations | 18 |
 | Candidates with latency evidence | 57 |
-| Candidates with memory evidence | 54 |
+| Candidates with memory evidence | 57 |
 
 ## 2. Quality applicability and feasibility
 
@@ -70,7 +70,7 @@ OBSERVED_DISJOINT means only that the recorded three-repeat ranges do not overla
 
 ResNet50 medium / Apple M4 demonstrates the expected changes in feasibility as latency and throughput thresholds are tightened. A synthetic ImageNetV2 Top-5 threshold can select FP32 as the sole eligible candidate even though FP16 has lower measured energy.
 
-Intel CPU sensitivity is **partial evidence only**: missing memory measurements and conditional quality evidence prevent full feasibility certification.
+Intel CPU sensitivity remains **partial evidence only**: Windows process peak-working-set measurements are now available for all three canonical thread settings, but conditional quality evidence and unconfigured deployment QoS prevent feasibility certification.
 
 ## 6. Measurement boundaries and limitations
 
