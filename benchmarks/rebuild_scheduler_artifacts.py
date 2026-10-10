@@ -20,6 +20,8 @@ SCRIPTS = [
     "benchmarks/sweep_service_latency_qos.py",
     "benchmarks/sweep_convnext_cpu_latency_partial.py",
     "benchmarks/sweep_service_throughput_quality_qos.py",
+    "benchmarks/build_scheduler_pareto.py",
+    "benchmarks/summarize_scheduler_pareto_groups.py",
 ]
 
 for script in SCRIPTS:
