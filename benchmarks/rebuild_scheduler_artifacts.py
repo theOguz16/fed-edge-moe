@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 SCRIPTS = [
+    "benchmarks/recover_qwen3_cuda_latency.py",
     "benchmarks/build_scheduler_registry.py",
     "benchmarks/enrich_scheduler_memory.py",
     "benchmarks/summarize_scheduler_operating_ranges.py",

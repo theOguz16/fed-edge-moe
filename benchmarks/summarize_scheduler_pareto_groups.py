@@ -166,9 +166,9 @@ assert used_evidence == len(pairwise)
 assert len(summary) == 37
 assert sum(r["candidate_count"] for r in summary) == 57
 assert sum(r["candidate_count"] > 1 for r in summary) == 19
-assert sum(r["observed_nondominated"] for r in summary) == 38
+assert sum(r["observed_nondominated"] for r in summary) == 41
 assert sum(r["observed_dominated"] for r in summary) == 16
-assert sum(r["not_evaluable"] for r in summary) == 3
+assert sum(r["not_evaluable"] for r in summary) == 0
 
 coverage = Counter(
     r["repeat_evidence_coverage"] for r in summary
@@ -198,9 +198,9 @@ print("Complete repeat groups    :", coverage["COMPLETE_N3_DESCRIPTIVE"])
 print("Multi-choice without repeats:",
       coverage["NO_REPEAT_PAIRWISE_EVIDENCE"])
 print("Pairwise energy records   :", used_evidence)
-print("Pareto nondominated       : 38")
-print("Pareto dominated          : 16")
-print("Missing metrics           : 3")
+print("Pareto nondominated       :", sum(r["observed_nondominated"] for r in summary))
+print("Pareto dominated          :", sum(r["observed_dominated"] for r in summary))
+print("Missing metrics           :", sum(r["not_evaluable"] for r in summary))
 print("QoS FEASIBLE              : 0")
 
 print("\n=== MULTI-CHOICE GROUPS ===")

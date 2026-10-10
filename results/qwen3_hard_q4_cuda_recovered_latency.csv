@@ -1,0 +1,4 @@
+profile,model,device,backend,precision,quantization,context_tokens,output_tokens,batch,latency_sec,latency_min_sec,latency_max_sec,observations,latency_semantics,evidence_scope,source_file,source_sha256
+light,Qwen3-1.7B,RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,Q4_K_M,128,64,1,0.588,0.588,0.588,1,llamacpp_batched_benchmark_total,single_sweep_observation,qwen3_hard_q4_cuda_sweep.txt,5271fecc3ae28b437770884ee8d7c2715ccb6b57db602cfe037eaabb07a0ca8b
+medium,Qwen3-1.7B,RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,Q4_K_M,512,128,2,1.471,1.434,1.5,42,llamacpp_batched_benchmark_total,sequential_sustained_observations,qwen3_hard_q4_cuda_medium_sustained.txt,3ee45adf2fab9335ee14621cd8bb9147a24620f88bb7675926cd69f06d4c084c
+heavy,Qwen3-1.7B,RTX 3050 Laptop,llama.cpp/cuda,q4_k_m,Q4_K_M,1024,128,4,2.968,2.904,3.012,21,llamacpp_batched_benchmark_total,sequential_sustained_observations,qwen3_hard_q4_cuda_heavy_sustained.txt,4c83da86033793730235cf4584ca4506b2ef9e32c698ef0c415085efa1a96898

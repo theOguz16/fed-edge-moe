@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import statistics
 from collections import defaultdict
 from pathlib import Path
@@ -246,6 +247,92 @@ KEYS = [
     "batch",
     "threads",
 ]
+
+
+# QWEN3_CUDA_RECOVERED_LATENCY_INTEGRATION
+# Add latency-only evidence rows in memory. Do not modify the unified
+# input or override sustained throughput / energy measurements.
+recovered_path = Path(
+    "results/qwen3_hard_q4_cuda_recovered_latency.csv"
+)
+
+with recovered_path.open(newline="", encoding="utf-8") as f:
+    recovered_rows = list(csv.DictReader(f))
+
+expected_shapes = {
+    "light": (128, 64, 1),
+    "medium": (512, 128, 2),
+    "heavy": (1024, 128, 4),
+}
+
+assert len(recovered_rows) == 3
+seen_profiles = set()
+
+for evidence in recovered_rows:
+    profile = evidence["profile"]
+    assert profile in expected_shapes
+    assert profile not in seen_profiles
+    seen_profiles.add(profile)
+
+    shape = (
+        int(evidence["context_tokens"]),
+        int(evidence["output_tokens"]),
+        int(evidence["batch"]),
+    )
+    assert shape == expected_shapes[profile]
+    assert evidence["latency_semantics"] == (
+        "llamacpp_batched_benchmark_total"
+    )
+
+    source_path = Path("results") / evidence["source_file"]
+    actual_sha = hashlib.sha256(source_path.read_bytes()).hexdigest()
+    assert actual_sha == evidence["source_sha256"]
+
+    matching = [
+        r for r in rows
+        if r.get("model") == "Qwen3-1.7B"
+        and r.get("device") == "RTX 3050 Laptop"
+        and r.get("backend") == "llama.cpp/cuda"
+        and r.get("precision") == "q4_k_m"
+        and r.get("quantization") == "Q4_K_M"
+        and all(
+            valid(r.get(field, ""))
+            and int(float(r[field])) == expected
+            for field, expected in zip(
+                ("context_tokens", "output_tokens", "batch"),
+                shape,
+            )
+        )
+    ]
+
+    assert len(matching) == 2, (
+        profile, len(matching)
+    )
+    assert all(not valid(r.get("latency_sec", "")) for r in matching)
+
+    anchors = [
+        r for r in matching
+        if r.get("source_file")
+        == "qwen3_hard_q4_cross_device.csv"
+    ]
+    assert len(anchors) == 1
+
+    latency_only = {field: "" for field in rows[0]}
+    for field in KEYS:
+        latency_only[field] = anchors[0].get(field, "")
+
+    latency_only["latency_sec"] = evidence["latency_sec"]
+    latency_only["source_file"] = recovered_path.name
+    latency_only["profile"] = profile
+    latency_only["workload"] = "recovered_cuda_batch_latency"
+    latency_only["measurement_mode"] = "raw_benchmark_recovery"
+    latency_only["is_sustained"] = "0"
+
+    rows.append(latency_only)
+
+assert seen_profiles == set(expected_shapes)
+
+print("Qwen3 CUDA latency evidence injection: 3/3")
 
 groups = defaultdict(list)
 

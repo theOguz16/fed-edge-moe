@@ -118,7 +118,7 @@ for service_id, service in services.items():
 
 assert sum(
     bool(r["latency_semantics"]) for r in matches
-) == 54
+) == 57
 
 assert all(
     bool(r["latency_semantics"]) == bool(r["latency_sec"])
@@ -132,10 +132,33 @@ for r in matches:
     sources = r["source_files"]
 
     if r["service_id"] == "text_hard":
-        assert r["backend"] == "llama.cpp/metal"
-        assert (
-            "qwen3_hard_q4_mac_accel_power_synced.csv"
-            in sources
+        assert r["precision"] == "q4_k_m"
+        assert r["quantization"] == "Q4_K_M"
+
+        if (
+            r["device"] == "Apple M4"
+            and r["backend"] == "llama.cpp/metal"
+        ):
+            expected_source = (
+                "qwen3_hard_q4_mac_accel_power_synced.csv"
+            )
+        elif (
+            r["device"] == "RTX 3050 Laptop"
+            and r["backend"] == "llama.cpp/cuda"
+        ):
+            expected_source = (
+                "qwen3_hard_q4_cuda_recovered_latency.csv"
+            )
+        else:
+            raise AssertionError(
+                "Unsupported Qwen3 latency source: "
+                f"{r['device']} / {r['backend']}"
+            )
+
+        assert expected_source in sources, (
+            r["request_profile"],
+            expected_source,
+            sources,
         )
     else:
         assert (
@@ -170,9 +193,9 @@ joint_count = sum(
 
 assert len(coverage) == 18
 assert len(matches) == 57
-assert latency_count == 54
+assert latency_count == 57
 assert memory_count == 54
-assert joint_count == 51
+assert joint_count == 54
 
 print("=== SERVICE-CANDIDATE MATCHING: PASS ===")
 print("Service profiles      :", len(coverage))

@@ -13,6 +13,7 @@ SOURCES = {
     "groups": "scheduler_pareto_group_summary.csv",
     "uncertainty": "energy_uncertainty_summary.csv",
     "pairwise": "energy_pairwise_repeat_evidence.csv",
+    "cuda_latency": "qwen3_hard_q4_cuda_recovered_latency.csv",
     "latency": "qos_latency_sensitivity_resnet50_m4_medium.csv",
     "cpu_latency": "qos_latency_sensitivity_convnext_cpu_medium_partial.csv",
     "throughput": "qos_throughput_sensitivity_resnet50_m4_medium.csv",
@@ -56,10 +57,10 @@ assert quality_counts == {
     "UNVERIFIED": 6,
 }
 assert pareto_counts == {
-    "OBSERVED_NONDOMINATED": 38,
+    "OBSERVED_NONDOMINATED": 41,
     "OBSERVED_DOMINATED": 16,
-    "NOT_EVALUABLE_MISSING_METRICS": 3,
-}
+}, pareto_counts
+assert pareto_counts["NOT_EVALUABLE_MISSING_METRICS"] == 0
 assert feas_counts == {"UNVERIFIED": 57}
 
 multi = [r for r in groups if int(r["candidate_count"]) > 1]
@@ -105,7 +106,7 @@ lines = [
     f"| Candidates with latency evidence | "
     f"{sum(bool(r.get('latency_sec')) for r in app)} |",
     f"| Candidates with memory evidence | "
-    f"{sum(r.get('has_memory') == '1' for r in app)} |",
+    f"{sum(str(r.get('has_any_memory_observation', '')).strip().lower() in ('true', '1') for r in app)} |",
     "",
     "## 2. Quality applicability and feasibility",
     "",
@@ -152,6 +153,13 @@ lines.extend([
     "Pareto comparisons use observed energy, latency and throughput "
     "point estimates within compatible service, workload shape, "
     "device, backend, energy boundary and measurement semantics.",
+    "",
+    "Qwen3 CUDA batch-completion latency was recovered from "
+    "archived llama.cpp benchmark logs for three canonical profiles. "
+    "Light has one sweep observation; medium and heavy have "
+    "sequential sustained observations. These measurements do not "
+    "represent independent experiment repetitions or end-to-end "
+    "UAV request latency.",
     "",
     "## 4. Repeat-based energy evidence",
     "",

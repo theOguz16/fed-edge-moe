@@ -12,8 +12,8 @@
 | Scheduler core configurations | 109 |
 | Canonical service candidates | 57 |
 | Service/profile combinations | 18 |
-| Candidates with latency evidence | 54 |
-| Candidates with memory evidence | 51 |
+| Candidates with latency evidence | 57 |
+| Candidates with memory evidence | 54 |
 
 ## 2. Quality applicability and feasibility
 
@@ -33,13 +33,15 @@ Quality limitations include native Qwen3 Q4_K_M WikiText-2 perplexity evidence o
 
 | Pareto classification | Candidates |
 |---|---:|
-| Observed nondominated | 38 |
+| Observed nondominated | 41 |
 | Observed dominated | 16 |
-| Missing objective metrics | 3 |
+| Missing objective metrics | 0 |
 
 Comparisons cover **37 groups**, including **19 multi-candidate groups**. Only **4 of these 19 groups** have complete three-repeat pairwise energy evidence.
 
 Pareto comparisons use observed energy, latency and throughput point estimates within compatible service, workload shape, device, backend, energy boundary and measurement semantics.
+
+Qwen3 CUDA batch-completion latency was recovered from archived llama.cpp benchmark logs for three canonical profiles. Light has one sweep observation; medium and heavy have sequential sustained observations. These measurements do not represent independent experiment repetitions or end-to-end UAV request latency.
 
 ## 4. Repeat-based energy evidence
 
@@ -88,6 +90,7 @@ Intel CPU sensitivity is **partial evidence only**: missing memory measurements 
 - `results/scheduler_pareto_group_summary.csv`
 - `results/energy_uncertainty_summary.csv`
 - `results/energy_pairwise_repeat_evidence.csv`
+- `results/qwen3_hard_q4_cuda_recovered_latency.csv`
 - `results/qos_latency_sensitivity_resnet50_m4_medium.csv`
 - `results/qos_latency_sensitivity_convnext_cpu_medium_partial.csv`
 - `results/qos_throughput_sensitivity_resnet50_m4_medium.csv`

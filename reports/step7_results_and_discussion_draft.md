@@ -4,7 +4,7 @@
 
 The experimental characterization produced 385 distinct configurations, of which 109 were included in the scheduler core. After matching execution configurations against canonical workload profiles, 57 candidates were retained across 18 service-profile combinations.
 
-Among these 57 candidates, latency and memory observations were available for 54 candidates each, while 51 candidates had both. The remaining coverage gaps were explicitly retained rather than replaced by estimates.
+Among these 57 candidates, measured batch-latency evidence was available for all 57 candidates, while memory evidence was available for 54; consequently, 54 candidates had both. The remaining memory coverage gaps were explicitly retained rather than replaced by estimates.
 
 Quality evidence applicability was classified as SUPPORTED for 42 candidates, CONDITIONAL for nine, and UNVERIFIED for six. Importantly, applicability indicates whether relevant benchmark evidence exists; it does not establish satisfaction of a deployment-level quality requirement.
 
@@ -46,7 +46,7 @@ Because canonical Intel CPU memory measurements were unavailable and quality evi
 
 A three-objective Pareto analysis considered energy per item and batch latency as minimization objectives, and throughput as a maximization objective.
 
-The 57 canonical candidates formed 37 comparison groups, including 19 multi-candidate groups. Using measured point estimates, 38 candidates were classified as observed nondominated, 16 as observed dominated, and three as not evaluable because of missing objective metrics.
+The 57 canonical candidates formed 37 comparison groups, including 19 multi-candidate groups. Using measured point estimates, 41 candidates were classified as observed nondominated and 16 as observed dominated. All 57 candidates had the objective metrics required for Pareto evaluation.
 
 For the ResNet50 medium workload on Apple M4, FP16 dominated FP32 on all three objectives.
 
@@ -66,7 +66,7 @@ Second, memory observations use different measurement semantics, including frame
 
 Third, benchmark-reference quality evidence does not guarantee deployment quality under UAV operating conditions. In particular, Qwen3 Q4_K_M has a native Apple M4 llama.cpp WikiText-2 perplexity reference (PPL 21.3852, 16 context chunks), but its protocol is not equivalent to the existing Transformers FP16/FP32 seq64 evaluation and it does not establish deployment-level task quality, DistilGPT2 precision was not consistently controlled, and some model-device combinations rely on conditional cross-device references.
 
-Fourth, the absence of per-request latency evidence for the Qwen3 CUDA configurations prevents complete latency-based evaluation of those candidates.
+Fourth, Qwen3 CUDA batch-completion latency was recovered from archived llama.cpp benchmark logs: 0.588 s for light (one observation), 1.471 s for medium (median of 42 sequential observations), and 2.968 s for heavy (median of 21 sequential observations). These are not independent repetitions or end-to-end UAV service response times.
 
 Finally, energy and performance measurements originate from specific benchmark procedures, and observed point-estimate ordering may be sensitive to measurement variability.
 
