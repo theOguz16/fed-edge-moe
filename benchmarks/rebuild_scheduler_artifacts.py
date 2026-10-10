@@ -19,6 +19,7 @@ SCRIPTS = [
     "benchmarks/test_service_energy_selection.py",
     "benchmarks/sweep_service_latency_qos.py",
     "benchmarks/sweep_convnext_cpu_latency_partial.py",
+    "benchmarks/sweep_service_throughput_quality_qos.py",
 ]
 
 for script in SCRIPTS:
