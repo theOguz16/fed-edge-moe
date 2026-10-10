@@ -13,6 +13,9 @@ SCRIPTS = [
     "benchmarks/evaluate_service_feasibility.py",
     "benchmarks/test_quality_gate_contracts.py",
     "benchmarks/select_service_energy.py",
+    "benchmarks/summarize_energy_uncertainty.py",
+    "benchmarks/summarize_energy_pairwise.py",
+    "benchmarks/attach_energy_repeat_evidence.py",
     "benchmarks/test_service_energy_selection.py",
 ]
 

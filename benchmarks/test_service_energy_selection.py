@@ -104,6 +104,7 @@ cases = [
         "benchmark_reference",
         {"fp16": "FEASIBLE", "fp32": "FEASIBLE"},
         "PROVISIONAL_MIN_POINT_ESTIMATE",
+        "OBSERVED_DISJOINT_VS_ALL",
     ),
     (
         "TIGHT_DEADLINE_EXCLUDES_FP32",
@@ -111,6 +112,7 @@ cases = [
         "benchmark_reference",
         {"fp16": "FEASIBLE", "fp32": "INFEASIBLE"},
         "SOLE_FEASIBLE",
+        "NOT_APPLICABLE_SOLE_FEASIBLE",
     ),
     (
         "DEPLOYMENT_QUALITY_ABSTAINS",
@@ -118,6 +120,7 @@ cases = [
         "deployment_quality",
         {"fp16": "UNVERIFIED", "fp32": "UNVERIFIED"},
         "NO_FEASIBLE",
+        "NOT_APPLICABLE_NO_SELECTION",
     ),
 ]
 
@@ -130,6 +133,7 @@ with tempfile.TemporaryDirectory() as directory:
         quality_scope,
         expected_statuses,
         expected_selection,
+        expected_repeat_status,
     ) in enumerate(cases):
 
         requirements = copy.deepcopy(base_requirements)
@@ -157,6 +161,7 @@ with tempfile.TemporaryDirectory() as directory:
         memory_file = temp / f"memory_{i}.json"
         feasibility_file = temp / f"feasibility_{i}.csv"
         selection_file = temp / f"selection_{i}.csv"
+        evidence_file = temp / f"selection_evidence_{i}.csv"
 
         requirements_file.write_text(
             json.dumps(requirements), encoding="utf-8"
@@ -183,6 +188,18 @@ with tempfile.TemporaryDirectory() as directory:
                 "benchmarks/select_service_energy.py",
                 "--input", str(feasibility_file),
                 "--output", str(selection_file),
+            ],
+            check=True,
+            stdout=subprocess.DEVNULL,
+        )
+
+        subprocess.run(
+            [
+                sys.executable,
+                "benchmarks/attach_energy_repeat_evidence.py",
+                "--feasibility", str(feasibility_file),
+                "--selection", str(selection_file),
+                "--output", str(evidence_file),
             ],
             check=True,
             stdout=subprocess.DEVNULL,
@@ -243,9 +260,54 @@ with tempfile.TemporaryDirectory() as directory:
                 in selected["selected_candidate"]
             )
 
+        attached = [
+            r for r in load_csv(evidence_file)
+            if r["service_id"] == "vision_easy"
+            and r["request_profile"] == "medium"
+            and r["device"] == "Apple M4"
+            and r["backend"] == "mps"
+        ]
+
+        assert len(attached) == 1, label
+        attached = attached[0]
+
+        assert (
+            attached["repeat_evidence_status"]
+            == expected_repeat_status
+        ), (
+            label,
+            expected_repeat_status,
+            attached["repeat_evidence_status"],
+        )
+
+        # Evidence attachment must not change the decision.
+        assert (
+            attached["selection_status"]
+            == selected["selection_status"]
+        )
+        assert (
+            attached["selected_candidate"]
+            == selected["selected_candidate"]
+        )
+
+        expected_comparisons = (
+            1 if expected_repeat_status
+            == "OBSERVED_DISJOINT_VS_ALL"
+            else 0
+        )
+
+        assert int(
+            attached["repeat_comparisons_required"]
+        ) == expected_comparisons
+
+        assert int(
+            attached["repeat_comparisons_supported"]
+        ) == expected_comparisons
+
         print(f"{label}: PASS")
         print("  feasibility:", actual_statuses)
         print("  selection  :", expected_selection)
+        print("  evidence   :", expected_repeat_status)
 
 print()
 print("ENERGY SELECTOR REGRESSION TESTS: PASS")
