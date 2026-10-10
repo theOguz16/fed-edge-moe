@@ -1,0 +1,10 @@
+{
+  "dataset": "Salesforce/wikitext",
+  "configuration": "wikitext-2-raw-v1",
+  "split": "test",
+  "preprocessing": "join nonblank rows with newline",
+  "nonblank_rows": 2891,
+  "corpus_sha256": "430983e5a711fbc4c6576edffecacf47ff23d58f62f3923d2386d798e0a794c9",
+  "corpus_utf8_bytes": 1290546,
+  "protocol": "llama.cpp native perplexity; not equivalent to HF seq_len=64"
+}

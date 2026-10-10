@@ -1,4 +1,6 @@
 import csv
+import hashlib
+import json
 from pathlib import Path
 
 ROOT = Path("results")
@@ -171,7 +173,62 @@ for filename, service in SELFCHECK:
             source_file=filename,
         )
 
-assert len(evidence) == 36, len(evidence)
+
+# Native llama.cpp Q4_K_M perplexity reference.
+# Not equivalent to the Transformers/HF seq_len=64 evaluation.
+q4_path = ROOT / "qwen3_q4_native_ppl_mac_c16.json"
+q4 = json.loads(q4_path.read_text(encoding="utf-8"))
+
+manifest = json.loads(
+    (ROOT / "qwen3_q4_wikitext_corpus_manifest.json")
+    .read_text(encoding="utf-8")
+)
+
+raw_log = (ROOT / q4["raw_log"]).read_bytes()
+
+assert hashlib.sha256(raw_log).hexdigest() == q4["raw_log_sha256"]
+assert q4["corpus_sha256"] == manifest["corpus_sha256"]
+assert q4["model"] == "ggml-org/Qwen3-1.7B-GGUF:Q4_K_M"
+assert q4["device"] == "Apple M4"
+assert q4["backend"] == "llama.cpp/metal"
+assert q4["precision"] == "q4_k_m"
+assert q4["quantization"] == "Q4_K_M"
+assert q4["evaluated_chunks"] == 16
+assert q4["context_size"] == 512
+assert q4["n_seq"] == 1
+assert q4["comparable_to_hf_seq64"] is False
+assert q4["evaluated_target_token_count"] is None
+assert abs(float(q4["perplexity"]) - 21.3852) < 0.0001
+
+add(
+    service_id="text_hard",
+    model="Qwen3-1.7B",
+    device=q4["device"],
+    backend=q4["backend"],
+    precision=q4["precision"],
+    quantization=q4["quantization"],
+    task="text_language_model_evaluation",
+    dataset=q4["dataset"],
+    evaluation_seq_len=str(q4["context_size"]),
+    evaluation_tokens="",
+    preprocessing=(
+        "wikitext2_nonblank_rows_joined_newline;"
+        "corpus_sha256=" + q4["corpus_sha256"]
+    ),
+    metric="perplexity",
+    value=str(q4["perplexity"]),
+    direction="lower",
+    applicability=(
+        "native_q4_llamacpp_ppl_reference_only;"
+        "16_context_chunks;"
+        "gguf_binary_revision_unverified;"
+        "not_equivalent_to_hf_seq64;"
+        "service_task_quality_not_verified"
+    ),
+    source_file=q4_path.name,
+)
+
+assert len(evidence) == 37, len(evidence)
 
 with OUT.open("w", newline="", encoding="utf-8") as f:
     writer = csv.DictWriter(
@@ -184,7 +241,7 @@ with OUT.open("w", newline="", encoding="utf-8") as f:
 
 print("QUALITY EVIDENCE REGISTRY: PASS")
 print("Vision metric records :", 24)
-print("Text PPL records      :", 8)
+print("Text PPL records      :", 9)
 print("SelfCheck records     :", 4)
 print("Total records         :", len(evidence))
 print("Saved                 :", OUT)

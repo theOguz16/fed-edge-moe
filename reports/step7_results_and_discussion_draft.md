@@ -6,7 +6,7 @@ The experimental characterization produced 385 distinct configurations, of which
 
 Among these 57 candidates, latency and memory observations were available for 54 candidates each, while 51 candidates had both. The remaining coverage gaps were explicitly retained rather than replaced by estimates.
 
-Quality evidence applicability was classified as SUPPORTED for 39 candidates, CONDITIONAL for six, and UNVERIFIED for 12. Importantly, applicability indicates whether relevant benchmark evidence exists; it does not establish satisfaction of a deployment-level quality requirement.
+Quality evidence applicability was classified as SUPPORTED for 42 candidates, CONDITIONAL for nine, and UNVERIFIED for six. Importantly, applicability indicates whether relevant benchmark evidence exists; it does not establish satisfaction of a deployment-level quality requirement.
 
 All 57 candidates remained UNVERIFIED in the baseline feasibility evaluation because numerical service-level QoS requirements had not been configured. Consequently, no candidate was certified as FEASIBLE or INFEASIBLE under actual UAV operating requirements.
 
@@ -64,7 +64,7 @@ First, energy measurements use different power boundaries across platforms: comb
 
 Second, memory observations use different measurement semantics, including framework allocator usage, process memory, and NVML GPU memory. Passing a bound on one measurement type does not establish total device-memory sufficiency.
 
-Third, benchmark-reference quality evidence does not guarantee deployment quality under UAV operating conditions. In particular, Qwen3 Q4_K_M task-quality evidence is unavailable, DistilGPT2 precision was not consistently controlled, and some model-device combinations rely on conditional cross-device references.
+Third, benchmark-reference quality evidence does not guarantee deployment quality under UAV operating conditions. In particular, Qwen3 Q4_K_M has a native Apple M4 llama.cpp WikiText-2 perplexity reference (PPL 21.3852, 16 context chunks), but its protocol is not equivalent to the existing Transformers FP16/FP32 seq64 evaluation and it does not establish deployment-level task quality, DistilGPT2 precision was not consistently controlled, and some model-device combinations rely on conditional cross-device references.
 
 Fourth, the absence of per-request latency evidence for the Qwen3 CUDA configurations prevents complete latency-based evaluation of those candidates.
 

@@ -1,0 +1,2 @@
+# Preserve raw Qwen3 measurement bytes for SHA-256 verification.
+results/qwen3_q4_native_ppl_mac_c16_raw.txt -text -whitespace

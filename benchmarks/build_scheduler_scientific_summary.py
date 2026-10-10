@@ -51,9 +51,9 @@ feas_counts = Counter(
 )
 
 assert quality_counts == {
-    "SUPPORTED": 39,
-    "CONDITIONAL": 6,
-    "UNVERIFIED": 12,
+    "SUPPORTED": 42,
+    "CONDITIONAL": 9,
+    "UNVERIFIED": 6,
 }
 assert pareto_counts == {
     "OBSERVED_NONDOMINATED": 38,
@@ -125,9 +125,13 @@ lines.extend([
     "SUPPORTED quality evidence means a matching benchmark reference "
     "exists; it does not independently establish a deployment SLA.",
     "",
-    "Quality limitations include missing Qwen3 Q4_K_M task-quality "
-    "evidence, uncontrolled DistilGPT2 precision, and conditional "
-    "cross-device references.",
+    "Quality limitations include native Qwen3 Q4_K_M "
+    "WikiText-2 perplexity evidence only on Apple M4 "
+    "(llama.cpp, 16 context chunks); the GGUF binary revision "
+    "is unverified, the result is not comparable to HF seq64, "
+    "and UAV task-quality requirements remain unverified. "
+    "DistilGPT2 precision remains uncontrolled, and some "
+    "quality references are conditional across devices.",
     "",
     "## 3. Pareto analysis",
     "",
@@ -224,6 +228,13 @@ lines.extend([
 ])
 
 for filename in SOURCES.values():
+    lines.append(f"- `results/{filename}`")
+
+for filename in (
+    "qwen3_q4_native_ppl_mac_c16.json",
+    "qwen3_q4_native_ppl_mac_c16_raw.txt",
+    "qwen3_q4_wikitext_corpus_manifest.json",
+):
     lines.append(f"- `results/{filename}`")
 
 lines.extend([

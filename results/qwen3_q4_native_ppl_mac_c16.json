@@ -1,0 +1,30 @@
+{
+  "model": "ggml-org/Qwen3-1.7B-GGUF:Q4_K_M",
+  "precision": "q4_k_m",
+  "quantization": "Q4_K_M",
+  "device": "Apple M4",
+  "backend": "llama.cpp/metal",
+  "dataset": "Salesforce/wikitext:wikitext-2-raw-v1:test",
+  "corpus_sha256": "430983e5a711fbc4c6576edffecacf47ff23d58f62f3923d2386d798e0a794c9",
+  "software_version": [
+    "version: 0.5.0 (build 11146, commit 7fe450e19)",
+    "built with AppleClang 21.0.0.21000334 for Darwin arm64"
+  ],
+  "protocol": "llama.cpp native perplexity",
+  "context_size": 512,
+  "batch_size": 512,
+  "n_seq": 1,
+  "evaluated_chunks": 16,
+  "perplexity": 21.3852,
+  "tool_reported_plus_minus": 1.28641,
+  "plus_minus_is_confidence_interval": false,
+  "evaluated_target_token_count": null,
+  "gguf_revision_verified": false,
+  "comparable_to_hf_seq64": false,
+  "token_metadata_warnings": [
+    "0.00.882.606 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden"
+  ],
+  "raw_log": "qwen3_q4_native_ppl_mac_c16_raw.txt",
+  "quality_registry_status": "PENDING_PROTOCOL_REVIEW",
+  "raw_log_sha256": "fd845ce76666d34359a81bd83bef4b611414ccb9862ada096ad8aa1c3c51075c"
+}

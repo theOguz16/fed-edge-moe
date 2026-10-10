@@ -82,10 +82,20 @@ for candidate in candidates:
             )
 
     elif candidate["precision"] == "q4_k_m":
-        scope = (
-            "native_fp32_fp16_evidence_does_not"
-            "_validate_q4_k_m"
-        )
+        if status == "SUPPORTED":
+            scope = (
+                "native_q4_k_m_same_device_backend;"
+                "llamacpp_quality_evaluation;"
+                "not_comparable_to_hf_seq64_perplexity;"
+                "service_generation_quality_not_verified"
+            )
+        elif status == "CONDITIONAL":
+            scope = (
+                "cross_device_or_backend_q4_k_m_reference;"
+                "quality_transfer_not_verified"
+            )
+        else:
+            scope = "no_matching_q4_k_m_quality_evidence"
 
     elif candidate["precision"] == "default_uncontrolled":
         scope = (

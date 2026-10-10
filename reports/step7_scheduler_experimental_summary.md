@@ -19,15 +19,15 @@
 
 | Evidence applicability | Candidates |
 |---|---:|
-| SUPPORTED | 39 |
-| CONDITIONAL | 6 |
-| UNVERIFIED | 12 |
+| SUPPORTED | 42 |
+| CONDITIONAL | 9 |
+| UNVERIFIED | 6 |
 
 All 57 baseline candidates are **UNVERIFIED**, not proven FEASIBLE or INFEASIBLE, because real service QoS thresholds are not configured.
 
 SUPPORTED quality evidence means a matching benchmark reference exists; it does not independently establish a deployment SLA.
 
-Quality limitations include missing Qwen3 Q4_K_M task-quality evidence, uncontrolled DistilGPT2 precision, and conditional cross-device references.
+Quality limitations include native Qwen3 Q4_K_M WikiText-2 perplexity evidence only on Apple M4 (llama.cpp, 16 context chunks); the GGUF binary revision is unverified, the result is not comparable to HF seq64, and UAV task-quality requirements remain unverified. DistilGPT2 precision remains uncontrolled, and some quality references are conditional across devices.
 
 ## 3. Pareto analysis
 
@@ -92,5 +92,8 @@ Intel CPU sensitivity is **partial evidence only**: missing memory measurements 
 - `results/qos_latency_sensitivity_convnext_cpu_medium_partial.csv`
 - `results/qos_throughput_sensitivity_resnet50_m4_medium.csv`
 - `results/qos_quality_sensitivity_resnet50_m4_medium.csv`
+- `results/qwen3_q4_native_ppl_mac_c16.json`
+- `results/qwen3_q4_native_ppl_mac_c16_raw.txt`
+- `results/qwen3_q4_wikitext_corpus_manifest.json`
 
 Regeneration entrypoint: `python benchmarks/rebuild_scheduler_artifacts.py`.
