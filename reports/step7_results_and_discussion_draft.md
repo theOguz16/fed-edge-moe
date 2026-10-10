@@ -24,7 +24,7 @@ Throughput sensitivity demonstrated analogous threshold-dependent behavior.
 
 Quality sensitivity further demonstrated that energy minimization does not override an explicit quality constraint. Under a synthetic ImageNetV2 Top-5 threshold between the two observed scores, FP32 was the sole eligible candidate despite its higher measured energy.
 
-However, the observed Top-1 and Top-5 differences between precisions were very small. These sensitivity experiments validate decision logic rather than statistically significant differences in model quality.
+This synthetic case also illustrates why candidates dominated on energy, latency, and throughput must not be discarded before applying the quality constraint: the dominated FP32 candidate can remain the sole quality-eligible option. However, the observed Top-1 and Top-5 differences between precisions were very small. These sensitivity experiments validate decision logic rather than statistically significant differences in model quality.
 
 ## 3. Energy Efficiency and Measurement Uncertainty
 
@@ -46,7 +46,7 @@ Canonical Intel CPU process-memory observations are now available for all three 
 
 A three-objective Pareto analysis considered energy per item and batch latency as minimization objectives, and throughput as a maximization objective.
 
-The 57 canonical candidates formed 37 comparison groups, including 19 multi-candidate groups. Using measured point estimates, 41 candidates were classified as observed nondominated and 16 as observed dominated. All 57 candidates had the objective metrics required for Pareto evaluation.
+The 57 canonical candidates formed 37 comparison groups, including 19 multi-candidate groups. Using measured point estimates, 41 candidates were classified as observed nondominated and 16 as observed dominated. All 57 candidates had the objective metrics required for Pareto evaluation. Eighteen comparison groups contained only one candidate; nondominance in these singleton groups does not establish superiority over an alternative.
 
 For the ResNet50 medium workload on Apple M4, FP16 dominated FP32 on all three objectives.
 
@@ -56,7 +56,7 @@ Only four of the 19 multi-candidate groups had complete three-repeat pairwise en
 
 ## 5. Discussion and Threats to Validity
 
-The results demonstrate a conservative scheduler evaluation pipeline that separates measured performance, constraint satisfaction, energy ranking, and uncertainty evidence.
+The offline experiments support a traceable, feasibility-first scheduler evaluation pipeline that separates measured performance, constraint satisfaction, energy ranking, and uncertainty evidence. The contribution established here is conservative decision behavior under measured and synthetic conditions, rather than demonstrated energy optimality in deployed UAV operation.
 
 Several limitations remain.
 
@@ -70,6 +70,6 @@ Fourth, Qwen3 CUDA batch-completion latency was recovered from archived llama.cp
 
 Finally, energy and performance measurements originate from specific benchmark procedures, and observed point-estimate ordering may be sensitive to measurement variability.
 
-Therefore, the present results support the correctness and reproducibility of the scheduler's conservative decision logic under the tested benchmark scenarios. They do not yet establish end-to-end feasibility for a deployed UAV system.
+Therefore, the present results support the correctness and reproducibility of the scheduler's conservative decision logic under measured hardware characteristics and synthetic UAV-inspired workload scenarios. The UAV context serves as an application scenario rather than a physical experimental platform; no drone flight, onboard execution, or field deployment is evaluated.
 
-Future work should specify and validate UAV service requirements, close the remaining measurement and task-quality evidence gaps, and evaluate scheduler decisions under representative deployment conditions.
+The next evaluation stage will compare energy-only, QoS-first, and evidence-aware QoS-first scheduling policies using the same measured candidate registry and explicitly synthetic workload constraints. The comparison will examine constraint violations, selection and abstention behavior, and energy point estimates within compatible measurement boundaries. Broader energy uncertainty and task-quality evidence remain limitations, without requiring physical UAV experimentation.
