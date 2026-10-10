@@ -22,6 +22,7 @@ SCRIPTS = [
     "benchmarks/sweep_service_throughput_quality_qos.py",
     "benchmarks/build_scheduler_pareto.py",
     "benchmarks/summarize_scheduler_pareto_groups.py",
+    "benchmarks/build_scheduler_scientific_summary.py",
 ]
 
 for script in SCRIPTS:
