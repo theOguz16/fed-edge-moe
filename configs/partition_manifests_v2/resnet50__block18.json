@@ -1,0 +1,268 @@
+{
+  "schema_version": "2.0-draft",
+  "model_id": "resnet50",
+  "granularity": "block18",
+  "execution_status": "manifest_only_not_validated",
+  "group_count": 18,
+  "cut_boundary_count": 17,
+  "theoretical_placements_max_2_switches": 308,
+  "groups": [
+    {
+      "group_id": "G1",
+      "stage": "stem",
+      "name": "stem",
+      "modules": [
+        "conv1",
+        "bn1",
+        "relu",
+        "maxpool"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "stage": "layer1",
+      "name": "layer1_block1",
+      "modules": [
+        "layer1.0"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "stage": "layer1",
+      "name": "layer1_block2",
+      "modules": [
+        "layer1.1"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "stage": "layer1",
+      "name": "layer1_block3",
+      "modules": [
+        "layer1.2"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "stage": "layer2",
+      "name": "layer2_block1",
+      "modules": [
+        "layer2.0"
+      ]
+    },
+    {
+      "group_id": "G6",
+      "stage": "layer2",
+      "name": "layer2_block2",
+      "modules": [
+        "layer2.1"
+      ]
+    },
+    {
+      "group_id": "G7",
+      "stage": "layer2",
+      "name": "layer2_block3",
+      "modules": [
+        "layer2.2"
+      ]
+    },
+    {
+      "group_id": "G8",
+      "stage": "layer2",
+      "name": "layer2_block4",
+      "modules": [
+        "layer2.3"
+      ]
+    },
+    {
+      "group_id": "G9",
+      "stage": "layer3",
+      "name": "layer3_block1",
+      "modules": [
+        "layer3.0"
+      ]
+    },
+    {
+      "group_id": "G10",
+      "stage": "layer3",
+      "name": "layer3_block2",
+      "modules": [
+        "layer3.1"
+      ]
+    },
+    {
+      "group_id": "G11",
+      "stage": "layer3",
+      "name": "layer3_block3",
+      "modules": [
+        "layer3.2"
+      ]
+    },
+    {
+      "group_id": "G12",
+      "stage": "layer3",
+      "name": "layer3_block4",
+      "modules": [
+        "layer3.3"
+      ]
+    },
+    {
+      "group_id": "G13",
+      "stage": "layer3",
+      "name": "layer3_block5",
+      "modules": [
+        "layer3.4"
+      ]
+    },
+    {
+      "group_id": "G14",
+      "stage": "layer3",
+      "name": "layer3_block6",
+      "modules": [
+        "layer3.5"
+      ]
+    },
+    {
+      "group_id": "G15",
+      "stage": "layer4",
+      "name": "layer4_block1",
+      "modules": [
+        "layer4.0"
+      ]
+    },
+    {
+      "group_id": "G16",
+      "stage": "layer4",
+      "name": "layer4_block2",
+      "modules": [
+        "layer4.1"
+      ]
+    },
+    {
+      "group_id": "G17",
+      "stage": "layer4",
+      "name": "layer4_block3",
+      "modules": [
+        "layer4.2"
+      ]
+    },
+    {
+      "group_id": "G18",
+      "stage": "head",
+      "name": "head",
+      "modules": [
+        "avgpool",
+        "fc"
+      ]
+    }
+  ],
+  "valid_cut_boundaries": [
+    {
+      "cut_after": "G1",
+      "before": "stem",
+      "after": "layer1_block1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G2",
+      "before": "layer1_block1",
+      "after": "layer1_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G3",
+      "before": "layer1_block2",
+      "after": "layer1_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G4",
+      "before": "layer1_block3",
+      "after": "layer2_block1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G5",
+      "before": "layer2_block1",
+      "after": "layer2_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G6",
+      "before": "layer2_block2",
+      "after": "layer2_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G7",
+      "before": "layer2_block3",
+      "after": "layer2_block4",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G8",
+      "before": "layer2_block4",
+      "after": "layer3_block1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G9",
+      "before": "layer3_block1",
+      "after": "layer3_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G10",
+      "before": "layer3_block2",
+      "after": "layer3_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G11",
+      "before": "layer3_block3",
+      "after": "layer3_block4",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G12",
+      "before": "layer3_block4",
+      "after": "layer3_block5",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G13",
+      "before": "layer3_block5",
+      "after": "layer3_block6",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G14",
+      "before": "layer3_block6",
+      "after": "layer4_block1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G15",
+      "before": "layer4_block1",
+      "after": "layer4_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G16",
+      "before": "layer4_block2",
+      "after": "layer4_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G17",
+      "before": "layer4_block3",
+      "after": "head",
+      "boundary_type": "stage_boundary"
+    }
+  ],
+  "notes": [
+    "Bottleneck residual branch remains inside its block.",
+    "Head requires flatten between avgpool and fc.",
+    "Every proposed execution must pass numerical validation."
+  ]
+}

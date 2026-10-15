@@ -1,0 +1,100 @@
+{
+  "schema_version": "2.0-draft",
+  "model_id": "resnet50",
+  "granularity": "stage6",
+  "execution_status": "manifest_only_not_validated",
+  "group_count": 6,
+  "cut_boundary_count": 5,
+  "theoretical_placements_max_2_switches": 32,
+  "groups": [
+    {
+      "group_id": "G1",
+      "stage": "stem",
+      "name": "stem",
+      "modules": [
+        "conv1",
+        "bn1",
+        "relu",
+        "maxpool"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "stage": "layer1",
+      "name": "layer1",
+      "modules": [
+        "layer1"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "stage": "layer2",
+      "name": "layer2",
+      "modules": [
+        "layer2"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "stage": "layer3",
+      "name": "layer3",
+      "modules": [
+        "layer3"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "stage": "layer4",
+      "name": "layer4",
+      "modules": [
+        "layer4"
+      ]
+    },
+    {
+      "group_id": "G6",
+      "stage": "head",
+      "name": "head",
+      "modules": [
+        "avgpool",
+        "fc"
+      ]
+    }
+  ],
+  "valid_cut_boundaries": [
+    {
+      "cut_after": "G1",
+      "before": "stem",
+      "after": "layer1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G2",
+      "before": "layer1",
+      "after": "layer2",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G3",
+      "before": "layer2",
+      "after": "layer3",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G4",
+      "before": "layer3",
+      "after": "layer4",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G5",
+      "before": "layer4",
+      "after": "head",
+      "boundary_type": "stage_boundary"
+    }
+  ],
+  "notes": [
+    "Bottleneck residual branch remains inside its block.",
+    "Head requires flatten between avgpool and fc.",
+    "Every proposed execution must pass numerical validation."
+  ]
+}

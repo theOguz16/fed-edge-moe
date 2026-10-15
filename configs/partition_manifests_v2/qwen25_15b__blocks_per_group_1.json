@@ -1,0 +1,447 @@
+{
+  "schema_version": "2.0-draft",
+  "model_id": "qwen25_15b",
+  "granularity": "blocks_per_group_1",
+  "execution_status": "manifest_only_not_validated",
+  "group_count": 31,
+  "cut_boundary_count": 30,
+  "theoretical_placements_max_2_switches": 932,
+  "groups": [
+    {
+      "group_id": "G1",
+      "stage": "embedding",
+      "name": "token_embeddings",
+      "modules": [
+        "model.embed_tokens"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "stage": "decoder",
+      "name": "blocks_1_to_1",
+      "modules": [
+        "model.layers.0"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "stage": "decoder",
+      "name": "blocks_2_to_2",
+      "modules": [
+        "model.layers.1"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "stage": "decoder",
+      "name": "blocks_3_to_3",
+      "modules": [
+        "model.layers.2"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "stage": "decoder",
+      "name": "blocks_4_to_4",
+      "modules": [
+        "model.layers.3"
+      ]
+    },
+    {
+      "group_id": "G6",
+      "stage": "decoder",
+      "name": "blocks_5_to_5",
+      "modules": [
+        "model.layers.4"
+      ]
+    },
+    {
+      "group_id": "G7",
+      "stage": "decoder",
+      "name": "blocks_6_to_6",
+      "modules": [
+        "model.layers.5"
+      ]
+    },
+    {
+      "group_id": "G8",
+      "stage": "decoder",
+      "name": "blocks_7_to_7",
+      "modules": [
+        "model.layers.6"
+      ]
+    },
+    {
+      "group_id": "G9",
+      "stage": "decoder",
+      "name": "blocks_8_to_8",
+      "modules": [
+        "model.layers.7"
+      ]
+    },
+    {
+      "group_id": "G10",
+      "stage": "decoder",
+      "name": "blocks_9_to_9",
+      "modules": [
+        "model.layers.8"
+      ]
+    },
+    {
+      "group_id": "G11",
+      "stage": "decoder",
+      "name": "blocks_10_to_10",
+      "modules": [
+        "model.layers.9"
+      ]
+    },
+    {
+      "group_id": "G12",
+      "stage": "decoder",
+      "name": "blocks_11_to_11",
+      "modules": [
+        "model.layers.10"
+      ]
+    },
+    {
+      "group_id": "G13",
+      "stage": "decoder",
+      "name": "blocks_12_to_12",
+      "modules": [
+        "model.layers.11"
+      ]
+    },
+    {
+      "group_id": "G14",
+      "stage": "decoder",
+      "name": "blocks_13_to_13",
+      "modules": [
+        "model.layers.12"
+      ]
+    },
+    {
+      "group_id": "G15",
+      "stage": "decoder",
+      "name": "blocks_14_to_14",
+      "modules": [
+        "model.layers.13"
+      ]
+    },
+    {
+      "group_id": "G16",
+      "stage": "decoder",
+      "name": "blocks_15_to_15",
+      "modules": [
+        "model.layers.14"
+      ]
+    },
+    {
+      "group_id": "G17",
+      "stage": "decoder",
+      "name": "blocks_16_to_16",
+      "modules": [
+        "model.layers.15"
+      ]
+    },
+    {
+      "group_id": "G18",
+      "stage": "decoder",
+      "name": "blocks_17_to_17",
+      "modules": [
+        "model.layers.16"
+      ]
+    },
+    {
+      "group_id": "G19",
+      "stage": "decoder",
+      "name": "blocks_18_to_18",
+      "modules": [
+        "model.layers.17"
+      ]
+    },
+    {
+      "group_id": "G20",
+      "stage": "decoder",
+      "name": "blocks_19_to_19",
+      "modules": [
+        "model.layers.18"
+      ]
+    },
+    {
+      "group_id": "G21",
+      "stage": "decoder",
+      "name": "blocks_20_to_20",
+      "modules": [
+        "model.layers.19"
+      ]
+    },
+    {
+      "group_id": "G22",
+      "stage": "decoder",
+      "name": "blocks_21_to_21",
+      "modules": [
+        "model.layers.20"
+      ]
+    },
+    {
+      "group_id": "G23",
+      "stage": "decoder",
+      "name": "blocks_22_to_22",
+      "modules": [
+        "model.layers.21"
+      ]
+    },
+    {
+      "group_id": "G24",
+      "stage": "decoder",
+      "name": "blocks_23_to_23",
+      "modules": [
+        "model.layers.22"
+      ]
+    },
+    {
+      "group_id": "G25",
+      "stage": "decoder",
+      "name": "blocks_24_to_24",
+      "modules": [
+        "model.layers.23"
+      ]
+    },
+    {
+      "group_id": "G26",
+      "stage": "decoder",
+      "name": "blocks_25_to_25",
+      "modules": [
+        "model.layers.24"
+      ]
+    },
+    {
+      "group_id": "G27",
+      "stage": "decoder",
+      "name": "blocks_26_to_26",
+      "modules": [
+        "model.layers.25"
+      ]
+    },
+    {
+      "group_id": "G28",
+      "stage": "decoder",
+      "name": "blocks_27_to_27",
+      "modules": [
+        "model.layers.26"
+      ]
+    },
+    {
+      "group_id": "G29",
+      "stage": "decoder",
+      "name": "blocks_28_to_28",
+      "modules": [
+        "model.layers.27"
+      ]
+    },
+    {
+      "group_id": "G30",
+      "stage": "final_norm",
+      "name": "final_norm",
+      "modules": [
+        "model.norm"
+      ]
+    },
+    {
+      "group_id": "G31",
+      "stage": "lm_head",
+      "name": "lm_head",
+      "modules": [
+        "lm_head"
+      ]
+    }
+  ],
+  "valid_cut_boundaries": [
+    {
+      "cut_after": "G1",
+      "before": "token_embeddings",
+      "after": "blocks_1_to_1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G2",
+      "before": "blocks_1_to_1",
+      "after": "blocks_2_to_2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G3",
+      "before": "blocks_2_to_2",
+      "after": "blocks_3_to_3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G4",
+      "before": "blocks_3_to_3",
+      "after": "blocks_4_to_4",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G5",
+      "before": "blocks_4_to_4",
+      "after": "blocks_5_to_5",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G6",
+      "before": "blocks_5_to_5",
+      "after": "blocks_6_to_6",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G7",
+      "before": "blocks_6_to_6",
+      "after": "blocks_7_to_7",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G8",
+      "before": "blocks_7_to_7",
+      "after": "blocks_8_to_8",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G9",
+      "before": "blocks_8_to_8",
+      "after": "blocks_9_to_9",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G10",
+      "before": "blocks_9_to_9",
+      "after": "blocks_10_to_10",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G11",
+      "before": "blocks_10_to_10",
+      "after": "blocks_11_to_11",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G12",
+      "before": "blocks_11_to_11",
+      "after": "blocks_12_to_12",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G13",
+      "before": "blocks_12_to_12",
+      "after": "blocks_13_to_13",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G14",
+      "before": "blocks_13_to_13",
+      "after": "blocks_14_to_14",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G15",
+      "before": "blocks_14_to_14",
+      "after": "blocks_15_to_15",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G16",
+      "before": "blocks_15_to_15",
+      "after": "blocks_16_to_16",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G17",
+      "before": "blocks_16_to_16",
+      "after": "blocks_17_to_17",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G18",
+      "before": "blocks_17_to_17",
+      "after": "blocks_18_to_18",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G19",
+      "before": "blocks_18_to_18",
+      "after": "blocks_19_to_19",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G20",
+      "before": "blocks_19_to_19",
+      "after": "blocks_20_to_20",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G21",
+      "before": "blocks_20_to_20",
+      "after": "blocks_21_to_21",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G22",
+      "before": "blocks_21_to_21",
+      "after": "blocks_22_to_22",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G23",
+      "before": "blocks_22_to_22",
+      "after": "blocks_23_to_23",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G24",
+      "before": "blocks_23_to_23",
+      "after": "blocks_24_to_24",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G25",
+      "before": "blocks_24_to_24",
+      "after": "blocks_25_to_25",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G26",
+      "before": "blocks_25_to_25",
+      "after": "blocks_26_to_26",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G27",
+      "before": "blocks_26_to_26",
+      "after": "blocks_27_to_27",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G28",
+      "before": "blocks_27_to_27",
+      "after": "blocks_28_to_28",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G29",
+      "before": "blocks_28_to_28",
+      "after": "final_norm",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G30",
+      "before": "final_norm",
+      "after": "lm_head",
+      "boundary_type": "stage_boundary"
+    }
+  ],
+  "notes": [
+    "Layer count read from local config: 28.",
+    "Decoder block boundaries only, not inside attention.",
+    "Attention masks, positions, RoPE and KV cache require architecture-specific forward logic.",
+    "Manifest alone does not establish executable partitioning."
+  ]
+}

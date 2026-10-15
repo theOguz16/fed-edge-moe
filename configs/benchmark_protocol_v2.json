@@ -1,0 +1,121 @@
+{
+  "protocol_version": "2.0-draft",
+  "research_mode": "experimental_characterization",
+  "optimization_algorithm": false,
+  "fitness_weights": null,
+  "models": [
+    {
+      "id": "resnet50",
+      "family": "vision",
+      "model_ref": "torchvision/resnet50",
+      "partition_scheme": "residual_block_level"
+    },
+    {
+      "id": "convnext_base",
+      "family": "vision",
+      "model_ref": "torchvision/convnext_base",
+      "partition_scheme": "convnext_block_level"
+    },
+    {
+      "id": "convnext_large",
+      "family": "vision",
+      "model_ref": "torchvision/convnext_large",
+      "partition_scheme": "existing_35_group"
+    },
+    {
+      "id": "distilgpt2",
+      "family": "text",
+      "model_ref": "distilbert/distilgpt2",
+      "partition_scheme": "transformer_block_level"
+    },
+    {
+      "id": "qwen25_15b",
+      "family": "text",
+      "model_ref": "Qwen/Qwen2.5-1.5B-Instruct",
+      "partition_scheme": "decoder_block_level"
+    },
+    {
+      "id": "qwen3_17b",
+      "family": "text",
+      "model_ref": "Qwen/Qwen3-1.7B",
+      "partition_scheme": "decoder_block_level"
+    }
+  ],
+  "machines": {
+    "mac_m4": {
+      "backends": ["cpu", "mps"],
+      "cpu_threads": [1, 2, 4, 6, 8, 10],
+      "memory_gb": 16
+    },
+    "msi_3050": {
+      "backends": ["cpu", "cuda"],
+      "cpu_threads": [1, 2, 4, 6, 8, 10, 12, 16],
+      "gpu": "RTX 3050",
+      "gpu_vram_gb": null
+    }
+  },
+  "workloads": {
+    "vision_core": {
+      "resolution": [224, 224],
+      "batch": 1,
+      "precision": "fp32"
+    },
+    "vision_extended": {
+      "resolution": [320, 320],
+      "batch": 1,
+      "precision": "fp32"
+    },
+    "text_prefill_core": {
+      "input_tokens": 128,
+      "batch": 1,
+      "precision": "fp32",
+      "kv_cache": false
+    },
+    "text_decode_core": {
+      "input_tokens": 128,
+      "output_tokens": 32,
+      "batch": 1,
+      "kv_cache": true,
+      "precision": "device_compatible_recorded"
+    }
+  },
+  "experiment_families": [
+    "full_model_baseline",
+    "group_cost_profile",
+    "hybrid_partition",
+    "resource_qos"
+  ],
+  "placement_policy": {
+    "max_internal_device_switches": 2,
+    "include_cpu_only": true,
+    "include_gpu_only": true,
+    "include_single_cut": true,
+    "include_cpu_islands": true,
+    "include_gpu_islands": true,
+    "measure_all_combinations": false
+  },
+  "measurement_policy": {
+    "pilot_first": true,
+    "independent_process_repeats_target": 3,
+    "target_samples_per_configuration": 100,
+    "max_measured_seconds_per_process": 180,
+    "record_raw_latency": true,
+    "synchronize_device_at_timing_boundaries": true,
+    "exclude_model_initialization_from_inference_timing": true,
+    "include_input_output_transfers_in_e2e": true,
+    "record_per_segment_compute_and_transfer": true,
+    "numerical_reference_required": true,
+    "record_energy_measurement_boundary": true,
+    "record_power_state_and_software_versions": true,
+    "record_failed_and_unsupported_jobs": true,
+    "support_resume": true
+  },
+  "statuses": [
+    "ok",
+    "unsupported",
+    "oom",
+    "timeout",
+    "numerical_mismatch",
+    "failed"
+  ]
+}

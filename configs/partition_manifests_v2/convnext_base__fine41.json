@@ -1,0 +1,588 @@
+{
+  "schema_version": "2.0-draft",
+  "model_id": "convnext_base",
+  "granularity": "fine41",
+  "execution_status": "manifest_only_not_validated",
+  "group_count": 41,
+  "cut_boundary_count": 40,
+  "theoretical_placements_max_2_switches": 1642,
+  "groups": [
+    {
+      "group_id": "G1",
+      "stage": "stem",
+      "name": "stem",
+      "modules": [
+        "features.0"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "stage": "stage1",
+      "name": "stage1_block1",
+      "modules": [
+        "features.1.0"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "stage": "stage1",
+      "name": "stage1_block2",
+      "modules": [
+        "features.1.1"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "stage": "stage1",
+      "name": "stage1_block3",
+      "modules": [
+        "features.1.2"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "stage": "stage2",
+      "name": "downsample2",
+      "modules": [
+        "features.2"
+      ]
+    },
+    {
+      "group_id": "G6",
+      "stage": "stage2",
+      "name": "stage2_block1",
+      "modules": [
+        "features.3.0"
+      ]
+    },
+    {
+      "group_id": "G7",
+      "stage": "stage2",
+      "name": "stage2_block2",
+      "modules": [
+        "features.3.1"
+      ]
+    },
+    {
+      "group_id": "G8",
+      "stage": "stage2",
+      "name": "stage2_block3",
+      "modules": [
+        "features.3.2"
+      ]
+    },
+    {
+      "group_id": "G9",
+      "stage": "stage3",
+      "name": "downsample3",
+      "modules": [
+        "features.4"
+      ]
+    },
+    {
+      "group_id": "G10",
+      "stage": "stage3",
+      "name": "stage3_block1",
+      "modules": [
+        "features.5.0"
+      ]
+    },
+    {
+      "group_id": "G11",
+      "stage": "stage3",
+      "name": "stage3_block2",
+      "modules": [
+        "features.5.1"
+      ]
+    },
+    {
+      "group_id": "G12",
+      "stage": "stage3",
+      "name": "stage3_block3",
+      "modules": [
+        "features.5.2"
+      ]
+    },
+    {
+      "group_id": "G13",
+      "stage": "stage3",
+      "name": "stage3_block4",
+      "modules": [
+        "features.5.3"
+      ]
+    },
+    {
+      "group_id": "G14",
+      "stage": "stage3",
+      "name": "stage3_block5",
+      "modules": [
+        "features.5.4"
+      ]
+    },
+    {
+      "group_id": "G15",
+      "stage": "stage3",
+      "name": "stage3_block6",
+      "modules": [
+        "features.5.5"
+      ]
+    },
+    {
+      "group_id": "G16",
+      "stage": "stage3",
+      "name": "stage3_block7",
+      "modules": [
+        "features.5.6"
+      ]
+    },
+    {
+      "group_id": "G17",
+      "stage": "stage3",
+      "name": "stage3_block8",
+      "modules": [
+        "features.5.7"
+      ]
+    },
+    {
+      "group_id": "G18",
+      "stage": "stage3",
+      "name": "stage3_block9",
+      "modules": [
+        "features.5.8"
+      ]
+    },
+    {
+      "group_id": "G19",
+      "stage": "stage3",
+      "name": "stage3_block10",
+      "modules": [
+        "features.5.9"
+      ]
+    },
+    {
+      "group_id": "G20",
+      "stage": "stage3",
+      "name": "stage3_block11",
+      "modules": [
+        "features.5.10"
+      ]
+    },
+    {
+      "group_id": "G21",
+      "stage": "stage3",
+      "name": "stage3_block12",
+      "modules": [
+        "features.5.11"
+      ]
+    },
+    {
+      "group_id": "G22",
+      "stage": "stage3",
+      "name": "stage3_block13",
+      "modules": [
+        "features.5.12"
+      ]
+    },
+    {
+      "group_id": "G23",
+      "stage": "stage3",
+      "name": "stage3_block14",
+      "modules": [
+        "features.5.13"
+      ]
+    },
+    {
+      "group_id": "G24",
+      "stage": "stage3",
+      "name": "stage3_block15",
+      "modules": [
+        "features.5.14"
+      ]
+    },
+    {
+      "group_id": "G25",
+      "stage": "stage3",
+      "name": "stage3_block16",
+      "modules": [
+        "features.5.15"
+      ]
+    },
+    {
+      "group_id": "G26",
+      "stage": "stage3",
+      "name": "stage3_block17",
+      "modules": [
+        "features.5.16"
+      ]
+    },
+    {
+      "group_id": "G27",
+      "stage": "stage3",
+      "name": "stage3_block18",
+      "modules": [
+        "features.5.17"
+      ]
+    },
+    {
+      "group_id": "G28",
+      "stage": "stage3",
+      "name": "stage3_block19",
+      "modules": [
+        "features.5.18"
+      ]
+    },
+    {
+      "group_id": "G29",
+      "stage": "stage3",
+      "name": "stage3_block20",
+      "modules": [
+        "features.5.19"
+      ]
+    },
+    {
+      "group_id": "G30",
+      "stage": "stage3",
+      "name": "stage3_block21",
+      "modules": [
+        "features.5.20"
+      ]
+    },
+    {
+      "group_id": "G31",
+      "stage": "stage3",
+      "name": "stage3_block22",
+      "modules": [
+        "features.5.21"
+      ]
+    },
+    {
+      "group_id": "G32",
+      "stage": "stage3",
+      "name": "stage3_block23",
+      "modules": [
+        "features.5.22"
+      ]
+    },
+    {
+      "group_id": "G33",
+      "stage": "stage3",
+      "name": "stage3_block24",
+      "modules": [
+        "features.5.23"
+      ]
+    },
+    {
+      "group_id": "G34",
+      "stage": "stage3",
+      "name": "stage3_block25",
+      "modules": [
+        "features.5.24"
+      ]
+    },
+    {
+      "group_id": "G35",
+      "stage": "stage3",
+      "name": "stage3_block26",
+      "modules": [
+        "features.5.25"
+      ]
+    },
+    {
+      "group_id": "G36",
+      "stage": "stage3",
+      "name": "stage3_block27",
+      "modules": [
+        "features.5.26"
+      ]
+    },
+    {
+      "group_id": "G37",
+      "stage": "stage4",
+      "name": "downsample4",
+      "modules": [
+        "features.6"
+      ]
+    },
+    {
+      "group_id": "G38",
+      "stage": "stage4",
+      "name": "stage4_block1",
+      "modules": [
+        "features.7.0"
+      ]
+    },
+    {
+      "group_id": "G39",
+      "stage": "stage4",
+      "name": "stage4_block2",
+      "modules": [
+        "features.7.1"
+      ]
+    },
+    {
+      "group_id": "G40",
+      "stage": "stage4",
+      "name": "stage4_block3",
+      "modules": [
+        "features.7.2"
+      ]
+    },
+    {
+      "group_id": "G41",
+      "stage": "head",
+      "name": "head",
+      "modules": [
+        "avgpool",
+        "classifier"
+      ]
+    }
+  ],
+  "valid_cut_boundaries": [
+    {
+      "cut_after": "G1",
+      "before": "stem",
+      "after": "stage1_block1",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G2",
+      "before": "stage1_block1",
+      "after": "stage1_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G3",
+      "before": "stage1_block2",
+      "after": "stage1_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G4",
+      "before": "stage1_block3",
+      "after": "downsample2",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G5",
+      "before": "downsample2",
+      "after": "stage2_block1",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G6",
+      "before": "stage2_block1",
+      "after": "stage2_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G7",
+      "before": "stage2_block2",
+      "after": "stage2_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G8",
+      "before": "stage2_block3",
+      "after": "downsample3",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G9",
+      "before": "downsample3",
+      "after": "stage3_block1",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G10",
+      "before": "stage3_block1",
+      "after": "stage3_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G11",
+      "before": "stage3_block2",
+      "after": "stage3_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G12",
+      "before": "stage3_block3",
+      "after": "stage3_block4",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G13",
+      "before": "stage3_block4",
+      "after": "stage3_block5",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G14",
+      "before": "stage3_block5",
+      "after": "stage3_block6",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G15",
+      "before": "stage3_block6",
+      "after": "stage3_block7",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G16",
+      "before": "stage3_block7",
+      "after": "stage3_block8",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G17",
+      "before": "stage3_block8",
+      "after": "stage3_block9",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G18",
+      "before": "stage3_block9",
+      "after": "stage3_block10",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G19",
+      "before": "stage3_block10",
+      "after": "stage3_block11",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G20",
+      "before": "stage3_block11",
+      "after": "stage3_block12",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G21",
+      "before": "stage3_block12",
+      "after": "stage3_block13",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G22",
+      "before": "stage3_block13",
+      "after": "stage3_block14",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G23",
+      "before": "stage3_block14",
+      "after": "stage3_block15",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G24",
+      "before": "stage3_block15",
+      "after": "stage3_block16",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G25",
+      "before": "stage3_block16",
+      "after": "stage3_block17",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G26",
+      "before": "stage3_block17",
+      "after": "stage3_block18",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G27",
+      "before": "stage3_block18",
+      "after": "stage3_block19",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G28",
+      "before": "stage3_block19",
+      "after": "stage3_block20",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G29",
+      "before": "stage3_block20",
+      "after": "stage3_block21",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G30",
+      "before": "stage3_block21",
+      "after": "stage3_block22",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G31",
+      "before": "stage3_block22",
+      "after": "stage3_block23",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G32",
+      "before": "stage3_block23",
+      "after": "stage3_block24",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G33",
+      "before": "stage3_block24",
+      "after": "stage3_block25",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G34",
+      "before": "stage3_block25",
+      "after": "stage3_block26",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G35",
+      "before": "stage3_block26",
+      "after": "stage3_block27",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G36",
+      "before": "stage3_block27",
+      "after": "downsample4",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G37",
+      "before": "downsample4",
+      "after": "stage4_block1",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G38",
+      "before": "stage4_block1",
+      "after": "stage4_block2",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G39",
+      "before": "stage4_block2",
+      "after": "stage4_block3",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G40",
+      "before": "stage4_block3",
+      "after": "head",
+      "boundary_type": "stage_boundary"
+    }
+  ],
+  "notes": [
+    "Both variants share stage depths 3/3/27/3.",
+    "Group35 preserves previous ConvNeXt-Large results.",
+    "Group41 additionally separates Stage1 and Stage2.",
+    "Module shapes and execution must be validated per model."
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schema_version": "2.0-draft",
+  "model_id": "qwen3_17b",
+  "granularity": "blocks_per_group_2",
+  "execution_status": "manifest_only_not_validated",
+  "group_count": 17,
+  "cut_boundary_count": 16,
+  "theoretical_placements_max_2_switches": 274,
+  "groups": [
+    {
+      "group_id": "G1",
+      "stage": "embedding",
+      "name": "token_embeddings",
+      "modules": [
+        "model.embed_tokens"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "stage": "decoder",
+      "name": "blocks_1_to_2",
+      "modules": [
+        "model.layers.0",
+        "model.layers.1"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "stage": "decoder",
+      "name": "blocks_3_to_4",
+      "modules": [
+        "model.layers.2",
+        "model.layers.3"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "stage": "decoder",
+      "name": "blocks_5_to_6",
+      "modules": [
+        "model.layers.4",
+        "model.layers.5"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "stage": "decoder",
+      "name": "blocks_7_to_8",
+      "modules": [
+        "model.layers.6",
+        "model.layers.7"
+      ]
+    },
+    {
+      "group_id": "G6",
+      "stage": "decoder",
+      "name": "blocks_9_to_10",
+      "modules": [
+        "model.layers.8",
+        "model.layers.9"
+      ]
+    },
+    {
+      "group_id": "G7",
+      "stage": "decoder",
+      "name": "blocks_11_to_12",
+      "modules": [
+        "model.layers.10",
+        "model.layers.11"
+      ]
+    },
+    {
+      "group_id": "G8",
+      "stage": "decoder",
+      "name": "blocks_13_to_14",
+      "modules": [
+        "model.layers.12",
+        "model.layers.13"
+      ]
+    },
+    {
+      "group_id": "G9",
+      "stage": "decoder",
+      "name": "blocks_15_to_16",
+      "modules": [
+        "model.layers.14",
+        "model.layers.15"
+      ]
+    },
+    {
+      "group_id": "G10",
+      "stage": "decoder",
+      "name": "blocks_17_to_18",
+      "modules": [
+        "model.layers.16",
+        "model.layers.17"
+      ]
+    },
+    {
+      "group_id": "G11",
+      "stage": "decoder",
+      "name": "blocks_19_to_20",
+      "modules": [
+        "model.layers.18",
+        "model.layers.19"
+      ]
+    },
+    {
+      "group_id": "G12",
+      "stage": "decoder",
+      "name": "blocks_21_to_22",
+      "modules": [
+        "model.layers.20",
+        "model.layers.21"
+      ]
+    },
+    {
+      "group_id": "G13",
+      "stage": "decoder",
+      "name": "blocks_23_to_24",
+      "modules": [
+        "model.layers.22",
+        "model.layers.23"
+      ]
+    },
+    {
+      "group_id": "G14",
+      "stage": "decoder",
+      "name": "blocks_25_to_26",
+      "modules": [
+        "model.layers.24",
+        "model.layers.25"
+      ]
+    },
+    {
+      "group_id": "G15",
+      "stage": "decoder",
+      "name": "blocks_27_to_28",
+      "modules": [
+        "model.layers.26",
+        "model.layers.27"
+      ]
+    },
+    {
+      "group_id": "G16",
+      "stage": "final_norm",
+      "name": "final_norm",
+      "modules": [
+        "model.norm"
+      ]
+    },
+    {
+      "group_id": "G17",
+      "stage": "lm_head",
+      "name": "lm_head",
+      "modules": [
+        "lm_head"
+      ]
+    }
+  ],
+  "valid_cut_boundaries": [
+    {
+      "cut_after": "G1",
+      "before": "token_embeddings",
+      "after": "blocks_1_to_2",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G2",
+      "before": "blocks_1_to_2",
+      "after": "blocks_3_to_4",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G3",
+      "before": "blocks_3_to_4",
+      "after": "blocks_5_to_6",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G4",
+      "before": "blocks_5_to_6",
+      "after": "blocks_7_to_8",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G5",
+      "before": "blocks_7_to_8",
+      "after": "blocks_9_to_10",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G6",
+      "before": "blocks_9_to_10",
+      "after": "blocks_11_to_12",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G7",
+      "before": "blocks_11_to_12",
+      "after": "blocks_13_to_14",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G8",
+      "before": "blocks_13_to_14",
+      "after": "blocks_15_to_16",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G9",
+      "before": "blocks_15_to_16",
+      "after": "blocks_17_to_18",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G10",
+      "before": "blocks_17_to_18",
+      "after": "blocks_19_to_20",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G11",
+      "before": "blocks_19_to_20",
+      "after": "blocks_21_to_22",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G12",
+      "before": "blocks_21_to_22",
+      "after": "blocks_23_to_24",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G13",
+      "before": "blocks_23_to_24",
+      "after": "blocks_25_to_26",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G14",
+      "before": "blocks_25_to_26",
+      "after": "blocks_27_to_28",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G15",
+      "before": "blocks_27_to_28",
+      "after": "final_norm",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G16",
+      "before": "final_norm",
+      "after": "lm_head",
+      "boundary_type": "stage_boundary"
+    }
+  ],
+  "notes": [
+    "Layer count read from local config: 28.",
+    "Decoder block boundaries only, not inside attention.",
+    "Attention masks, positions, RoPE and KV cache require architecture-specific forward logic.",
+    "Manifest alone does not establish executable partitioning."
+  ]
+}

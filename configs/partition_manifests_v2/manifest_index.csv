@@ -1,0 +1,14 @@
+model,granularity,groups,cut_boundaries,placements_max_2_switches,status
+resnet50,stage6,6,5,32,manifest_ready
+resnet50,block18,18,17,308,manifest_ready
+convnext_base,compatible35,35,34,1192,manifest_ready
+convnext_base,fine41,41,40,1642,manifest_ready
+convnext_large,compatible35,35,34,1192,manifest_ready
+convnext_large,fine41,41,40,1642,manifest_ready
+distilgpt2,pending_local_config,,,,config_unavailable: Local config.json not found; no download attempted
+qwen25_15b,blocks_per_group_1,31,30,932,manifest_ready
+qwen25_15b,blocks_per_group_2,17,16,274,manifest_ready
+qwen25_15b,blocks_per_group_4,10,9,92,manifest_ready
+qwen3_17b,blocks_per_group_1,31,30,932,manifest_ready
+qwen3_17b,blocks_per_group_2,17,16,274,manifest_ready
+qwen3_17b,blocks_per_group_4,10,9,92,manifest_ready

@@ -1,0 +1,174 @@
+{
+  "schema_version": "2.0-draft",
+  "model_id": "qwen3_17b",
+  "granularity": "blocks_per_group_4",
+  "execution_status": "manifest_only_not_validated",
+  "group_count": 10,
+  "cut_boundary_count": 9,
+  "theoretical_placements_max_2_switches": 92,
+  "groups": [
+    {
+      "group_id": "G1",
+      "stage": "embedding",
+      "name": "token_embeddings",
+      "modules": [
+        "model.embed_tokens"
+      ]
+    },
+    {
+      "group_id": "G2",
+      "stage": "decoder",
+      "name": "blocks_1_to_4",
+      "modules": [
+        "model.layers.0",
+        "model.layers.1",
+        "model.layers.2",
+        "model.layers.3"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "stage": "decoder",
+      "name": "blocks_5_to_8",
+      "modules": [
+        "model.layers.4",
+        "model.layers.5",
+        "model.layers.6",
+        "model.layers.7"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "stage": "decoder",
+      "name": "blocks_9_to_12",
+      "modules": [
+        "model.layers.8",
+        "model.layers.9",
+        "model.layers.10",
+        "model.layers.11"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "stage": "decoder",
+      "name": "blocks_13_to_16",
+      "modules": [
+        "model.layers.12",
+        "model.layers.13",
+        "model.layers.14",
+        "model.layers.15"
+      ]
+    },
+    {
+      "group_id": "G6",
+      "stage": "decoder",
+      "name": "blocks_17_to_20",
+      "modules": [
+        "model.layers.16",
+        "model.layers.17",
+        "model.layers.18",
+        "model.layers.19"
+      ]
+    },
+    {
+      "group_id": "G7",
+      "stage": "decoder",
+      "name": "blocks_21_to_24",
+      "modules": [
+        "model.layers.20",
+        "model.layers.21",
+        "model.layers.22",
+        "model.layers.23"
+      ]
+    },
+    {
+      "group_id": "G8",
+      "stage": "decoder",
+      "name": "blocks_25_to_28",
+      "modules": [
+        "model.layers.24",
+        "model.layers.25",
+        "model.layers.26",
+        "model.layers.27"
+      ]
+    },
+    {
+      "group_id": "G9",
+      "stage": "final_norm",
+      "name": "final_norm",
+      "modules": [
+        "model.norm"
+      ]
+    },
+    {
+      "group_id": "G10",
+      "stage": "lm_head",
+      "name": "lm_head",
+      "modules": [
+        "lm_head"
+      ]
+    }
+  ],
+  "valid_cut_boundaries": [
+    {
+      "cut_after": "G1",
+      "before": "token_embeddings",
+      "after": "blocks_1_to_4",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G2",
+      "before": "blocks_1_to_4",
+      "after": "blocks_5_to_8",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G3",
+      "before": "blocks_5_to_8",
+      "after": "blocks_9_to_12",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G4",
+      "before": "blocks_9_to_12",
+      "after": "blocks_13_to_16",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G5",
+      "before": "blocks_13_to_16",
+      "after": "blocks_17_to_20",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G6",
+      "before": "blocks_17_to_20",
+      "after": "blocks_21_to_24",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G7",
+      "before": "blocks_21_to_24",
+      "after": "blocks_25_to_28",
+      "boundary_type": "block_boundary"
+    },
+    {
+      "cut_after": "G8",
+      "before": "blocks_25_to_28",
+      "after": "final_norm",
+      "boundary_type": "stage_boundary"
+    },
+    {
+      "cut_after": "G9",
+      "before": "final_norm",
+      "after": "lm_head",
+      "boundary_type": "stage_boundary"
+    }
+  ],
+  "notes": [
+    "Layer count read from local config: 28.",
+    "Decoder block boundaries only, not inside attention.",
+    "Attention masks, positions, RoPE and KV cache require architecture-specific forward logic.",
+    "Manifest alone does not establish executable partitioning."
+  ]
+}
