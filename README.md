@@ -14,6 +14,18 @@ Proje şu bileşenleri bir araya getirir:
 - validation-based commit ve rollback,
 - adaptive local-training budget.
 
+## Quick overview (English)
+
+**FedEdgeMoE** is an active research prototype investigating how sparse Mixture-of-Experts (MoE) components can be trained and executed across heterogeneous edge devices.
+
+- **Research problem:** distribute expert-specific adaptation and execution while accounting for device capabilities, communication overhead, and model-quality constraints.
+- **Architecture:** a global backbone/router and expert registry coordinate expert placement, LoRA-based updates, aggregation, and validation-gated commits.
+- **Experimental environments:** Apple Silicon / MPS and NVIDIA / CUDA clients connected over a physical network.
+- **Reported prototype mechanisms:** expert-wise aggregation, adaptive local training budgets, validation-gated updates, rollback, and split expert execution.
+- **Evidence limits:** current Qwen2-MoE experiments use a small randomly initialized model, synthetic data, and a limited number of clients. They are **systems proof-of-concept experiments**, not evidence of production-scale model quality.
+
+**Explore:** [Research roadmap](docs/ROADMAP.md) · [Experiment notes](docs/) · [Results](results/)
+
 ## Araştırma Sorusu
 
 Ortak bir sparse MoE modeli, expert alt kümeleri farklı heterojen edge cihazlara atanarak federatif biçimde fine-tune edilebilir mi?
